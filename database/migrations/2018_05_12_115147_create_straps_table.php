@@ -19,8 +19,9 @@ class CreateStrapsTable extends Migration
              * this table should have all fields which are extended from \App\Product
              * and in the Accessory class we should define different table for it.
              */
-            $table->integer('brand_id')->nullable();
-            $table->integer('warranty_id')->nullable();
+            $table->integer('brand_id')->unsigned()->nullable();
+            $table->integer('warranty_id')->unsigned()->nullable();
+            $table->integer('category_id')->unsigned()->nullable();
 
             $table->string('name')->nullable();
             $table->string('color')->nullable();

@@ -9,7 +9,15 @@ class Transaction extends Model
     //
 
 
-    public function transactionable(){
+    protected $fillable = [
+        'ainaki_user_id',
+        'transactionable_id',
+        'transactionable_type',
+        'refId',
+    ];
+
+    public function transactionable()
+    {
         return $this->morphTo();
     }
 }

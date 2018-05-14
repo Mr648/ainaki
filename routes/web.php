@@ -11,6 +11,16 @@
 |
 */
 
+
+use App\AinakiUser;
+use App\Strap;
+use App\Comment;
+
 Route::get('/', function () {
-    return view('welcome');
+
+    $user = AinakiUser::findOrFail(1);
+    //echo '<img src="/'. $user->comments[0]->commentable->photos[0]->path . '" alt=" sdfsdfsdf " />';
+    echo "<pre>" . json_encode(array($user->comments[0]->commentable, $user->comments[0], $user)) . "</pre>";
+
+
 });

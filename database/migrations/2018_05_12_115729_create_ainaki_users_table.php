@@ -16,13 +16,13 @@ class CreateAinakiUsersTable extends Migration
         Schema::create('ainaki_users', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('name');
-            $table->string('family');
-            $table->string('role');
-            $table->string('username');
-            $table->string('password');
-            $table->string('phone',11);
-            $table->string('email',50);
+            $table->string('name')->nullable();
+            $table->string('family')->nullable();
+            $table->string('role')->nullable();
+            $table->string('username')->nullable();
+            $table->string('password')->nullable();
+            $table->string('phone',11)->nullable();
+            $table->string('email',50)->nullable();
 
             $table->timestamps();
         });

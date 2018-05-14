@@ -8,7 +8,22 @@ class Comment extends Model
 {
     //
 
-    public function commentable(){
+    protected $fillable = [
+        'ainaki_user_id',
+        'commentable_id',
+        'commentable_type',
+        'rating',
+        'comment',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\AinakiUser');
+    }
+
+
+    public function commentable()
+    {
         return $this->morphTo();
     }
 }

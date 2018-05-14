@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWarrantiesTable extends Migration
+class CreateAccessoryPackagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateWarrantiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('warranties', function (Blueprint $table) {
+        Schema::create('accessory_packages', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('warrantyable_id')->unsigned()->nullable();
-            $table->string('warrantyable_type')->nullable();
-            $table->string('period')->nullable();
-            $table->string('company')->nullable();
+            $table->string('name')->nullable();
+            $table->integer('price')->unsigned()->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateWarrantiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('warranties');
+        Schema::dropIfExists('accessory_packages');
     }
 }

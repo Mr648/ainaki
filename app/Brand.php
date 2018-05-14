@@ -7,7 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Brand extends Model
 {
     //
-    public function photos(){
+
+    protected $fillable = [
+        'name',
+        'country',
+        'description',
+    ];
+
+    public function photos()
+    {
         return $this->morphMany('App\Photo', 'imageable');
     }
 }
