@@ -17,6 +17,7 @@ class CreateLensTable extends Migration
             $table->increments('id');
             $table->integer('brand_id')->unsigned()->nullable();
             $table->integer('warranty_id')->unsigned()->nullable();
+            $table->integer('category_id')->unsigned()->nullable();
 
 
             $table->string('name')->nullable();
