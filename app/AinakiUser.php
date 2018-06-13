@@ -17,6 +17,10 @@ class AinakiUser extends Model
         'email',
     ];
 
+    public function authSms(){
+        return $this->hasOne('App\SmsAuth');
+    }
+
     public function photos()
     {
         return $this->morphMany('App\Photo','imageable');

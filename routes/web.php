@@ -21,6 +21,10 @@ Route::get('/', function () {
     echo "test";
 });
 
+
+Route::post('/sendSms', 'SmsAuthenticationController@sendSms');
+
+
 Route::get("/products/{category}/{filter}", function($category,$filter){
     $array = array();
     for($i = 1; $i<100; $i++){
