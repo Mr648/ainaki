@@ -18,9 +18,17 @@ use App\Comment;
 
 Route::get('/', function () {
 
-    $user = AinakiUser::findOrFail(1);
-    //echo '<img src="/'. $user->comments[0]->commentable->photos[0]->path . '" alt=" sdfsdfsdf " />';
-    echo "<pre>" . json_encode(array($user->comments[0]->commentable, $user->comments[0], $user)) . "</pre>";
+    echo "test";
+});
 
-
+Route::get("/products/{category}/{filter}", function($category,$filter){
+    $array = array();
+    for($i = 1; $i<100; $i++){
+        $array[] = [
+                "id"=>$i,
+                "name"=> "Rayban " . substr(rand(), 3) ,
+                "image" => urlencode('images/g'. (rand()%7 +1) . '.png'),
+                "price"=>  rand()/2 * 0.001];
+    }
+    return json_encode($array);
 });

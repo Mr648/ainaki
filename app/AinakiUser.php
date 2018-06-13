@@ -19,7 +19,7 @@ class AinakiUser extends Model
 
     public function photos()
     {
-        return $this->morphMany('App\Photo');
+        return $this->morphMany('App\Photo','imageable');
     }
 
     public function comments()
@@ -29,7 +29,7 @@ class AinakiUser extends Model
 
     public function favorites()
     {
-        return $this->hasMany('App\Favorite', 'favoriteable');
+        return $this->hasMany('App\Favorite');
     }
 
     public function tickets()
