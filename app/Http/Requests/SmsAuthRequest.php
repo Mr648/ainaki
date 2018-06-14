@@ -24,7 +24,7 @@ class SmsAuthRequest extends FormRequest
     public function rules()
     {
         return [
-            'phoneNumber' => 'required|digits:11'
+            'phone' => 'required|max:11|min:11'
         ];
     }
 }

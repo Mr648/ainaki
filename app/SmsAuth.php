@@ -9,6 +9,7 @@ class SmsAuth extends Model
     //
     protected $fillable=[
         'authentication_code',
+        'authKey',
         'authenticated',
     ];
 

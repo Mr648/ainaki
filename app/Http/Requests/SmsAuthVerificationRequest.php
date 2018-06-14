@@ -24,8 +24,8 @@ class SmsAuthVerificationRequest extends FormRequest
     public function rules()
     {
         return [
-            'authId'=>'required|digits:5',
-            'authKey'=>'required|digits'
+            'phone'=>'required|max:11|min:11',
+            'verificationCode'=>'required|max:4|min:4',
         ];
     }
 }

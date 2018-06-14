@@ -20,9 +20,16 @@ Route::get('/', function () {
 
     echo "test";
 });
+Route::post('/verifyCode', 'SmsAuthenticationController@verifyCode');
+
+Route::get('/compare/{code1}/{code2}', function ($code1, $code2) {
+return $code1 == $code2;
+});
 
 
 Route::post('/sendSms', 'SmsAuthenticationController@sendSms');
+
+
 
 
 Route::get("/products/{category}/{filter}", function($category,$filter){
