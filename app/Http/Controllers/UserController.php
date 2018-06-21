@@ -9,6 +9,7 @@ use App\Http\Requests\FavoriteRequest;
 use App\Lens;
 use App\SmsAuth;
 use App\Strap;
+use Illuminate\Database\Eloquent\Collection;
 
 class UserController extends Controller
 {
@@ -19,7 +20,7 @@ class UserController extends Controller
         $productId = $request->productId;
         $productCategory = $request->productCategory;
 
-        $authentication = SmsAuth::where('authKey', $authKey)->first();
+        $authentication = SmsAuth::where('authKey', sha1($authKey))->first();
 
         if (!is_null($authentication) && $authentication->authenticated == 1) {
 

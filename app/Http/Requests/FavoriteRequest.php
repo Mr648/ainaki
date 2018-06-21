@@ -25,7 +25,6 @@ class FavoriteRequest extends FormRequest
     {
         return [
             'authKey'=>'required',
-            'productId'=>'required',
             'productCategory'=>'required',
             //
         ];

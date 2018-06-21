@@ -7,6 +7,7 @@ use App\SmsAuth;
 use App\Http\Requests\SmsAuthRequest;
 use App\Http\Requests\SmsAuthVerificationRequest;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Crypt;
 
 class SmsAuthenticationController extends Controller
 {
@@ -50,7 +51,9 @@ class SmsAuthenticationController extends Controller
             if ($smsStatus->status == 200) {
                 $authSms = new SmsAuth();
                 $authSms->authentication_code = $verificationCode;
-                $authSms->authKey = md5($phoneNumber . env('MD5_SALT'));
+//                $authSms->authKey = md5($phoneNumber . env('MD5_SALT'));
+                $authSms->authKey = Crypt::encrypt($phoneNumber . env('MD5_SALT'));
+
 
                 $user->authSms()->save($authSms);
 
@@ -97,14 +100,15 @@ class SmsAuthenticationController extends Controller
         $verificationCode = $request->verificationCode;
 
         $smsAuth = SmsAuth::where([
-                'authKey' => md5($phoneNumber . env('MD5_SALT')),
+                'authKey' => Crypt::encrypt($phoneNumber . env('MD5_SALT')),
                 'authenticated' => false,
                 'authentication_code' => $verificationCode]
         )->first();
 
         if (is_null($smsAuth)) {
             return json_encode([
-                'message' => 'خطا در ارسال پیامک!',
+                'message' => Crypt::encrypt($phoneNumber . env('MD5_SALT')),
+//                'message' => 'خطا در ارسال پیامک!',
                 'error' => true
             ]);
         } else {
@@ -114,7 +118,8 @@ class SmsAuthenticationController extends Controller
                 'message' => 'ورود موفقیت آمیز',
                 'error' => false,
                 'isAuthResponse' => true,
-                'authKey' => sha1($smsAuth->authKey)
+                'authKey' => $smsAuth->authKey,
+                'csrfToken' => csrf_token()
             ]);
         }
     }
