@@ -23,23 +23,36 @@ Route::get('/', function () {
 Route::post('/verifyCode', 'SmsAuthenticationController@verifyCode');
 
 Route::get('/compare/{code1}/{code2}', function ($code1, $code2) {
-return $code1 == $code2;
+    return "fgfdfdfd" . ($code1 == $code2);
 });
 
 
 Route::post('/sendSms', 'SmsAuthenticationController@sendSms');
+Route::post('/users/like/{id}', 'UserController@like');
+Route::post('/users/dislike/{id}', 'UserController@dislike');
 
 
+Route::get("/products/{category}/{filter}", function ($category, $filter) {
 
 
-Route::get("/products/{category}/{filter}", function($category,$filter){
-    $array = array();
-    for($i = 1; $i<100; $i++){
-        $array[] = [
-                "id"=>$i,
-                "name"=> "Rayban " . substr(rand(), 3) ,
-                "image" => urlencode('images/g'. (rand()%7 +1) . '.png'),
-                "price"=>  rand()/2 * 0.001];
+    $eyeGlasses = \App\EyeGlass::get();
+
+// build your second collection with a subset of attributes. this new
+// collection will be a collection of plain arrays, not Users models.
+    $subset = $eyeGlasses->map(function ($eyeGlass) {
+        return collect($eyeGlass->toArray(), $eyeGlass->photos)
+            ->only(['id', 'name', 'price', 'imagePath'])
+            ->toArray();
+
+    });
+
+    $items = array();
+
+    foreach ($subset as $item) {
+        $item['image'] = \App\EyeGlass::findOrFail($item['id'])->photos[0]->path;
+        $items[] = $item;
     }
-    return json_encode($array);
+
+    return \GuzzleHttp\json_encode($items);
+
 });

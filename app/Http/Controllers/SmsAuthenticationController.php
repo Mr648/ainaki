@@ -29,18 +29,22 @@ class SmsAuthenticationController extends Controller
 
         // TODO call SMS API here
 
-        $client = new Client([
+       /* $client = new Client([
             'base_uri' => 'http://127.0.0.1:8000',
             'defaults' => [
                 'exceptions' => false
             ]
-        ]);
+        ]);*/
 
-        $res = $client->get('/getSomeJson');
+//        $res = $client->get('/getSomeJson');
 
-        if ($res->getStatusCode() == 200) {
 
-            $smsStatus = json_decode($res->getBody());
+            $smsStatus = json_decode(json_encode([
+                'status'=>200,
+                'verificationCode'=>rand(1000,9999)
+            ]));
+
+
             $verificationCode = $smsStatus->verificationCode;
 
             if ($smsStatus->status == 200) {
@@ -54,19 +58,36 @@ class SmsAuthenticationController extends Controller
                     'message' => "ارسال موفقیت آمیز!" . " :: " . $verificationCode,
                     'error' => false
                 ]);
-            } else {
-                return json_encode([
-                    'message' => 'خطا در ارسال پیامک!',
-                    'error' => true
-                ]);
             }
-
-        } else {
-            return json_encode([
-                'message' => 'خطا در ارسال پیامک!',
-                'error' => true
-            ]);
-        }
+//        if ($res->getStatusCode() == 200) {
+//
+//            $smsStatus = json_decode($res->getBody());
+//            $verificationCode = $smsStatus->verificationCode;
+//
+//            if ($smsStatus->status == 200) {
+//                $authSms = new SmsAuth();
+//                $authSms->authentication_code = $verificationCode;
+//                $authSms->authKey = md5($phoneNumber . env('MD5_SALT'));
+//
+//                $user->authSms()->save($authSms);
+//
+//                return json_encode([
+//                    'message' => "ارسال موفقیت آمیز!" . " :: " . $verificationCode,
+//                    'error' => false
+//                ]);
+//            } else {
+//                return json_encode([
+//                    'message' => 'خطا در ارسال پیامک!',
+//                    'error' => true
+//                ]);
+//            }
+//
+//        } else {
+//            return json_encode([
+//                'message' => 'خطا در ارسال پیامک!',
+//                'error' => true
+//            ]);
+//        }
     }
 
     public function verifyCode(SmsAuthVerificationRequest $request)
