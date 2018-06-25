@@ -23,23 +23,30 @@ Route::get('/', function () {
 Route::post('/verifyCode', 'SmsAuthenticationController@verifyCode');
 
 Route::get('/compare/{code1}/{code2}', function ($code1, $code2) {
-return $code1 == $code2;
+    return $code1 == $code2;
 });
 
 
 Route::post('/sendSms', 'SmsAuthenticationController@sendSms');
+Route::get('/showuser/{id}', function ($id) {
+    $user = AinakiUser::findOrFail($id);
+    echo '<pre>';
+    echo json_encode($user);
+    echo '</pre>';
+});
 
+Route::get('/testUserAuth/{authKey}' , function ($authKey){
+    echo 'jamal';
+})->middleware('smsauth');
 
-
-
-Route::get("/products/{category}/{filter}", function($category,$filter){
+Route::get("/products/{category}/{filter}", function ($category, $filter) {
     $array = array();
-    for($i = 1; $i<100; $i++){
+    for ($i = 1; $i < 100; $i++) {
         $array[] = [
-                "id"=>$i,
-                "name"=> "Rayban " . substr(rand(), 3) ,
-                "image" => urlencode('images/g'. (rand()%7 +1) . '.png'),
-                "price"=>  rand()/2 * 0.001];
+            "id" => $i,
+            "name" => "Rayban " . substr(rand(), 3),
+            "image" => urlencode('images/g' . (rand() % 7 + 1) . '.png'),
+            "price" => rand() / 2 * 0.001];
     }
     return json_encode($array);
 });
