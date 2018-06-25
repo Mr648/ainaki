@@ -33,7 +33,7 @@ class AinakiUser extends Model
 
     public function favorites()
     {
-        return $this->hasMany('App\Favorite');
+        return $this->hasMany('App\Favorite' ,'ainaki_user_id');
     }
 
     public function tickets()

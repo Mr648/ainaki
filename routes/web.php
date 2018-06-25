@@ -28,8 +28,9 @@ Route::get('/compare/{code1}/{code2}', function ($code1, $code2) {
 
 
 Route::post('/sendSms', 'SmsAuthenticationController@sendSms');
-Route::post('/users/like/{id}', 'UserController@like');
-Route::post('/users/dislike/{id}', 'UserController@dislike');
+Route::post('/users/like', 'UserController@like');
+Route::post('/user/favorites', 'UserController@favorites');
+Route::post('/users/dislike', 'UserController@dislike');
 
 
 Route::get("/products/{category}/{filter}", function ($category, $filter) {
@@ -53,6 +54,6 @@ Route::get("/products/{category}/{filter}", function ($category, $filter) {
         $items[] = $item;
     }
 
-    return \GuzzleHttp\json_encode($items);
+    return json_encode($items);
 
 });

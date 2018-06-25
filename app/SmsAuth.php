@@ -14,6 +14,6 @@ class SmsAuth extends Model
     ];
 
     public function user(){
-       return $this->belongsTo('App/AinakiUser');
+       return $this->belongsTo('App\AinakiUser', 'ainaki_user_id');
     }
 }

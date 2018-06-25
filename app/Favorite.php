@@ -15,7 +15,7 @@ class Favorite extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\AinakiUser');
+        return $this->belongsTo('App\AinakiUser' );
     }
 
     public function favoriteable()

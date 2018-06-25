@@ -114,7 +114,8 @@ class SmsAuthenticationController extends Controller
                 'message' => 'ورود موفقیت آمیز',
                 'error' => false,
                 'isAuthResponse' => true,
-                'authKey' => sha1($smsAuth->authKey)
+                'authKey' => $smsAuth->authKey,
+                'csrfToken' => csrf_token(),
             ]);
         }
     }
