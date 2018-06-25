@@ -15,6 +15,7 @@
 use App\AinakiUser;
 use App\Strap;
 use App\Comment;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
 
@@ -39,8 +40,8 @@ Route::get('/showuser/{id}', function ($id) {
     echo '</pre>';
 });
 
-Route::get('/testUserAuth/{authKey}' , function ($authKey){
-    echo 'jamal';
+Route::get('/testUserAuth/{authKey}' , function ( Request $request){
+    echo 'User Authorized :: <strong>' . $request->account()->phone . '</strong>';
 })->middleware('smsauth');
 
 

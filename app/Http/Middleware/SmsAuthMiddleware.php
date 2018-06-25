@@ -4,7 +4,6 @@ namespace App\Http\Middleware;
 
 use App\SmsAuth;
 use Closure;
-use Illuminate\Support\Facades\Response;
 
 class SmsAuthMiddleware
 {
@@ -24,9 +23,17 @@ class SmsAuthMiddleware
         ])->first();
 
         if (!is_null($smsAuth) && !is_null($smsAuth->user)) {
+            $user = $smsAuth->user;
+//            $request->merge(['user' => $user]);
+//            $request->setUserResolver(function () use ($user) {
+//                return $user;
+//            }
+            $request::macro('account', function () use ($user){
+                return $user;
+            });
             return $next($request);
         } else {
-            return response('Access is Denied.', 200)->header('Content-Type', 'text/plain');
+            return response('Access is Denied.', 401)->header('Content-Type', 'text/plain');
         }
     }
 }
