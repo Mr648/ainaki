@@ -16,8 +16,8 @@ class VerifyCsrfToken extends Middleware
         '/products/*/*',
         '/sendSms',
         '/verifyCode',
-        '/users/like',
+        '/user/like',
         '/user/favorites',
-        '/users/dislike'
+        '/user/dislike'
     ];
 }

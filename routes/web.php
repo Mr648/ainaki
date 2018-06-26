@@ -13,59 +13,41 @@
 
 
 use App\AinakiUser;
-use App\Strap;
-use App\Comment;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
-
-    echo "test";
+    echo "Ainaki Application is Alive!";
 });
+
 Route::post('/verifyCode', 'SmsAuthenticationController@verifyCode');
-
-Route::get('/compare/{code1}/{code2}', function ($code1, $code2) {
-    return "cmp " . ($code1 == $code2);
-});
-
-
 Route::post('/sendSms', 'SmsAuthenticationController@sendSms');
-Route::post('/users/like', 'UserController@like');
-Route::post('/user/favorites', 'UserController@favorites');
-Route::post('/users/dislike', 'UserController@dislike');
 
-Route::get('/showuser/{id}', function ($id) {
-    $user = AinakiUser::findOrFail($id);
-    echo '<pre>';
-    echo json_encode($user);
-    echo '</pre>';
+Route::prefix('user')->group(function () {
+    Route::post('/like', 'UserController@like');
+    Route::post('/favorites', 'UserController@favorites');
+    Route::post('/dislike', 'UserController@dislike');
 });
 
-Route::get('/testUserAuth/{authKey}' , function ( Request $request){
+Route::get('/testUserAuth/{authKey}', function (Request $request) {
     echo 'User Authorized :: <strong>' . $request->account()->phone . '</strong>';
 })->middleware('smsauth');
 
 
-Route::get("/products/{category}/{filter}", function($category,$filter){
+Route::get('/glass', function () {
+    $eyeGlasses = \App\EyeGlass::all();
+    return json_encode($eyeGlasses);
+});
 
 
-        $eyeGlasses = \App\EyeGlass::get();
-
-                // build your second collection with a subset of attributes. this new
-                // collection will be a collection of plain arrays, not Users models.
-                $subset = $eyeGlasses->map(function ($eyeGlass) {
-        return collect($eyeGlass->toArray(), $eyeGlass->photos)
-            ->only(['id', 'name', 'price', 'imagePath'])
-            ->toArray();
-
+Route::get('/users', function () {
+    $users = \App\AinakiUser::all();
+    $users->each(function ($user) {
+        echo $user->authSms;
     });
+});
 
-    $items = array();
 
-    foreach ($subset as $item) {
-        $item['image'] = \App\EyeGlass::findOrFail($item['id'])->photos[ 0]->path;
-        $items[] = $item;
-    }
-
-    return json_encode($items);
-
+Route::get('/products/{category}/{id}', function ($id) {
+    $eye = \App\EyeGlass::where('id', $id)->first();
+    echo json_encode($eye);
 });

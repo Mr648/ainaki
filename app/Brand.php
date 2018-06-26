@@ -18,4 +18,5 @@ class Brand extends Model
     {
         return $this->morphMany('App\Photo', 'imageable');
     }
+
 }

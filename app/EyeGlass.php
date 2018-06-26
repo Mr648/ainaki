@@ -69,4 +69,8 @@ class EyeGlass extends Model
     {
         return $this->morphMany('App\Favorite', 'favoriteable');
     }
+
+    public function brand(){
+        return $this->belongsTo('App\Brand');
+    }
 }

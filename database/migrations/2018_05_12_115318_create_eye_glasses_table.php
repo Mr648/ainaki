@@ -27,22 +27,20 @@ class CreateEyeGlassesTable extends Migration
             $table->string('name')->nullable();
             $table->text('description')->nullable();
 
-//            $table->string('faceShapes')->nullable();
-//            $table->string('faceSizes')->nullable();
-            $table->string('bridgeLength')->nullable();
+            $table->float('bridgeLength')->nullable();
             $table->string('frameColor')->nullable();
             $table->string('frameColorType')->nullable();
             $table->string('frameShape')->nullable();
-            $table->string('frameWidth')->nullable();
-            $table->string('gender_id')->nullable();
-            $table->string('handleLength')->nullable();
+            $table->float('frameWidth')->nullable();
+            $table->tinyInteger('gender')->nullable();
+            $table->float('handleLength')->nullable();
             $table->string('hasBox')->nullable();
             $table->string('lensColor')->nullable();
             $table->string('lensColorType')->nullable();
-            $table->string('lensHeight')->nullable();
-            $table->string('lensWidth')->nullable();
+            $table->float('lensHeight')->nullable();
+            $table->float('lensWidth')->nullable();
             $table->string('lensMaterial')->nullable();
-            $table->string('weight')->nullable();
+            $table->float('weight')->nullable();
 
             $table->float('discountPercentage')->nullable();
             $table->timestamp('discountPeriod')->nullable();
