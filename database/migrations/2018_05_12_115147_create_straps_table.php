@@ -24,6 +24,7 @@ class CreateStrapsTable extends Migration
             $table->integer('category_id')->unsigned()->nullable();
 
             $table->string('name')->nullable();
+            $table->tinyInteger('gender')->nullable();
             $table->string('color')->nullable();
             $table->float('length')->nullable();
             $table->string('material')->nullable();

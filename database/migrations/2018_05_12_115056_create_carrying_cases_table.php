@@ -22,7 +22,7 @@ class CreateCarryingCasesTable extends Migration
             $table->integer('brand_id')->unsigned()->nullable();
             $table->integer('warranty_id')->unsigned()->nullable();
             $table->integer('category_id')->unsigned()->nullable();
-
+            $table->tinyInteger('gender')->nullable();
             $table->string('name')->nullable();
             $table->string('color')->nullable();
             $table->string('material')->nullable();

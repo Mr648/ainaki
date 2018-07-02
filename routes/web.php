@@ -42,12 +42,37 @@ Route::get('/glass', function () {
 Route::get('/users', function () {
     $users = \App\AinakiUser::all();
     $users->each(function ($user) {
-        echo $user->authSms;
+        echo $user->authSms->authKey . '<br>';
     });
 });
 
 
-Route::get('/products/{category}/{id}', function ($id) {
-    $eye = \App\EyeGlass::where('id', $id)->first();
-    echo json_encode($eye);
+Route::get('/products/{category}/{filter}', function ($id) {
+    $eyes = \App\EyeGlass::all()->shuffle()->take(25);
+    $items = array();
+    foreach ($eyes as $eye) {
+        $eyeGlassImages = App\Photo::where('imageable_id', $eye->id)->get(['path']);
+
+        $images = array();
+        foreach ($eyeGlassImages as $image) {
+            $images[] = $image->path;
+        };
+        $items[] = array(
+            'id' => $eye->id,
+            'attrs' => array(
+                'name' => $eye->frameColor,
+                'color' => $eye->frameColor,
+                'frame' => $eye->frameShape,
+                'price' => $eye->price,
+                'images' => !is_null($images) ? $images : 'EMPTY',
+            )
+        );
+    }
+    return json_encode($items);
 });
+
+
+Route::get('/test/new/api', function () {
+
+});
+

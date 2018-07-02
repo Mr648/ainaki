@@ -18,6 +18,7 @@ class VerifyCsrfToken extends Middleware
         '/verifyCode',
         '/user/like',
         '/user/favorites',
-        '/user/dislike'
+        '/user/dislike',
+        '/test/new/api'
     ];
 }

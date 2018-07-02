@@ -27,6 +27,7 @@ class CreateLensTable extends Migration
             $table->float('DIA')->nullable();
             $table->string('healthLicence')->nullable();
             $table->string('color')->nullable();
+            $table->tinyInteger('gender')->nullable();
             $table->string('quantityInPack')->nullable();
             $table->string('usePeriod')->nullable();
             $table->float('waterContent')->nullable();

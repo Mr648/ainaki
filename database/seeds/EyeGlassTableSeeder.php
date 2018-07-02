@@ -12,7 +12,9 @@ class EyeGlassTableSeeder extends Seeder
     public function run()
     {
         factory(App\EyeGlass::class, 50)->create()->each(function ($eyeGlass) {
-            $eyeGlass->photos()->save(factory(App\Photo::class)->make());
+            $len = random_int(2, 8);
+            for ($i = 0; $i < $len; $i++)
+                $eyeGlass->photos()->save(factory(App\Photo::class)->make());
         });
     }
 }
