@@ -26,6 +26,7 @@ Route::prefix('user')->group(function () {
     Route::post('/like', 'UserController@like');
     Route::post('/favorites', 'UserController@favorites');
     Route::post('/dislike', 'UserController@dislike');
+    Route::post('/update', 'UserController@updateUser');
 });
 
 Route::get('/testUserAuth/{authKey}', function (Request $request) {

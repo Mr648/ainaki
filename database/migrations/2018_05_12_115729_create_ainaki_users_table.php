@@ -18,6 +18,7 @@ class CreateAinakiUsersTable extends Migration
 
             $table->string('name')->nullable();
             $table->string('family')->nullable();
+            $table->string('birthday')->nullable();
             $table->string('role')->nullable();
             $table->string('username')->nullable();
             $table->string('password')->nullable();

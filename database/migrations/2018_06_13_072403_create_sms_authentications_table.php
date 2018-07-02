@@ -30,6 +30,6 @@ class CreateSmsAuthenticationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sms_authentications');
+        Schema::dropIfExists('sms_auths');
     }
 }

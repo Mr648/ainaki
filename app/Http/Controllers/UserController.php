@@ -139,4 +139,19 @@ class UserController extends Controller
 
     }
 
+    private function updateUser($request)
+    {
+
+        $user = $request->account();
+        $user->name = request('name');
+        $user->family = request('family');
+        $user->birthday = request('birthday');
+
+        $user->save();
+
+        echo "update successfully!";
+        echo $user;
+
+    }
+
 }

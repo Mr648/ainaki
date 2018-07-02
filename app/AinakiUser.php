@@ -10,6 +10,7 @@ class AinakiUser extends Model
     protected $fillable = [
         'name',
         'family',
+        'birthday',
         'role',
         'username',
         'password',
