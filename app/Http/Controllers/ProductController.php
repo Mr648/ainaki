@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Comment;
+use App\Favorite;
 
 
 define('EYEGLASS', 0x1001);
@@ -30,16 +32,55 @@ class ProductController extends Controller
 
     private function filter($request)
     {
-        $CLASS = $this->getProductType(hexdec($request->productType));;
-        return $CLASS::where('id', $request->productId)->get($this->getProductInfo(hexdec($request->productType)))->first();
+
+        $user = $request->account();
+
+        $CLASS = $this->getProductType(hexdec($request->productType));
+
+        $product = array();
+
+        $result = $CLASS::where('id', $request->productId)->first();
+
+
+        $json = json_decode($result);
+
+        $keys = $this->getProductInfo(hexdec($request->productType));
+
+        foreach ($json as $key => $value) {
+            if (array_search($key, $keys)) {
+                $product[$key] = $value;
+            }
+        }
+
+        $isFavorite = $result->favorites()->where('ainaki_user_id', $user->id)->first();
+
+        $product['isFavorite'] = !is_null($isFavorite);
+
+        $count = $result->comments()->get(['rating', 'comment'])->count();
+
+        $photos = $result->photos()->get(['path']);
+        $product['photos'] = [];
+        if (!is_null($photos)) {
+            foreach ($photos as $photo) {
+                $product['photos'][] = $photo->path;
+            }
+        }
+
+        $product['url'] = urlencode('http://test');
+
+        $product['rating'] = ($count != 0) ? $result->comments()->get(['rating', 'comment'])->sum('rating') / $count : 0;
+
+        $product['comments'] = ($count != 0) ? $result->comments()->get(['rating', 'comment']) : [];
+
+
+        return $product;
     }
 
-    private function getProductType($producType)
+    private function getProductType($productType)
     {
-        switch ($producType) {
+        switch ($productType) {
             case EYEGLASS :
                 return 'App\EyeGlass';
-
             case STRAP :
                 return 'App\Strap';
             case LENS :
@@ -51,20 +92,21 @@ class ProductController extends Controller
         }
     }
 
-    private function getProductInfo($producType)
+    private function getProductInfo($productType)
     {
-        switch ($producType) {
+        switch ($productType) {
             case EYEGLASS :
                 return [
-                    'name',
                     'description',
+                    'name',
                     'bridgeLength',
                     'frameColor',
                     'frameColorType',
                     'frameShape',
                     'frameWidth',
                     'gender',
- 'handleLength',
+                    'price',
+                    'handleLength',
                     'hasBox',
                     'lensColor',
                     'lensColorType',
@@ -78,7 +120,13 @@ class ProductController extends Controller
                 ];
             case STRAP :
                 return [
-
+                    'color',
+                    'name',
+                    'length',
+                    'material',
+                    'description',
+                    'discountPercentage',
+                    'discountPeriod',
                 ];
             case LENS :
                 return [
