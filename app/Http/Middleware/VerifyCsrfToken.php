@@ -17,6 +17,7 @@ class VerifyCsrfToken extends Middleware
         '/sendSms',
         '/verifyCode',
         '/user/*',
-        '/test/new/api'
+        '/test/new/api',
+        '/filter'
     ];
 }

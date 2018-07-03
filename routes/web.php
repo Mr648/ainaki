@@ -34,11 +34,52 @@ Route::get('/testUserAuth/{authKey}', function (Request $request) {
 })->middleware('smsauth');
 
 
+Route::post('/filter',  'ProductController@filterChooser');
 Route::get('/glass', function () {
-    $eyeGlasses = \App\EyeGlass::all();
-    return json_encode($eyeGlasses);
+    $e = \App\EyeGlass::find(1);
+    $e = json_decode(json_encode($e));
+    foreach ($e as $key => $value) {
+        echo $key . " :: " . $value . " :: " . getFa($key) . "<br>";
+    }
 });
 
+function getFa($key)
+{
+    switch ($key) {
+        case 'name':
+            return 'نام';
+        case 'name':
+            return 'نام';
+        case 'name':
+            return 'نام';
+        case 'name':
+            return 'نام';
+        case 'name':
+            return 'نام';
+        case 'name':
+            return 'نام';
+        case 'name':
+            return 'نام';
+        case 'name':
+            return 'نام';
+        case 'name':
+            return 'نام';
+        case 'name':
+            return 'نام';
+        case 'name':
+            return 'نام';
+        case 'name':
+            return 'نام';
+        case 'name':
+            return 'نام';
+        case 'name':
+            return 'نام';
+        case 'name':
+            return 'نام';
+        case 'name':
+            return 'نام';
+    }
+}
 
 Route::get('/users', function () {
     $users = \App\AinakiUser::all();
@@ -76,4 +117,6 @@ Route::get('/products/{category}/{filter}', function ($id) {
 Route::get('/test/new/api', function () {
 
 });
+
+
 
