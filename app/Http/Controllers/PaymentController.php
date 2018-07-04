@@ -11,4 +11,7 @@ class PaymentController extends Controller
     {
         $this->middleware('smsauth');
     }
+
+
 }
+

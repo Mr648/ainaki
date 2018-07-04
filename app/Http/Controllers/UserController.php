@@ -6,9 +6,12 @@ use App\CarryingCase;
 use App\Cleaner;
 use App\EyeGlass;
 use App\Favorite;
+use App\Comment;
+use App\Http\Requests\CommentRequest;
 use App\Http\Requests\FavoriteRequest;
 use App\Lens;
 use App\Strap;
+use App\Transaction;
 use Illuminate\Http\Request;
 
 const ACTION_ADD = 'add';
@@ -134,8 +137,36 @@ class UserController extends Controller
         return $result;
     }
 
-    private function addComment($productId, $productType)
+    public function addComment(CommentRequest $request)
     {
+        $productId=$request->productId;
+        $productType=$request->productType;
+        $rating=$request->rating;
+        $comment=$request->comment;
+
+        $user = $request->account();
+
+        $transaction = Transaction::where('transactionable_id'  ,$productId)->where('transactionable_type' , $productType)->first();
+
+
+        if(!is_null($transaction)){
+            $comment = new Comment([
+                'commentable_id'=>$productId,
+                'commentable_type'=>$productType,
+                'rating'=>$rating,
+                'comment'=>is_null($comment)?'':$comment,
+            ]);
+            $user->comments()->save($comment);
+
+            return response()->json(['message' => "عملیات موفقیت آمیز!" , 'erorr' =>false ]);
+
+        }
+    else
+        {
+            return response()->json(['message' => "برای نظر گذاشتن درباره محصول باید آنرا خریداری کنید" , 'erorr' =>true ]);
+        }
+
+
 
     }
 
