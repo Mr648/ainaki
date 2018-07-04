@@ -17,6 +17,9 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
     echo "Ainaki Application is Alive!";
+    for ($i = 0x6480eee; $i < 0x6480fff; $i++) {
+        echo    ''.dechex($i). '<br>';
+    }
 });
 
 Route::post('/verifyCode', 'SmsAuthenticationController@verifyCode');
@@ -34,7 +37,7 @@ Route::get('/testUserAuth/{authKey}', function (Request $request) {
 })->middleware('smsauth');
 
 
-Route::post('/filter',  'ProductController@filterChooser');
+Route::post('/filter', 'ProductController@filterChooser');
 Route::get('/glass', function () {
     $e = \App\EyeGlass::find(1);
     $e = json_decode(json_encode($e));
