@@ -16,7 +16,9 @@ use App\AinakiUser;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
-    echo "Ainaki Application is Alive!";
+   // echo "Ainaki Application is Alive!";
+
+    return view('index');
 });
 
 Route::post('/verifyCode', 'SmsAuthenticationController@verifyCode');
@@ -121,3 +123,7 @@ Route::get('/test/new/api', function () {
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
