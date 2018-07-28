@@ -76,16 +76,15 @@ class ProductController extends Controller
         $filtered = $CLASS::where('gender', $filters->gender);
 
         foreach ($filters as $key => $obj) {
-            $filtered = $filtered->where($this->getColumnFor($key), $obj->op, $obj->value);
+            $filtered = $filtered->where($this->getColumnFor(hexdec($key)), $obj->op, $obj->value);
         }
 
         return $filtered->get($this->getProductInfo(hexdec($request->productType)));
     }
 
 
-
-
-    public  function  product($request){
+    public function product(Request $request)
+    {
 
         $user = $request->account();
 
@@ -95,39 +94,46 @@ class ProductController extends Controller
 
         $result = $CLASS::where('id', $request->productId)->first();
 
+        if (!is_null($result)) {
+            $json = json_decode($result);
 
-        $json = json_decode($result);
+            $keys = $this->getProductInfo(hexdec($request->productType));
 
-        $keys = $this->getProductInfo(hexdec($request->productType));
-
-        foreach ($json as $key => $value) {
-            if (array_search($key, $keys)) {
-                $product[$key] = $value;
+            foreach ($json as $key => $value) {
+                if (array_search($key, $keys)) {
+                    $product[$key] = $value;
+                }
             }
+
+            $isFavorite = $result->favorites()->where('ainaki_user_id', $user->id)->first();
+
+            $product['isFavorite'] = !is_null($isFavorite);
+
+            $count = $result->comments()->get(['rating', 'comment'])->count();
+
+            $photos = $result->photos()->get(['path']);
+            $product['photos'] = [];
+            if (!is_null($photos)) {
+                foreach ($photos as $photo) {
+                    $product['photos'][] = $photo->path;
+                }
+            }
+
+            $product['url'] = urlencode('http://test');
+
+            $product['rating'] = ($count != 0) ? $result->comments()->get(['rating', 'comment'])->sum('rating') / $count : 0;
+
+            $product['comments'] = ($count != 0) ? $result->comments()->get(['rating', 'comment']) : [];
+
+
+            return $product;
         }
 
-        $isFavorite = $result->favorites()->where('ainaki_user_id', $user->id)->first();
+        return response()->json([
+            'message'=>'کالای مورد نظر یافت نشد!',
+            'error'=>true,
+        ]);
 
-        $product['isFavorite'] = !is_null($isFavorite);
-
-        $count = $result->comments()->get(['rating', 'comment'])->count();
-
-        $photos = $result->photos()->get(['path']);
-        $product['photos'] = [];
-        if (!is_null($photos)) {
-            foreach ($photos as $photo) {
-                $product['photos'][] = $photo->path;
-            }
-        }
-
-        $product['url'] = urlencode('http://test');
-
-        $product['rating'] = ($count != 0) ? $result->comments()->get(['rating', 'comment'])->sum('rating') / $count : 0;
-
-        $product['comments'] = ($count != 0) ? $result->comments()->get(['rating', 'comment']) : [];
-
-
-        return $product;
     }
 
 

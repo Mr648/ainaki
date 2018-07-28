@@ -37,8 +37,9 @@ Route::get('/testUserAuth/{authKey}', function (Request $request) {
     echo 'User Authorized :: <strong>' . $request->account()->phone . '</strong>';
 })->middleware('smsauth');
 
-
+Route::get('/sample/{id}', 'SampleExample@test');
 Route::post('/filter', 'ProductController@filterChooser');
+Route::post('/product', 'ProductController@product');
 Route::get('/glass', function () {
     $e = \App\EyeGlass::find(1);
     $e = json_decode(json_encode($e));

@@ -18,6 +18,7 @@ class VerifyCsrfToken extends Middleware
         '/verifyCode',
         '/user/*',
         '/test/new/api',
-        '/filter'
+        '/filter',
+        '/product'
     ];
 }
