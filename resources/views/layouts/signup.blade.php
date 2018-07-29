@@ -6,17 +6,17 @@
 
 
             <div class="form-group">
-                <label for="email"> ادرس ایمیل: </label>
+                <label for="email"> ادرس ایمیل </label>
                 <input type="email" class="form-control" id="email" placeholder="لطفا ادرس ایمیل خود را وارد کنید"
                        name="email">
             </div>
             <div class="form-group">
-                <label for="phone"> شماره همراه: </label>
+                <label for="phone"> شماره همراه </label>
                 <input type="phone" class="form-control" id="phone" placeholder="لطفا شماره موبایل خود را وارد کنید"
                        name="phone">
             </div>
             <div class="form-group">
-                <label for="pwd">رمز عبور:</label>
+                <label for="pwd">رمز عبور</label>
                 <input type="password" class="form-control" id="pwd" placeholder="لطفا رمز عبور خود را وارد کنید"
                        name="pswd">
             </div>
