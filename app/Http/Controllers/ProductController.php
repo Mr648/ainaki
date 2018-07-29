@@ -119,6 +119,23 @@ class ProductController extends Controller
                 }
             }
 
+            $brand = $result->brand()->get(['name' , 'country']);
+            $brand= $brand['brand'] = [];
+            if (!is_null($brand)) {
+                foreach ($brand as $brand) {
+                    $brand['brand'][] = $brand->name;
+                    $brand['brand'][] = $brand->country;
+                }
+            }
+
+            $brand = $result->brand()->get(['name' , 'country']);
+            $brand= $brand['brand'] = [];
+            if (!is_null($brand)) {
+                $brand['brand'][] = $brand;
+            }
+
+
+
             $product['url'] = urlencode('http://test');
 
             $product['rating'] = ($count != 0) ? $result->comments()->get(['rating', 'comment'])->sum('rating') / $count : 0;

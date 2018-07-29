@@ -16,10 +16,9 @@ use App\AinakiUser;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
-    echo "Ainaki Application is Alive!";
-    for ($i = 0x6480eee; $i < 0x6480fff; $i++) {
-        echo    ''.dechex($i). '<br>';
-    }
+   // echo "Ainaki Application is Alive!";
+
+    return view('index');
 });
 
 Route::post('/verifyCode', 'SmsAuthenticationController@verifyCode');
@@ -125,3 +124,7 @@ Route::get('/test/new/api', function () {
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
