@@ -74,7 +74,7 @@
                 <p><i class="fa fa-phone mr-3"></i>شماره تماس 08733730542</p>
 
                 <p>
-                    <i class="fa fa-envelope mr-3"></i> info@sffa.ir ایمیل </p>
+                    <i class="fa fa-envelope mr-3"></i> ایمیل info@sffa.ir </p>
             </div>
 
 

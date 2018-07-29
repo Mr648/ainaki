@@ -11,9 +11,26 @@
 
         <div class="col-md-6 col-xs-12  h-100 align-self-center">
             <div class="d-flex justify-content-end align-contents-center w-100 text-dark">
-                    <span class="align-self-center" id="sign-in">
-                        <a href="#" class="px-1" id="login">ورود</a>/<a class="px-2" href="#" id="sign-up">ثبت‌نام</a>
-                    </span>
+                <span class="align-self-center" id="sign-in">
+                <a href="#" class="px-1 " data-toggle=modal data-target="#myModalLogin" id="login">ورود</a>/
+                </span>
+                <div class="modal" id="myModalLogin">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            @include ('layouts.login')
+                        </div>
+                    </div>
+                </div>
+                <span class="align-self-center" id="sign-in">
+                <a class="px-2" data-toggle="modal" data-target="#myModalRegister"
+                   href="#" id="sign-up">ثبت‌نام</a></span>
+                <div class="modal" id="myModalRegister">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            @include ('layouts.signup')
+                        </div>
+                    </div>
+                </div>
                 <i class="border-left border-light"></i><a href="#" class="align-self-center btn btn-link"><i
                             class="fa fa-shopping-cart fa-lg" id="shopping-cart"></i>
                 </a>
@@ -29,7 +46,7 @@
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav navbar-expand-sm  ">
-            <li class="nav-item">
+            <li class="nav-item" >
                 <a class="nav-link" href="#"> عینک طبی<i class="fa fa-angle-down" aria-hidden="true"></i></a>
             </li>
             <li class="nav-item">

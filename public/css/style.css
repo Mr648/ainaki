@@ -1,7 +1,9 @@
 .rtl {
     direction: rtl !important;
 }
-
+body{
+    font-family: "Iranian Sans";
+}
 .color-primary {
     color: #921a48;
 }
@@ -56,6 +58,29 @@
     color: white;
     font-family: 'Iranian Sans';
 }
-.carousel-control-prev{
+.carousel-control-prev span{
     color: black;
 }
+.fa-chevron-right , .fa-chevron-left{
+    color: black;
+
+}
+#see-product{
+    background-color: #921a48;
+    border: none;
+    padding: 10px;
+}
+#see-product:hover{
+    background-color: #6d1436;}
+
+form{
+    padding: 20px;
+    border: 5px;
+    border-color: #921a48;
+}
+.form-group{
+    padding: 15px;
+
+
+}
+
