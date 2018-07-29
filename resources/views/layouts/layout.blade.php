@@ -14,8 +14,11 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font_awesome.css') }}">
 
     <!-- Scripts -->
+    <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/jquery.slim.min.js') }}"></script>
     <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
 
 
     <!-- Styles -->
@@ -27,18 +30,23 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap/rtl/bootstrap.min.css') }}">
     <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
 </head>
-<body>
+<body style="font-family:'Iranian Sans';">
 @include ('layouts.header')
-{{--@include ('layouts.slider')--}}
-{{--@include ('layouts.cards')--}}
+@include ('layouts.slider')
+@include ('layouts.cards')
 
-{{--@include ('layouts.infocards')--}}
-{{--@include ('layouts.text')--}}
-@include ('layouts.signup')
+@include ('layouts.infocards')
+@include ('layouts.text')
+{{--@include ('layouts.signup')--}}
 
 
 
 @include ('layouts.footer')
+<script>
+    $(document).ready(function () {
+        $('.dropdown').dropdown();
+    });
+</script>
 
 </body>
 </html>

@@ -12,18 +12,18 @@
             </div>
             <!-- Left and right controls -->
             <a class="carousel-control-prev" href="#demo1" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
+                <i class="fa  fa-chevron-right text-black-50"></i>
             </a>
             <a class="carousel-control-next" href="#demo1" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
+                <i class="fa  fa-chevron-left text-black-50"></i>
             </a>
             <br>
             {{--<img class="card-img-top" src="images/8.jpg" alt="Card image" style="width:400px;">--}}
         </div>
-        <div class="card-body" style="width: 400px">
-            <h4 class="card-title">John Doe</h4>
-            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-            <a href="#" class="btn btn-primary">See Profile</a>
+        <div class="card-body text-center" style="width: 400px">
+            <h4 class="card-title">عینک افتابی کومونو 879 589</h4>
+            <p class="card-text text-center">قیمت 290000 تومان</p>
+            <a href="#" class="btn btn-primary" id="see-product">مشاهده محصول</a>
         </div>
     </div>
 
@@ -39,18 +39,18 @@
             </div>
             <!-- Left and right controls -->
             <a class="carousel-control-prev" href="#demo2" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
+                <i class="fa  fa-chevron-right text-black-50"></i>
             </a>
             <a class="carousel-control-next" href="#demo2" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
+                <i class="fa  fa-chevron-left text-black-50"></i>
             </a>
             <br>
-            {{--<img class="card-img-top" src="images/8.jpg" alt="Card image" style="width:400px;">--}}
+
         </div>
-        <div class="card-body" style="width: 400px">
-            <h4 class="card-title">John Doe</h4>
-            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-            <a href="#" class="btn btn-primary">See Profile</a>
+        <div class="card-body text-center" style="width: 400px">
+            <h4 class="card-title">عینک افتابی کومونو 879 589</h4>
+            <p class="card-text">قیمت 290000 تومان</p>
+            <a href="#" class="btn btn-primary" id="see-product">مشاهده محصول</a>
         </div>
     </div>
 
@@ -66,18 +66,18 @@
             </div>
             <!-- Left and right controls -->
             <a class="carousel-control-prev" href="#demo3" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
+                <i class="fa  fa-chevron-right text-black-50"></i>
             </a>
             <a class="carousel-control-next" href="#demo3" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
+                <i class="fa  fa-chevron-left text-black-50"></i>
             </a>
             <br>
-            {{--<img class="card-img-top" src="images/8.jpg" alt="Card image" style="width:400px;">--}}
+
         </div>
-        <div class="card-body" style="width: 400px">
-            <h4 class="card-title">John Doe</h4>
-            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-            <a href="#" class="btn btn-primary">See Profile</a>
+        <div class="card-body text-center" style="width: 400px">
+            <h4 class="card-title ">عینک افتابی کومونو 879 589</h4>
+            <p class="card-text">قیمت 290000 تومان</p>
+            <a href="#" class="btn btn-primary" id="see-product">مشاهده محصول</a>
         </div>
     </div>
     <br>
