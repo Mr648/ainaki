@@ -84,3 +84,24 @@ form{
 
 }
 
+
+.dropdown-large{
+    width: 1140px !important;
+}
+
+@media screen and (max-width: 576px){
+
+    .dropdown-large{
+        width: 196px !important;
+    }
+}
+
+.dropdown-item:hover{
+
+    color: #C2185B !important;
+    background:none !important;
+}
+
+.dropdown-menu  img{
+    width: 172px !important;
+}
