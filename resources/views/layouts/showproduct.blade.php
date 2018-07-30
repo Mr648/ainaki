@@ -36,6 +36,7 @@
 
 @include ('layouts.showproductDetail')
 @include ('layouts.tabs')
+@include ('layouts.similarProduct')
 
 
 
@@ -49,6 +50,8 @@
         $('.dropdown').dropdown();
     });
 </script>
+
+
 
 </body>
 </html>

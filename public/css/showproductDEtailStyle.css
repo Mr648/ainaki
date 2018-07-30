@@ -1,17 +1,18 @@
 
-
 .preview-thumbnail.nav-tabs li {
-    width: 18%;
-    margin-right: 2.5%; }
+    width: 80px;
+    margin-right: 5%;
+    /*padding: 5px;*/
+    height: 80px;
+}
+.body{
+    background-color: #f2eff0;
+}
 
 .preview-thumbnail.nav-tabs li img {
     max-width: 100%;
-    display: block; }
-
-
-.preview-thumbnail.nav-tabs li:last-of-type {
-    margin-right: 0; }
-
+    display: block;
+}
 
 .tab-content img {
 
@@ -22,25 +23,25 @@
     margin-top: 50px;
     background: #eee;
     padding: 3em;
-    line-height: 1.5em; }
-
-
-
-.product-title, .price{
-
-    font-weight: bold; }
-
-
-
-.product-title, .product-description, .price {
-    margin-bottom: 15px; }
-
-.product-title {
-    margin-top: 0; }
-.product-description{
-    font-size:14px;
+    line-height: 1.5em;
 }
 
+.product-title, .price {
+
+    font-weight: bold;
+}
+
+.product-title, .product-description, .price {
+    margin-bottom: 15px;
+}
+
+.product-title {
+    margin-top: 0;
+}
+
+.product-description {
+    font-size: 14px;
+}
 
 .add-to-cart, .like {
     background: #0076ad;
@@ -51,60 +52,62 @@
     font-weight: bold;
     color: #fff;
     -webkit-transition: background .3s ease;
-    transition: background .3s ease; }
+    transition: background .3s ease;
+}
 
 .add-to-cart:hover, .like:hover {
 
     background: #004566;
-    color: #fff; }
+    color: #fff;
+}
 
 .preview {
-    margin-top :-50px; }
+    margin-top: -50px;
+}
+
 /******************************************/
 
-.pulse {
-    position:absolute;
-    top:50%;
-    left:50%;
-    width:100px;
-    height:100px;
-    /*background:#56ff00;*/
-    border-radius:50%;
-    box-sizing:border-box;
 
-}
-.title{
-    margin-top: 30px;
-}
-.pulse:before,
-.pulse:after
-{
-    content:'';
-    position:absolute;
-    top:-20px;
-    bottom:-20px;
-    left:-20px;
-    right:-20px;
-    border: 2px solid #921a48;
-    border-radius: 50%;
-    animation: animate 2s linear infinite;
 
-}
-.pulse:after {
-    animation-delay: 1s;
+
+
+.border-ainaki {
+    border: 2px solid #921a48 !important;
+    animation: animate 1s linear infinite;
 }
 
-@keyframes animate
-{
-    0%
-    {
-        transform: scale(1.25);
+.feature {
+    height: 96px !important;
+    width: 96px !important;
+    background-color: #d37498;
+}
+
+
+.tabs {
+    height: 500px;
+}
+
+.nav-link{
+    color: #921a48 !important;
+}
+.nav-link.active.show  {
+    background-color: #921a48 !important;
+    color: white !important;
+
+}
+
+.similar-product {
+    margin-right: 30px;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(1.25) ;
+        opacity: 0.5;
     }
-    100%
-    {
-        transform: scale(1);
+    100% {
+        transform: scale(1) ;
     }
 }
-/*.nav-tabs{*/
-    /*margin: 50px;*/
-/*}*/
+
+
