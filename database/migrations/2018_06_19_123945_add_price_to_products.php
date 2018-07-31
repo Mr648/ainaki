@@ -14,23 +14,23 @@ class AddPriceToProducts extends Migration
     public function up()
     {
         Schema::table('carrying_cases', function (Blueprint $table) {
-            $table->float('price')->after('description')->default(0)->nullable();
+            $table->double('price')->after('description')->default(0)->nullable();
         });
 
         Schema::table('straps', function (Blueprint $table) {
-            $table->float('price')->after('description')->default(0)->nullable();
+            $table->double('price')->after('description')->default(0)->nullable();
         });
 
         Schema::table('lens', function (Blueprint $table) {
-            $table->float('price')->after('description')->default(0)->nullable();
+            $table->double('price')->after('description')->default(0)->nullable();
         });
 
         Schema::table('cleaners', function (Blueprint $table) {
-            $table->float('price')->after('description')->default(0)->nullable();
+            $table->double('price')->after('description')->default(0)->nullable();
         });
 
         Schema::table('eye_glasses', function (Blueprint $table) {
-            $table->float('price')->after('description')->default(0)->nullable();
+            $table->double('price')->after('description')->default(0)->nullable();
         });
     }
 

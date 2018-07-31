@@ -12,6 +12,7 @@ $factory->define(App\EyeGlass::class, function (Faker $faker) {
         'frameShape' => str_random(7),
         'frameWidth' => random_int(1, 10),
         'gender' => random_int(0, 2),
+        'price' => floatval(rand(100000, 1500000)),
         'handleLength' => random_int(1, 10),
         'hasBox' => false,
         'lensColor' => str_random(7),

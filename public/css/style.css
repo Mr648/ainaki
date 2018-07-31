@@ -1,8 +1,21 @@
+@font-face {
+    font-family:IRSANS;
+    src:url(/fonts/irsans/IRANSansLight.woff) format('woff'),url(/fonts/irsans/IRANSansLight.ttf) format('truetype');
+    font-weight:400
+}
+@font-face {
+    font-family:IRSANS;
+    src:url(/fonts/irsans/IRANSansMedium.woff) format('woff'),url(/fonts/irsans/IRANSansMedium.ttf) format('truetype');
+    font-weight:700
+}
 .rtl {
     direction: rtl !important;
 }
+.ltr{
+    direction: ltr !important;
+}
 body{
-    font-family: "Iranian Sans";
+    font-family: IRSANS !important;
 }
 .color-primary {
     color: #921a48;
@@ -58,7 +71,6 @@ body{
 
 #footer-link {
     color: white;
-    font-family: 'Iranian Sans';
 }
 .carousel-control-prev span{
     color: black;
