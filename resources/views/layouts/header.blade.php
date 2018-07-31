@@ -34,6 +34,23 @@
                 <i class="border-left border-light"></i><a href="#" class="align-self-center btn btn-link"><i
                             class="fa fa-shopping-cart fa-lg" id="shopping-cart"></i>
                 </a>
+                <div class="modal" id="messageModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="messageModalTitle"></h4>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <p id="messageModalMessage"></p>
+                                <button type="button" class="pull-left btn btn-danger" data-dismiss="modal">بستن</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

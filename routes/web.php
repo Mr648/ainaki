@@ -30,13 +30,22 @@ Route::prefix('user')->group(function () {
     Route::post('/dislike', 'UserController@dislike');
     Route::post('/update', 'UserController@updateUser');
     Route::post('/comment', 'UserController@addComment');
+    Route::post('/signup', 'SignupController@signUp')->name('signup');
+    Route::post('/signin', 'LoginController@login')->name('signin');
+
 });
 
 Route::get('/testUserAuth/{authKey}', function (Request $request) {
     echo 'User Authorized :: <strong>' . $request->account()->phone . '</strong>';
 })->middleware('smsauth');
 
+
 Route::get('/sample/{id}', 'SampleExample@test');
+
+
+
+
+
 Route::post('/filter', 'ProductController@filterChooser');
 Route::post('/product', 'ProductController@product');
 Route::get('/glass', function () {
