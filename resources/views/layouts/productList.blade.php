@@ -40,9 +40,9 @@
 
 @include ('layouts.footer')
 <script>
-    $(document).ready(function () {
-        $('.dropdown').dropdown();
-    });
+//    $(document).ready(function () {
+//        $('.dropdown').dropdown();
+//    });
 </script>
 
 
