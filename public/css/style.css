@@ -103,5 +103,17 @@ form{
 }
 
 .dropdown-menu  img{
-    width: 172px !important;
+    width: 172px ;
+}
+.img-dropdown{
+    width: 156px !important;
+    height: 172px !important;
+}
+.img-dropdown2{
+    width: 156px !important;
+    height: 186px !important;
+}
+.img-dropdownbrand{
+    width:64px !important;
+    height: 64px !important;
 }
