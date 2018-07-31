@@ -63,30 +63,207 @@
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav navbar-expand-sm  ">
-            <li class="nav-item" >
-                <a class="nav-link" href="#"> عینک طبی<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">عینک طبی</a>
+                <div class="dropdown-menu dropdown-large">
+
+                    <div class="row">
+                        <div class="col" href="#">
+                            <div class="d-flex flex-lg-row ">
+                                <img src="images/woman.png" class="align-self-center rounded img-dropdown2 m-2"
+                                     alt="Woman Glass">
+                                <h5 class="align-self-center"><a class=" dropdown-item" href="#">زنانه</a></h5>
+                            </div>
+                        </div>
+                        <div class="col" href="#">
+                            <div class="d-flex flex-lg-row">
+                                <img src="images/men.png" class="align-self-center rounded m-2 img-dropdown"
+                                     alt="Man Glass">
+                                <h5 class="align-self-center "><a class=" dropdown-item" href="#">مردانه</a></h5>
+                            </div>
+                        </div>
+                        <div class="col" href="#">
+                            <div class="d-flex flex-lg-row ">
+                                <img src="images/Kid.png" class="align-self-center rounded img-dropdown m-2"
+                                     alt="Man Glass">
+                                <h5 class="align-self-center "><a class=" dropdown-item  " href="#">بچه‎گانه</a></h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"> عینک آفتابی <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+
+            <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">عینک آفتابی</a>
+                <div class="dropdown-menu dropdown-large" style="margin-right: -75px">
+
+                    <div class="row">
+                        <div class="col" href="#">
+                            <div class="d-flex flex-lg-row ">
+                                <img src="images/womanSun.png" class="align-self-center rounded img-dropdowng2 m-2"
+                                     alt="Woman Glass">
+                                <h5 class="align-self-center"><a class=" dropdown-item" href="#">زنانه</a></h5>
+                            </div>
+                        </div>
+                        <div class="col" href="#">
+                            <div class="d-flex flex-lg-row">
+                                <img src="images/menSun.png" class="align-self-center rounded img-dropdown m-2"
+                                     alt="Man Glass">
+                                <h5 class="align-self-center "><a class=" dropdown-item" href="#">مردانه</a></h5>
+                            </div>
+                        </div>
+                        <div class="col" href="#">
+                            <div class="d-flex flex-lg-row ">
+                                <img src="images/Kid.png" class="align-self-center rounded  img-dropdown m-2"
+                                     alt="Man Glass">
+                                <h5 class="align-self-center "><a class=" dropdown-item  " href="#">بچه‎گانه</a></h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"> لنز <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+
+            <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">لنز</a>
+                <div class="dropdown-menu dropdown-large " style="margin-right: -150px">
+
+                    <div class="row">
+                        <div class="col" href="#">
+                            <div class="d-flex flex-lg-row ">
+                                <h5 class="align-self-center" data-background-image="images/lens.png" data-size="156"><a
+                                            class=" dropdown-item" href="#">طبی</a></h5>
+                            </div>
+                        </div>
+                        <div class="col" href="#">
+                            <div class="d-flex flex-lg-row">
+                                <h5 class="align-self-center" data-background-image="images/lens.png" data-size="156"><a
+                                            class=" dropdown-item" href="#">طبی</a></h5>
+                            </div>
+                        </div>
+                        <div class="col" href="#">
+                            <div class="d-flex flex-lg-row ">
+                                <h5 class="align-self-center" data-background-image="images/lens.png" data-size="156"><a
+                                            class=" dropdown-item" href="#">طبی</a></h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"> لوازم جانبی <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+
+
+            <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">لوازم جانبی</a>
+                <div class="dropdown-menu dropdown-large" style="margin-right: -200px">
+
+                    <div class="row">
+                        <div class="col" href="#">
+                            <div class="d-flex flex-lg-row ">
+                                <img src="images/womanSun.png" class="align-self-center rounded img-dropdowng2 m-2"
+                                     alt="Woman Glass">
+                                <h5 class="align-self-center"><a class=" dropdown-item" href="#">جعبه ی عینک</a></h5>
+                            </div>
+                        </div>
+                        <div class="col" href="#">
+                            <div class="d-flex flex-lg-row">
+                                <img src="images/menSun.png" class="align-self-center rounded img-dropdown m-2"
+                                     alt="Man Glass">
+                                <h5 class="align-self-center "><a class=" dropdown-item" href="#">شوینده</a></h5>
+                            </div>
+                        </div>
+                        <div class="col" href="#">
+                            <div class="d-flex flex-lg-row ">
+                                <img src="images/Kid.png" class="align-self-center rounded img-dropdown m-2"
+                                     alt="Man Glass">
+                                <h5 class="align-self-center "><a class=" dropdown-item  " href="#">لوازم تعمیر</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"> برند<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+
+            <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">برند</a>
+                <div class="dropdown-menu dropdown-large" style="margin-right: -355px">
+
+                    <div class="row">
+                        <div class="col" href="#">
+                            <div class="list-group">
+                            <div class="d-flex flex-lg-row ">
+                                <img src="images/ReyBanLogo.png"
+                                     class="align-self-center rounded  img-dropdownbrand  m-2"
+                                     alt="Woman Glass">
+                                <h5 class="align-self-center"><a class=" dropdown-item" href="#">Rey.Ban</a></h5>
+                            </div>
+                                <div class="d-flex d-flex-row">
+                            <img src="images/ArmanyLogo.png"
+                                 class="align-self-center rounded m-2" style="width:84px "
+                                 alt="Woman Glass">
+                                <h5 class="align-self-center"><a class=" dropdown-item" href="#">Armany</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col" href="#">
+                            <div class="d-flex flex-lg-row">
+
+                                <h5 class="align-self-center "><a class=" dropdown-item" href="#">شوینده</a></h5>
+                            </div>
+                        </div>
+                        <div class="col" href="#">
+                            <div class="d-flex flex-lg-row ">
+                                <h5 class="align-self-center "><a class=" dropdown-item  " href="#">لوازم تعمیر</a></h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
             </li>
+
+
             <li class="nav-item">
-                <a class="nav-link" href="#">راهنمای تست انلاین <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <a class="nav-link" href="#">راهنمای تست آنلاین <i  aria-hidden="true"></i></a>
             </li>
 
             <li class="nav-item">
-                <a href="#" class="nav-link col-12 ">تست انلاین</a>
+                <a href="#" class="nav-link col-12 ">تست آنلاین</a>
             </li>
 
         </ul>
     </div>
 </nav>
+
+<script>
+    $(document).ready(function () {
+        $('.nav-item h5').each(function () {
+            var bg = '/' + $(this).data('background-image');
+            var size = $(this).data('size');
+            if (bg !== null && size !== null) {
+                $(this).css(
+                    {
+                        'background-image': 'url(' + bg + ')',
+                        'background-size': size + 'px' + " " + size + 'px',
+                        'width': size + "px !important",
+                        'height': size + "px !important"
+                    }
+                )
+                ;
+                console.info("bg is " + bg);
+            }
+        })
+        ;
+    })
+    ;
+</script>
 
