@@ -58,11 +58,13 @@ body{
 
 .card {
     border: none !important;
-    margin-right: 15px;
+
+
 }
 
+
 .page-footer {
-    padding: 20px;
+    padding-top: 20px;
     color: white;
 
 }
@@ -85,14 +87,27 @@ body{
 #see-product:hover{
     background-color: #6d1436;}
 
+
 form{
-    padding: 20px;
+    padding: 10px;
     border: 5px;
     border-color: #921a48;
+font-size: 14px;
 }
 .form-group{
-    padding: 15px;
+    padding: 10px;
 
 
 }
+::-webkit-input-placeholder{
+    font-size: 12px;
+    opacity: .5;
+}
+
+::-moz-placeholder{
+    font-size: 12px;
+    opacity: .5;
+}
+
+/************************************************************/
 

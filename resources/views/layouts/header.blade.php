@@ -14,7 +14,7 @@
                 <span class="align-self-center" id="sign-in">
                 <a href="#" class="px-1 " data-toggle=modal data-target="#myModalLogin" id="login">ورود</a>/
                 </span>
-                <div class="modal" id="myModalLogin">
+                <div class="modal col-12 col-lg-12" id="myModalLogin">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             @include ('layouts.login')
@@ -24,7 +24,7 @@
                 <span class="align-self-center" id="sign-in">
                 <a class="px-2" data-toggle="modal" data-target="#myModalRegister"
                    href="#" id="sign-up">ثبت‌نام</a></span>
-                <div class="modal" id="myModalRegister">
+                <div class="modal  col-12 col-lg-12"  id="myModalRegister">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             @include ('layouts.signup')
