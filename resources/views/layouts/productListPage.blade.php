@@ -11,8 +11,8 @@
                 <div class="card border text-center hovereffect" style="width:400px ; height: 350px">
                     <img class="card-img-top" src="images/g5.png" alt="Card image">
                     <h2>Hover effect 1</h2>
-                    <a href="#" class="btn btn-primary">مشاهده محصول</a>
-                    <a href="#" class="btn btn-primary">تست انلاین</a>
+                    <a href="#" class="btn btn-primary info">مشاهده محصول</a>
+                    <a href="#" class="btn btn-primary info">تست انلاین</a>
 
                     <div class="card-body list-page">
                         <h6 class="card-title text-center">عینک طبی اسپای 145</h6>
