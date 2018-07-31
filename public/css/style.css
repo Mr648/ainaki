@@ -15,7 +15,7 @@
     direction: ltr !important;
 }
 body{
-    font-family: IRSANS;
+    font-family: IRSANS !important;
 }
 .color-primary {
     color: #921a48;

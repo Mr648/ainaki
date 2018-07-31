@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap/rtl/bootstrap.min.css') }}">
     <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
 </head>
-<body style="font-family:'Iranian Sans';">
+<body>
 @include ('layouts.header')
 
 @include ('layouts.showproductDetail')

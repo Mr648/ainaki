@@ -35,7 +35,7 @@ class SignupController extends Controller
             ]);
             return json_encode([
                 'error' => false,
-                'message' => 'ثبت نام شما با موفقیت انجام شد!',
+                'message' => 'ثبت نام شما با موفقیت انجام شد!'
             ]);
 
         } else {
