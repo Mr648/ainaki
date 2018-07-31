@@ -78,7 +78,7 @@
             </div>
 
 
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 
                 <!-- Links -->
                 <h6 class="text-uppercase font-weight-bold">عینکی در شبکه های اجتماعی</h6>

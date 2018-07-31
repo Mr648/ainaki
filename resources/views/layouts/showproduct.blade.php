@@ -23,27 +23,33 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/showproductDEtailStyle.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/devicon.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/devicon-colors.css') }}">
 
     {{--Bootstrap--}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap/rtl/bootstrap.min.css') }}">
     <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/ainaki.js') }}"></script>
 </head>
 <body>
 @include ('layouts.header')
-@include ('layouts.slider')
-@include ('layouts.cards')
 
-@include ('layouts.infocards')
-@include ('layouts.text')
-{{--@include ('layouts.signup')--}}
+@include ('layouts.showproductDetail')
+@include ('layouts.tabs')
+@include ('layouts.similarProduct')
+
+
+
+
 
 
 
 @include ('layouts.footer')
-
+<script>
+    $(document).ready(function () {
+        $('.dropdown').dropdown();
+    });
+</script>
 
 
 

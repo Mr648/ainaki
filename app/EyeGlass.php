@@ -13,6 +13,7 @@ class EyeGlass extends Model
         'warranty_id',
         'category_id',
         'name',
+        'price',
         'description',
         'bridgeLength',
         'frameColor',

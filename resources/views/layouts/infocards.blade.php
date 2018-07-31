@@ -1,6 +1,6 @@
 <div class="card-deck rtl">
 
-    <div class="card my-5">
+    <div class="card my-5 border">
         <div id="demo1" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner text-center">
                 <div class="carousel-item active" style="height: 350px !important;">
@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <div class="card my-5">
+    <div class="card my-5 border">
         <div id="demo2" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner text-center">
                 <div class="carousel-item active" style="height: 350px !important;">
@@ -54,7 +54,7 @@
         </div>
     </div>
 
-    <div class="card my-5">
+    <div class="card my-5 border">
         <div id="demo3" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner text-center">
                 <div class="carousel-item active" style="height: 350px !important;">
