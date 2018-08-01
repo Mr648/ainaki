@@ -21,6 +21,12 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/gamal/jamal/kamal', function () {
+    // echo "Ainaki Application is Alive!";
+
+    return view('index');
+});
+
 Route::post('/verifyCode', 'SmsAuthenticationController@verifyCode');
 Route::post('/sendSms', 'SmsAuthenticationController@sendSms');
 

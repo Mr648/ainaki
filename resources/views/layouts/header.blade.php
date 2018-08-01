@@ -12,7 +12,11 @@
         <div class="col-md-6 col-xs-12  h-100 align-self-center">
             <div class="d-flex justify-content-end align-contents-center w-100 text-dark">
                 <span class="align-self-center" id="sign-in">
-                <a href="#" class="px-1 " data-toggle=modal data-target="#myModalLogin" id="login">ورود</a>/
+                    @php
+                        $userLoggedIn = session()->get('email');
+                    @endphp
+                        @if (!isset($userLoggedIn))
+                        <a href="#" class="px-1 " data-toggle=modal data-target="#myModalLogin" id="login">ورود</a>/
                 </span>
                 <div class="modal col-12 col-lg-12" id="myModalLogin">
                     <div class="modal-dialog">
@@ -22,8 +26,8 @@
                     </div>
                 </div>
                 <span class="align-self-center" id="sign-in">
-                <a class="px-2" data-toggle="modal" data-target="#myModalRegister"
-                   href="#" id="sign-up">ثبت‌نام</a></span>
+                <a class="px-2" data-toggle="modal" data-target="#myModalRegister" href="#" id="sign-up">ثبت‌نام</a>
+                </span>
                 <div class="modal  col-12 col-lg-12"  id="myModalRegister">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -31,6 +35,12 @@
                         </div>
                     </div>
                 </div>
+                @else
+                    <span class="align-self-center" id="sign-in">
+                <a class="px-2" data-toggle="modal" data-target="#myModalRegister" href="#" id="sign-up">خروج</a>
+                </span>
+                        @endif
+
                 <i class="border-left border-light"></i><a href="#" class="align-self-center btn btn-link"><i
                             class="fa fa-shopping-cart fa-lg" id="shopping-cart"></i>
                 </a>

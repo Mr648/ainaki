@@ -30,6 +30,8 @@
     {{--Bootstrap--}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap/rtl/bootstrap.min.css') }}">
     <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/ainaki.js') }}"></script>
+
 </head>
 <body>
 @include ('layouts.header')

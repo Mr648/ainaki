@@ -39,7 +39,7 @@
                     <br>
                     <div class="d-flex justify-content-center w-100">
                         <div class="rounded-circle d-flex border-ainaki feature">
-                            <h6 class="text-white align-self-center m-1">تست آنلاین</h6></div>
+                            <h6 class="align-self-center m-1">تست آنلاین</h6></div>
                     </div>
                     <br>
                     <br>

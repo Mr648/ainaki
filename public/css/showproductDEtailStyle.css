@@ -72,14 +72,15 @@
 
 
 .border-ainaki {
-    border: 2px solid #921a48 !important;
-    animation: animate 1s linear infinite;
+    border: 5px double #921a48 !important ;
+    animation: animate 1.5s cubic-bezier(0.1, 0.7, 1.0, 0.1) infinite;
 }
 
 .feature {
     height: 96px !important;
     width: 96px !important;
-    background-color: #d37498;
+    background-color: #fff;
+    color: #921a48;
 }
 
 
@@ -93,7 +94,6 @@
 .nav-link.active.show  {
     background-color: #921a48 !important;
     color: white !important;
-
 }
 
 .similar-product {
@@ -103,10 +103,11 @@
 @keyframes animate {
     0% {
         transform: scale(1.25) ;
-        opacity: 0.5;
+        rotation: 360deg;
     }
     100% {
         transform: scale(1) ;
+        rotation: 0deg;
     }
 }
 
