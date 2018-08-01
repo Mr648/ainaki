@@ -246,6 +246,7 @@
 
 <script>
     $(document).ready(function () {
+//        $('.dropdown').dropdown();
         $('.nav-item h5').each(function () {
             var bg = '/' + $(this).data('background-image');
             var size = $(this).data('size');
