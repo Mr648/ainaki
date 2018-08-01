@@ -4,8 +4,9 @@
             <div class="wrapper row">
                 <div class="preview col-md-5 col-sm-12">
 
-                    <div class="preview-pic tab-content border">
-                        <div class="tab-pane active" id="pic-1" style="height: 250px !important;"><img
+                    <div class="preview-pic tab-content border" data-toggle="modal" data-target="#myModal">
+                        <div class="tab-pane active" id="pic-1" style="height: 250px !important;">
+                            <img
                                     src="images/g1.png"/></div>
                         <div class="tab-pane" style="height: 250px !important;" id="pic-2"><img src="images/g2.png"/>
                         </div>
@@ -15,7 +16,7 @@
                         </div>
 
                     </div>
-                    <ul class="preview-thumbnail nav nav-tabs text-center ">
+                    <ul class="preview-thumbnail nav nav-tabs text-center modal" id="myModal">
                         <li class="active border "><a class=" border" data-target="#pic-1" data-toggle="tab"><img
                                         src="images/g1.png"/></a>
                         </li>

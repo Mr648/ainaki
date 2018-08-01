@@ -87,7 +87,6 @@ body{
 #see-product:hover{
     background-color: #6d1436;}
 
-
 form{
     padding: 10px;
     border: 5px;
@@ -109,5 +108,40 @@ font-size: 14px;
     opacity: .5;
 }
 
-/************************************************************/
+/***************************productlist page *********************************/
 
+.list-page{
+    margin-top: 50px;
+}
+.dropdown-large{
+    width: 1140px !important;
+}
+
+@media screen and (max-width: 576px){
+
+    .dropdown-large{
+        width: 196px !important;
+    }
+}
+
+.dropdown-item:hover{
+
+    color: #C2185B !important;
+    background:none !important;
+}
+
+.dropdown-menu  img{
+    width: 172px ;
+}
+.img-dropdown{
+    width: 156px !important;
+    height: 172px !important;
+}
+.img-dropdown2{
+    width: 156px !important;
+    height: 186px !important;
+}
+.img-dropdownbrand{
+    width:64px !important;
+    height: 64px !important;
+}
