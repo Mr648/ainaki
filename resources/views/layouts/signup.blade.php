@@ -1,5 +1,4 @@
-<form class="text-center form-horizontal" method="post" action="{{route('signup')}}" id="signUpForm">
-
+<form class="text-center"   method="post" action="{{route('signup')}}" id="signUpForm">
     {{csrf_field()}}
     <img src="images/user.png" alt="" width="80" height="80">
     <div class="form-group text-center">
@@ -34,4 +33,5 @@
             <a href="#" style="color: #921a48">قبلا ثبت نام کرده ام</a>
         </div>
     </div>
+
 </form>
