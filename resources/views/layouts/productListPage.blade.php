@@ -6,11 +6,12 @@
                 <h5 class="text-left" style="margin-right: -30px">فیلتر بر اساس</h5>
 
 
-                <div class="panel-group " id="accordion" >
+                <div class="panel-group " id="accordion">
                     <div class="panel panel-default">
                         <div class="panel-heading border " role="tab" id="headingOne">
                             <h6 class="panel-title">
-                                <a data-toggle="collapse" class="panel-title"  data-parent="#accordion" href="#collapse1">برند</a>
+                                <a data-toggle="collapse" class="panel-title" data-parent="#accordion"
+                                   href="#collapse1">برند</a>
 
                             </h6>
 
@@ -18,9 +19,9 @@
 
                         <div id="collapse1" class="panel-collapse collapse">
                             <ul class="list-group">
-                                <li class="list-group-item">Adidas</li>
-                                <li class="list-group-item">RayBan</li>
-                                <li class="list-group-item">Komono</li>
+                                <li class="list-group-item"><a class="list-item" href="#">Adidas</a></li>
+                                <li class="list-group-item"><a class="list-item" href="#">RayBan</a></li>
+                                <li class="list-group-item"><a class="list-item" href="#">Komono</a></li>
                             </ul>
 
                         </div>
@@ -30,7 +31,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading border">
                             <h6 class="panel-title">
-                                <a data-toggle="collapse"  class="panel-title" data-parent="#accordion" href="#collapse2">نوع عدسی</a>
+                                <a data-toggle="collapse" class="panel-title" data-parent="#accordion"
+                                   href="#collapse2">نوع عدسی</a>
 
                             </h6>
 
@@ -50,7 +52,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading border">
                             <h6 class="panel-title">
-                                <a data-toggle="collapse"  class="panel-title" data-parent="#accordion" href="#collapse3">شکل صورت</a>
+                                <a data-toggle="collapse" class="panel-title" data-parent="#accordion"
+                                   href="#collapse3">شکل صورت</a>
 
                             </h6>
 
@@ -70,7 +73,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading border">
                             <h6 class="panel-title">
-                                <a data-toggle="collapse"  class="panel-title" data-parent="#accordion" href="#collapse4">رنگ پوست</a>
+                                <a data-toggle="collapse" class="panel-title" data-parent="#accordion"
+                                   href="#collapse4">رنگ پوست</a>
 
                             </h6>
 
@@ -90,7 +94,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading border">
                             <h6 class="panel-title">
-                                <a data-toggle="collapse"  class="panel-title" data-parent="#accordion" href="#collapse5">شکل فریم</a>
+                                <a data-toggle="collapse" class="panel-title" data-parent="#accordion"
+                                   href="#collapse5">شکل فریم</a>
 
                             </h6>
 
@@ -110,7 +115,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading border">
                             <h6 class="panel-title">
-                                <a data-toggle="collapse"  class="panel-title" data-parent="#accordion" href="#collapse6">اندازه فریم</a>
+                                <a data-toggle="collapse" class="panel-title" data-parent="#accordion"
+                                   href="#collapse6">اندازه فریم</a>
 
                             </h6>
 
@@ -130,7 +136,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading border">
                             <h6 class="panel-title">
-                                <a data-toggle="collapse"  class="panel-title" data-parent="#accordion" href="#collapse7">جنس فریم</a>
+                                <a data-toggle="collapse" class="panel-title" data-parent="#accordion"
+                                   href="#collapse7">جنس فریم</a>
 
                             </h6>
 
@@ -150,7 +157,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading border">
                             <h6 class="panel-title">
-                                <a data-toggle="collapse"  class="panel-title" data-parent="#accordion" href="#collapse8">جنس عدسی</a>
+                                <a data-toggle="collapse" class="panel-title" data-parent="#accordion"
+                                   href="#collapse8">جنس عدسی</a>
 
                             </h6>
 
@@ -170,8 +178,9 @@
 
 
             </div>
-
+            <br>
         </div>
+
         <div class=" col-md-9 col-sm-12">
             <div class="container">
                 <div class="card-deck ">
@@ -218,8 +227,20 @@
             <br>
         </div>
 
+        <div class="container">
 
+                <ul class="pagination">
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                </ul>
+
+        </div>
     </div>
+
+
 </div>
 
 

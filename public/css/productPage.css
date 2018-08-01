@@ -104,3 +104,9 @@
     transform: rotate(180deg);
 }
 
+.list-item:hover{
+    color: #681a38;
+}
+.list-item{
+    color: #000000;
+}
