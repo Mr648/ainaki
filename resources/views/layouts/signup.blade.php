@@ -10,6 +10,8 @@
                 <input type="email" autocomplete="off" value="" class="form-control ltr" id="signUpEmail" placeholder="لطفا ادرس ایمیل خود را وارد کنید"
                        name="email">
             </div>
+
+
             <div class="form-group">
                 <label for="phone"> شماره همراه </label>
                 <input type="phone"  autocomplete="off" value="" class="form-control" id="signUpPhone" placeholder="لطفا شماره موبایل خود را وارد کنید"
