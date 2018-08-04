@@ -16,22 +16,40 @@ use App\AinakiUser;
 use Illuminate\Http\Request;
 
 
-Route::get('/adib/test/login/redirect', function () {
-	// echo "Ainaki Application is Alive!";
-
-	return view('index');
-});
 Route::get('/', function () {
-   // echo "Ainaki Application is Alive!";
+    $title = "صفحه اصلی";
+    $cards = array(
+        [
+            'img' => 'images/10.jpg',
+            'alt' => 'sample'
+        ],
+        [
+            'img' => 'images/12.jpg',
+            'alt' => 'sample'
+        ],
+        [
+            'img' => 'images/7.png',
+            'alt' => 'sample'
+        ],
+        [
+            'img' => 'images/8.jpg',
+            'alt' => 'sample'
+        ]
+    );
 
-    return view('index');
+    $homeProducts = \App\EyeGlass::inRandomOrder()->with('photos')->take(4)->get();
+//    echo '<pre>';
+//    print_r($homeProducts);
+//    echo '</pre>';
+
+    return view('index', compact('title' , 'cards', 'homeProducts') );
 });
 
-Route::get('/gamal/jamal/kamal', function () {
-    // echo "Ainaki Application is Alive!";
-
-    return view('index');
+Route::get('/design', function () {
+    return view('design.index');
 });
+
+
 
 Route::post('/verifyCode', 'SmsAuthenticationController@verifyCode');
 Route::post('/sendSms', 'SmsAuthenticationController@sendSms');
@@ -48,18 +66,20 @@ Route::prefix('user')->group(function () {
 
 });
 
+
+
 Route::get('/testUserAuth/{authKey}', function (Request $request) {
     echo 'User Authorized :: <strong>' . $request->account()->phone . '</strong>';
 })->middleware('smsauth');
 
 
-Route::get('/sample/{id}', 'SampleExample@test');
-
-
-
-
 
 Route::post('/filter', 'ProductController@filterChooser');
+
+Route::get('/products', 'ProductController@index')->name('product.index');
+
+Route::get('/products/{id}', 'ProductController@show')->name('product.show');
+
 Route::post('/product', 'ProductController@product');
 Route::get('/glass', function () {
     $e = \App\EyeGlass::find(1);
@@ -143,8 +163,6 @@ Route::get('/products/{category}/{filter}', function ($id) {
 Route::get('/test/new/api', function () {
 
 });
-
-
 
 
 Auth::routes();

@@ -1,22 +1,27 @@
 @font-face {
-    font-family:IRSANS;
-    src:url(/fonts/irsans/IRANSansLight.woff) format('woff'),url(/fonts/irsans/IRANSansLight.ttf) format('truetype');
-    font-weight:400
+    font-family: IRSANS;
+    src: url(/fonts/irsans/IRANSansLight.woff) format('woff'), url(/fonts/irsans/IRANSansLight.ttf) format('truetype');
+    font-weight: 400
 }
+
 @font-face {
-    font-family:IRSANS;
-    src:url(/fonts/irsans/IRANSansMedium.woff) format('woff'),url(/fonts/irsans/IRANSansMedium.ttf) format('truetype');
-    font-weight:700
+    font-family: IRSANS;
+    src: url(/fonts/irsans/IRANSansMedium.woff) format('woff'), url(/fonts/irsans/IRANSansMedium.ttf) format('truetype');
+    font-weight: 700
 }
+
 .rtl {
     direction: rtl !important;
 }
-.ltr{
+
+.ltr {
     direction: ltr !important;
 }
-body{
+
+body {
     font-family: IRSANS !important;
 }
+
 .color-primary {
     color: #921a48;
 }
@@ -59,9 +64,7 @@ body{
 .card {
     border: none !important;
 
-
 }
-
 
 .page-footer {
     padding-top: 20px;
@@ -72,76 +75,103 @@ body{
 #footer-link {
     color: white;
 }
-.carousel-control-prev span{
+
+.carousel-control-prev span {
     color: black;
 }
-.fa-chevron-right , .fa-chevron-left{
+
+.fa-chevron-right, .fa-chevron-left {
     color: black;
 
 }
-#see-product{
+
+#see-product {
     background-color: #921a48;
     border: none;
     padding: 10px;
 }
-#see-product:hover{
-    background-color: #6d1436;}
 
-form{
+#see-product:hover {
+    background-color: #6d1436;
+}
+
+form {
     padding: 10px;
     border: 5px;
     border-color: #921a48;
-font-size: 14px;
+    font-size: 14px;
 }
-.form-group{
+
+.form-group {
     padding: 10px;
 
-
 }
-::-webkit-input-placeholder{
+
+::-webkit-input-placeholder {
     font-size: 12px;
     opacity: .5;
 }
 
-::-moz-placeholder{
+::-moz-placeholder {
     font-size: 12px;
     opacity: .5;
 }
 
 /***************************productlist page *********************************/
 
-.list-page{
+.list-page {
     margin-top: 50px;
 }
-.dropdown-large{
+
+.dropdown-large {
     width: 1140px !important;
 }
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 576px) {
 
-    .dropdown-large{
+    .dropdown-large {
         width: 196px !important;
     }
 }
 
-.dropdown-item:hover{
+.dropdown-item:hover {
 
     color: #C2185B !important;
-    background:none !important;
+    background: none !important;
 }
 
-.dropdown-menu  img{
-    width: 172px ;
+.dropdown-menu img {
+    width: 172px;
 }
-.img-dropdown{
+
+.img-dropdown {
     width: 156px !important;
     height: 172px !important;
 }
-.img-dropdown2{
+
+.img-dropdown2 {
     width: 156px !important;
     height: 186px !important;
 }
-.img-dropdownbrand{
-    width:64px !important;
+
+.img-dropdownbrand {
+    width: 64px !important;
     height: 64px !important;
+}
+
+.card-columns {
+
+    column-count: 3;
+}
+
+@media screen and (max-width: 768px) {
+    .card-columns {
+        column-count: 2;
+    }
+}
+
+@media screen and (max-width: 567px) {
+    .card-columns {
+        column-count: 1;
+    }
 }
