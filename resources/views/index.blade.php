@@ -1,3 +1,3 @@
-@extends ('layouts.productList')
+@extends ('layouts.showproduct')
 @section('content')
 @endsection
