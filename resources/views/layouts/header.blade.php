@@ -24,7 +24,7 @@
                 <span class="align-self-center" id="sign-in">
                 <a class="px-2" data-toggle="modal" data-target="#myModalRegister"
                    href="#" id="sign-up">ثبت‌نام</a></span>
-                <div class="modal  col-12 col-lg-12"  id="myModalRegister">
+                <div class="modal  col-12 col-lg-12" id="myModalRegister">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             @include ('layouts.signup')
@@ -46,7 +46,8 @@
                             <!-- Modal body -->
                             <div class="modal-body">
                                 <p id="messageModalMessage"></p>
-                                <button type="button" class="pull-left btn btn-danger" data-dismiss="modal">بستن</button>
+                                <button type="button" class="pull-left btn btn-danger" data-dismiss="modal">بستن
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -56,215 +57,455 @@
     </div>
 </nav>
 
-<nav class="navbar navbar-expand-sm rtl bg-light navbar-light sticky-top">
-    <!-- Toggler/collapsibe Button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav navbar-expand-sm  ">
-            <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">عینک طبی</a>
-                <div class="dropdown-menu dropdown-large">
+{{--<nav class="navbar navbar-expand-sm rtl bg-light navbar-light sticky-top">--}}
+{{--<!-- Toggler/collapsibe Button -->--}}
+{{--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">--}}
+{{--<span class="navbar-toggler-icon"></span>--}}
+{{--</button>--}}
+{{--<div class="collapse navbar-collapse" id="collapsibleNavbar">--}}
+{{--<ul class="navbar-nav navbar-expand-sm  ">--}}
+{{--<li class="nav-item dropdown ">--}}
+{{--<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">عینک طبی</a>--}}
+{{--<div class="dropdown-menu dropdown-large">--}}
 
-                    <div class="row">
-                        <div class="col" href="#">
-                            <div class="d-flex flex-lg-row ">
-                                <img src="images/woman.png" class="align-self-center rounded img-dropdown2 m-2"
-                                     alt="Woman Glass">
-                                <h5 class="align-self-center"><a class=" dropdown-item" href="#">زنانه</a></h5>
-                            </div>
-                        </div>
-                        <div class="col" href="#">
-                            <div class="d-flex flex-lg-row">
-                                <img src="images/men.png" class="align-self-center rounded m-2 img-dropdown"
-                                     alt="Man Glass">
-                                <h5 class="align-self-center "><a class=" dropdown-item" href="#">مردانه</a></h5>
-                            </div>
-                        </div>
-                        <div class="col" href="#">
-                            <div class="d-flex flex-lg-row ">
-                                <img src="images/Kid.png" class="align-self-center rounded img-dropdown m-2"
-                                     alt="Man Glass">
-                                <h5 class="align-self-center "><a class=" dropdown-item  " href="#">بچه‎گانه</a></h5>
-                            </div>
-                        </div>
+{{--<div class="row">--}}
+{{--<div class="col" href="#">--}}
+{{--<div class="d-flex flex-lg-row ">--}}
+{{--<img src="images/woman.png" class="align-self-center rounded img-dropdown2 m-2"--}}
+{{--alt="Woman Glass">--}}
+{{--<h5 class="align-self-center"><a class=" dropdown-item" href="#">زنانه</a></h5>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<div class="col" href="#">--}}
+{{--<div class="d-flex flex-lg-row">--}}
+{{--<img src="images/men.png" class="align-self-center rounded m-2 img-dropdown"--}}
+{{--alt="Man Glass">--}}
+{{--<h5 class="align-self-center "><a class=" dropdown-item" href="#">مردانه</a></h5>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<div class="col" href="#">--}}
+{{--<div class="d-flex flex-lg-row ">--}}
+{{--<img src="images/Kid.png" class="align-self-center rounded img-dropdown m-2"--}}
+{{--alt="Man Glass">--}}
+{{--<h5 class="align-self-center "><a class=" dropdown-item  " href="#">بچه‎گانه</a></h5>--}}
+{{--</div>--}}
+{{--</div>--}}
 
-                    </div>
-                </div>
+{{--</div>--}}
+{{--</div>--}}
 
+
+{{--</li>--}}
+
+{{--<li class="nav-item dropdown ">--}}
+{{--<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">عینک آفتابی</a>--}}
+{{--<div class="dropdown-menu dropdown-large" style="margin-right: -75px">--}}
+
+{{--<div class="row">--}}
+{{--<div class="col" href="#">--}}
+{{--<div class="d-flex flex-lg-row ">--}}
+{{--<img src="images/womanSun.png" class="align-self-center rounded img-dropdowng2 m-2"--}}
+{{--alt="Woman Glass">--}}
+{{--<h5 class="align-self-center"><a class=" dropdown-item" href="#">زنانه</a></h5>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<div class="col" href="#">--}}
+{{--<div class="d-flex flex-lg-row">--}}
+{{--<img src="images/menSun.png" class="align-self-center rounded img-dropdown m-2"--}}
+{{--alt="Man Glass">--}}
+{{--<h5 class="align-self-center "><a class=" dropdown-item" href="#">مردانه</a></h5>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<div class="col" href="#">--}}
+{{--<div class="d-flex flex-lg-row ">--}}
+{{--<img src="images/Kid.png" class="align-self-center rounded  img-dropdown m-2"--}}
+{{--alt="Man Glass">--}}
+{{--<h5 class="align-self-center "><a class=" dropdown-item  " href="#">بچه‎گانه</a></h5>--}}
+{{--</div>--}}
+{{--</div>--}}
+
+{{--</div>--}}
+{{--</div>--}}
+
+
+{{--</li>--}}
+
+{{--<li class="nav-item dropdown ">--}}
+{{--<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">لنز</a>--}}
+{{--<div class="dropdown-menu dropdown-large " style="margin-right: -150px">--}}
+
+{{--<div class="row">--}}
+{{--<div class="col" href="#">--}}
+{{--<div class="d-flex flex-lg-row ">--}}
+{{--<h5 class="align-self-center" data-background-image="images/lens.png" data-size="156"><a--}}
+{{--class=" dropdown-item" href="#">طبی</a></h5>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<div class="col" href="#">--}}
+{{--<div class="d-flex flex-lg-row">--}}
+{{--<h5 class="align-self-center" data-background-image="images/lens.png" data-size="156"><a--}}
+{{--class=" dropdown-item" href="#">طبی</a></h5>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<div class="col" href="#">--}}
+{{--<div class="d-flex flex-lg-row ">--}}
+{{--<h5 class="align-self-center" data-background-image="images/lens.png" data-size="156"><a--}}
+{{--class=" dropdown-item" href="#">طبی</a></h5>--}}
+{{--</div>--}}
+{{--</div>--}}
+
+{{--</div>--}}
+{{--</div>--}}
+
+
+{{--</li>--}}
+
+
+{{--<li class="nav-item dropdown ">--}}
+{{--<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">لوازم جانبی</a>--}}
+{{--<div class="dropdown-menu dropdown-large" style="margin-right: -200px">--}}
+
+{{--<div class="row">--}}
+{{--<div class="col" href="#">--}}
+{{--<div class="d-flex flex-lg-row ">--}}
+{{--<img src="images/womanSun.png" class="align-self-center rounded img-dropdowng2 m-2"--}}
+{{--alt="Woman Glass">--}}
+{{--<h5 class="align-self-center"><a class=" dropdown-item" href="#">جعبه ی عینک</a></h5>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<div class="col" href="#">--}}
+{{--<div class="d-flex flex-lg-row">--}}
+{{--<img src="images/menSun.png" class="align-self-center rounded img-dropdown m-2"--}}
+{{--alt="Man Glass">--}}
+{{--<h5 class="align-self-center "><a class=" dropdown-item" href="#">شوینده</a></h5>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<div class="col" href="#">--}}
+{{--<div class="d-flex flex-lg-row ">--}}
+{{--<img src="images/Kid.png" class="align-self-center rounded img-dropdown m-2"--}}
+{{--alt="Man Glass">--}}
+{{--<h5 class="align-self-center "><a class=" dropdown-item  " href="#">لوازم تعمیر</a></h5>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--</div>--}}
+
+
+{{--</li>--}}
+
+{{--<li class="nav-item dropdown ">--}}
+{{--<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">برند</a>--}}
+{{--<div class="dropdown-menu dropdown-large" style="margin-right: -355px">--}}
+
+{{--<div class="row">--}}
+{{--<div class="col" href="#">--}}
+{{--<div class="list-group">--}}
+{{--<div class="d-flex flex-lg-row ">--}}
+{{--<img src="images/ReyBanLogo.png"--}}
+{{--class="align-self-center rounded  img-dropdownbrand  m-2"--}}
+{{--alt="Woman Glass">--}}
+{{--<h5 class="align-self-center"><a class=" dropdown-item" href="#">Rey.Ban</a></h5>--}}
+{{--</div>--}}
+{{--<div class="d-flex d-flex-row">--}}
+{{--<img src="images/ArmanyLogo.png"--}}
+{{--class="align-self-center rounded m-2" style="width:84px "--}}
+{{--alt="Woman Glass">--}}
+{{--<h5 class="align-self-center"><a class=" dropdown-item" href="#">Armany</a></h5>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<div class="col" href="#">--}}
+{{--<div class="d-flex flex-lg-row">--}}
+
+{{--<h5 class="align-self-center "><a class=" dropdown-item" href="#">شوینده</a></h5>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<div class="col" href="#">--}}
+{{--<div class="d-flex flex-lg-row ">--}}
+{{--<h5 class="align-self-center "><a class=" dropdown-item  " href="#">لوازم تعمیر</a></h5>--}}
+{{--</div>--}}
+{{--</div>--}}
+
+{{--</div>--}}
+{{--</div>--}}
+
+
+{{--</li>--}}
+
+
+{{--<li class="nav-item">--}}
+{{--<a class="nav-link" href="#">راهنمای تست آنلاین <i  aria-hidden="true"></i></a>--}}
+{{--</li>--}}
+
+{{--<li class="nav-item">--}}
+{{--<a href="#" class="nav-link col-12 ">تست آنلاین</a>--}}
+{{--</li>--}}
+
+{{--</ul>--}}
+{{--</div>--}}
+{{--</nav>--}}
+
+{{--<script>--}}
+{{--$(document).ready(function () {--}}
+{{--//        $('.dropdown').dropdown();--}}
+{{--$('.nav-item h5').each(function () {--}}
+{{--var bg = '/' + $(this).data('background-image');--}}
+{{--var size = $(this).data('size');--}}
+{{--if (bg !== null && size !== null) {--}}
+{{--$(this).css(--}}
+{{--{--}}
+{{--'background-image': 'url(' + bg + ')',--}}
+{{--'background-size': size + 'px' + " " + size + 'px',--}}
+{{--'width': size + "px !important",--}}
+{{--'height': size + "px !important"--}}
+{{--}--}}
+{{--)--}}
+{{--;--}}
+{{--console.info("bg is " + bg);--}}
+{{--}--}}
+{{--})--}}
+{{--;--}}
+{{--})--}}
+{{--;--}}
+{{--</script>--}}
+
+
+<nav class="navbar navbar-expand-md rtl">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+
+    <div class="collapse navbar-collapse " id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown dropdown-large">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">عینک طبی<b class="caret"></b></a>
+
+                <ul class="dropdown-menu dropdown-menu-large">
+                    <li class="dropdown-item d-flex flex-row">
+                        <ul class="row">
+                            <li class="col-md-3 col-sm-6 col-xs-12 text-left">
+                                <ul>
+                                    <li class="dropdown-header"><strong>دسته‎بندی</strong></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a class="dp-item" href="#">عینک طبی زنانه</a></li>
+                                    <li><a class="dp-item" href="#">عینک طبی مردانه</a></li>
+                                    <li><a class="dp-item" href="#">عینک طبی بچه‎گانه</a></li>
+
+
+                                </ul>
+                            </li>
+                            <li class="col-md-3 col-sm-6 col-xs-12 text-left">
+                                <ul>
+                                    <li class="dropdown-header"><strong>برند</strong></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a class="dp-item" href="#">Bali</a></li>
+                                    <li><a class="dp-item" href="#">Birmanie</a></li>
+                                    <li><a class="dp-item" href="#">Chine</a></li>
+                                    <li><a class="dp-item" href="#">Corée du Nord</a></li>
+                                    <li><a class="dp-item" href="#">Corée du Sud</a></li>
+                                    <li><a class="dp-item" href="#">Inde</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="col-md-3 col-sm-6 col-xs-12 text-left">
+                                <ul>
+                                    <li class="dropdown-header"><strong>پرفروش ترین ها</strong></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a class="dp-item" href="#">Emirats Arabes Unis</a></li>
+                                    <li><a class="dp-item" href="#">Israel et territoire Palestiniens</a></li>
+                                    <li><a class="dp-item" href="#">Jordanie</a></li>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                </ul>
 
             </li>
 
-            <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">عینک آفتابی</a>
-                <div class="dropdown-menu dropdown-large" style="margin-right: -75px">
+            <li class="nav-item dropdown dropdown-large">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">عینک آفتابی<b class="caret"></b></a>
 
-                    <div class="row">
-                        <div class="col" href="#">
-                            <div class="d-flex flex-lg-row ">
-                                <img src="images/womanSun.png" class="align-self-center rounded img-dropdowng2 m-2"
-                                     alt="Woman Glass">
-                                <h5 class="align-self-center"><a class=" dropdown-item" href="#">زنانه</a></h5>
-                            </div>
-                        </div>
-                        <div class="col" href="#">
-                            <div class="d-flex flex-lg-row">
-                                <img src="images/menSun.png" class="align-self-center rounded img-dropdown m-2"
-                                     alt="Man Glass">
-                                <h5 class="align-self-center "><a class=" dropdown-item" href="#">مردانه</a></h5>
-                            </div>
-                        </div>
-                        <div class="col" href="#">
-                            <div class="d-flex flex-lg-row ">
-                                <img src="images/Kid.png" class="align-self-center rounded  img-dropdown m-2"
-                                     alt="Man Glass">
-                                <h5 class="align-self-center "><a class=" dropdown-item  " href="#">بچه‎گانه</a></h5>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+                <ul class="dropdown-menu dropdown-menu-large">
+                    <li class="dropdown-item d-flex flex-row">
+                        <ul class="row">
+                            <li class="col-md-3 col-sm-6 col-xs-12 text-left">
+                                <ul>
+                                    <li class="dropdown-header"><strong>دسته‎بندی</strong></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a class="dp-item" href="#">عینک آفتابی زنانه</a></li>
+                                    <li><a class="dp-item" href="#">عینک آفتابی مردانه</a></li>
+                                    <li><a class="dp-item" href="#">عینک آفتابی بچه‎گانه</a></li>
 
 
-            </li>
+                                </ul>
+                            </li>
+                            <li class="col-md-3 col-sm-6 col-xs-12 text-left">
+                                <ul>
+                                    <li class="dropdown-header"><strong>برند</strong></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a class="dp-item" href="#">Bali</a></li>
+                                    <li><a class="dp-item" href="#">Birmanie</a></li>
+                                    <li><a class="dp-item" href="#">Chine</a></li>
+                                    <li><a class="dp-item" href="#">Corée du Nord</a></li>
+                                    <li><a class="dp-item" href="#">Corée du Sud</a></li>
+                                    <li><a class="dp-item" href="#">Inde</a></li>
 
-            <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">لنز</a>
-                <div class="dropdown-menu dropdown-large " style="margin-right: -150px">
+                                </ul>
+                            </li>
+                            <li class="col-md-3 col-sm-6 col-xs-12 text-left">
+                                <ul>
+                                    <li class="dropdown-header"><strong>پرفروش ترین ها</strong></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a class="dp-item" href="#">Emirats Arabes Unis</a></li>
+                                    <li><a class="dp-item" href="#">Israel et territoire Palestiniens</a></li>
+                                    <li><a class="dp-item" href="#">Jordanie</a></li>
 
-                    <div class="row">
-                        <div class="col" href="#">
-                            <div class="d-flex flex-lg-row ">
-                                <h5 class="align-self-center" data-background-image="images/lens.png" data-size="156"><a
-                                            class=" dropdown-item" href="#">طبی</a></h5>
-                            </div>
-                        </div>
-                        <div class="col" href="#">
-                            <div class="d-flex flex-lg-row">
-                                <h5 class="align-self-center" data-background-image="images/lens.png" data-size="156"><a
-                                            class=" dropdown-item" href="#">طبی</a></h5>
-                            </div>
-                        </div>
-                        <div class="col" href="#">
-                            <div class="d-flex flex-lg-row ">
-                                <h5 class="align-self-center" data-background-image="images/lens.png" data-size="156"><a
-                                            class=" dropdown-item" href="#">طبی</a></h5>
-                            </div>
-                        </div>
+                                </ul>
+                            </li>
 
-                    </div>
-                </div>
+                        </ul>
+                    </li>
 
+                </ul>
 
             </li>
 
+            <li class="nav-item dropdown dropdown-large">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">لنز<b class="caret"></b></a>
 
-            <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">لوازم جانبی</a>
-                <div class="dropdown-menu dropdown-large" style="margin-right: -200px">
-
-                    <div class="row">
-                        <div class="col" href="#">
-                            <div class="d-flex flex-lg-row ">
-                                <img src="images/womanSun.png" class="align-self-center rounded img-dropdowng2 m-2"
-                                     alt="Woman Glass">
-                                <h5 class="align-self-center"><a class=" dropdown-item" href="#">جعبه ی عینک</a></h5>
-                            </div>
-                        </div>
-                        <div class="col" href="#">
-                            <div class="d-flex flex-lg-row">
-                                <img src="images/menSun.png" class="align-self-center rounded img-dropdown m-2"
-                                     alt="Man Glass">
-                                <h5 class="align-self-center "><a class=" dropdown-item" href="#">شوینده</a></h5>
-                            </div>
-                        </div>
-                        <div class="col" href="#">
-                            <div class="d-flex flex-lg-row ">
-                                <img src="images/Kid.png" class="align-self-center rounded img-dropdown m-2"
-                                     alt="Man Glass">
-                                <h5 class="align-self-center "><a class=" dropdown-item  " href="#">لوازم تعمیر</a></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <ul class="dropdown-menu dropdown-menu-large">
+                    <li class="dropdown-item d-flex flex-row">
+                        <ul class="row">
+                            <li class="col-md-3 col-sm-6 col-xs-12 text-left">
+                                <ul>
+                                    <li class="dropdown-header"><strong>دسته‎بندی</strong></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a class="dp-item" href="#">لنز طبی</a></li>
+                                    <li><a class="dp-item" href="#">لنز رنگی</a></li>
+                                    <li><a class="dp-item" href="#">لنز طبی رنگی</a></li>
 
 
-            </li>
+                                </ul>
+                            </li>
+                            <li class="col-md-3 col-sm-6 col-xs-12 text-left">
+                                <ul>
+                                    <li class="dropdown-header"><strong>مدت زمان استفاده</strong></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a class="dp-item" href="#">لنز روزانه</a></li>
+                                    <li><a class="dp-item" href="#">لنز ماهانه</a></li>
+                                    <li><a class="dp-item" href="#">لنز فصلی</a></li>
 
-            <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">برند</a>
-                <div class="dropdown-menu dropdown-large" style="margin-right: -355px">
 
-                    <div class="row">
-                        <div class="col" href="#">
-                            <div class="list-group">
-                            <div class="d-flex flex-lg-row ">
-                                <img src="images/ReyBanLogo.png"
-                                     class="align-self-center rounded  img-dropdownbrand  m-2"
-                                     alt="Woman Glass">
-                                <h5 class="align-self-center"><a class=" dropdown-item" href="#">Rey.Ban</a></h5>
-                            </div>
-                                <div class="d-flex d-flex-row">
-                            <img src="images/ArmanyLogo.png"
-                                 class="align-self-center rounded m-2" style="width:84px "
-                                 alt="Woman Glass">
-                                <h5 class="align-self-center"><a class=" dropdown-item" href="#">Armany</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col" href="#">
-                            <div class="d-flex flex-lg-row">
+                                </ul>
+                            </li>
+                            <li class="col-md-3 col-sm-6 col-xs-12 text-left">
+                                <ul>
+                                    <li class="dropdown-header"><strong>برند</strong></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a class="dp-item" href="#">Bali</a></li>
+                                    <li><a class="dp-item" href="#">Birmanie</a></li>
+                                    <li><a class="dp-item" href="#">Chine</a></li>
+                                    <li><a class="dp-item" href="#">Corée du Nord</a></li>
+                                    <li><a class="dp-item" href="#">Corée du Sud</a></li>
+                                    <li><a class="dp-item" href="#">Inde</a></li>
 
-                                <h5 class="align-self-center "><a class=" dropdown-item" href="#">شوینده</a></h5>
-                            </div>
-                        </div>
-                        <div class="col" href="#">
-                            <div class="d-flex flex-lg-row ">
-                                <h5 class="align-self-center "><a class=" dropdown-item  " href="#">لوازم تعمیر</a></h5>
-                            </div>
-                        </div>
+                                </ul>
+                            </li>
+                            <li class="col-md-3 col-sm-6 col-xs-12 text-left">
+                                <ul>
+                                    <li class="dropdown-header"><strong>پرفروش ترین ها</strong></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a class="dp-item" href="#">Emirats Arabes Unis</a></li>
+                                    <li><a class="dp-item" href="#">Israel et territoire Palestiniens</a></li>
+                                    <li><a class="dp-item" href="#">Jordanie</a></li>
 
-                    </div>
-                </div>
+                                </ul>
+                            </li>
 
+                        </ul>
+                    </li>
+
+                </ul>
 
             </li>
 
+            <li class="nav-item dropdown dropdown-large" >
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" >لوازم جانبی<b class="caret"></b></a>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#">راهنمای تست آنلاین <i  aria-hidden="true"></i></a>
+                <ul class="dropdown-menu dropdown-menu-large">
+                    <li class="dropdown-item d-flex flex-row" >
+                        <ul class="row">
+                            <li class="col-md-3 col-sm-6 col-xs-12 text-left">
+                                <ul>
+                                    <li class="dropdown-header"><strong>لوازم جانبی عینک</strong></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a class="dp-item" href="#">جعبه عینک</a></li>
+                                    <li><a class="dp-item" href="#">بند عینک</a></li>
+                                    <li><a class="dp-item" href="#">محلول شوینده</a></li>
+
+
+                                </ul>
+                            </li>
+
+                            <li class="col-md-3 col-sm-6 col-xs-12 text-left">
+                                <ul>
+                                    <li class="dropdown-header"><strong>برند</strong></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a class="dp-item" href="#">Bali</a></li>
+                                    <li><a class="dp-item" href="#">Birmanie</a></li>
+                                    <li><a class="dp-item" href="#">Chine</a></li>
+                                    <li><a class="dp-item" href="#">Corée du Nord</a></li>
+                                    <li><a class="dp-item" href="#">Corée du Sud</a></li>
+                                    <li><a class="dp-item" href="#">Inde</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="col-md-3 col-sm-6 col-xs-12 text-left">
+                                <ul>
+                                    <li class="dropdown-header"><strong>پرفروش ترین ها</strong></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a class="dp-item" href="#">Emirats Arabes Unis</a></li>
+                                    <li><a class="dp-item" href="#">Israel et territoire Palestiniens</a></li>
+                                    <li><a class="dp-item" href="#">Jordanie</a></li>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+
             </li>
 
-            <li class="nav-item">
-                <a href="#" class="nav-link col-12 ">تست آنلاین</a>
-            </li>
+            <li class="nav-item" >
+                <a href="#" class="nav-link " >راهنمای تست آنلاین<b class="caret"></b></a>
+
+                </li>
+
 
         </ul>
-    </div>
+
+    </div><!-- /.nav-collapse -->
 </nav>
 
-<script>
-    $(document).ready(function () {
-//        $('.dropdown').dropdown();
-        $('.nav-item h5').each(function () {
-            var bg = '/' + $(this).data('background-image');
-            var size = $(this).data('size');
-            if (bg !== null && size !== null) {
-                $(this).css(
-                    {
-                        'background-image': 'url(' + bg + ')',
-                        'background-size': size + 'px' + " " + size + 'px',
-                        'width': size + "px !important",
-                        'height': size + "px !important"
-                    }
-                )
-                ;
-                console.info("bg is " + bg);
-            }
-        })
-        ;
-    })
-    ;
+<script>$(document).ready(function () {
+//        $(".dropdown").hover(
+//            function () {
+//                $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true, true).slideDown("400");
+//                $(this).toggleClass('open');
+//            },
+//            function () {
+//                $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true, true).slideUp("400");
+//                $(this).toggleClass('open');
+//            }
+//        );
+    });
 </script>
+
 

@@ -45,10 +45,10 @@ body{
     color: white
 }
 
-.nav-item {
-    padding-right: 15px;
+/*.nav-item {*/
+    /*padding-right: 15px;*/
 
-}
+/*}*/
 
 .carousel-inner img {
     width: 100%;
@@ -113,35 +113,76 @@ font-size: 14px;
 .list-page{
     margin-top: 50px;
 }
-.dropdown-large{
-    width: 1140px !important;
+
+.dropdown-large {
+    position: static !important;
 }
-
-@media screen and (max-width: 576px){
-
-    .dropdown-large{
-        width: 196px !important;
+.dropdown-item.d-flex.flex-row:hover{
+    background-color: white;
+}
+.dropdown-menu-large {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 20px 0px;
+}
+.dropdown-menu-large > li > ul {
+    padding: 0;
+    margin: 0;
+}
+.dropdown-menu-large  li {
+    list-style: none;
+}
+.dropdown-menu-large > li > ul > li > ul >li{
+    list-style: none;
+}
+.dropdown-menu-large > li > ul > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.428571429;
+    white-space: normal;
+}
+.dropdown-menu-large > li ul > li > a:hover,
+.dropdown-menu-large > li ul > li > a:focus {
+    text-decoration: none;
+}
+.dropdown-menu-large .disabled > a,
+.dropdown-menu-large .disabled > a:hover,
+.dropdown-menu-large .disabled > a:focus {
+}
+.dropdown-menu-large .disabled > a:hover,
+.dropdown-menu-large .disabled > a:focus {
+    text-decoration: none;
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    cursor: not-allowed;
+}
+.dropdown-menu-large .dropdown-header {
+    font-size: 18px;
+}
+@media (max-width: 768px) {
+    .dropdown-menu-large {
+        margin-left: 0 ;
+        margin-right: 0 ;
     }
+    .dropdown-menu-large > li {
+        margin-bottom: 30px;
+    }
+    .dropdown-menu-large > li:last-child {
+        margin-bottom: 0;
+    }
+    .dropdown-menu-large .dropdown-header {
+        padding: 3px 15px !important;
+    }
+
+
 }
 
-.dropdown-item:hover{
-
-    color: #C2185B !important;
-    background:none !important;
+.dp-item{
+    color: #212121 !important;
+    display:block;
+    padding:.5rem 1rem;
 }
-
-.dropdown-menu  img{
-    width: 172px ;
-}
-.img-dropdown{
-    width: 156px !important;
-    height: 172px !important;
-}
-.img-dropdown2{
-    width: 156px !important;
-    height: 186px !important;
-}
-.img-dropdownbrand{
-    width:64px !important;
-    height: 64px !important;
+.dp-item:hover{ color: #921a48 !important;
 }

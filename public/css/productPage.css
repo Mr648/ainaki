@@ -45,7 +45,6 @@
 
 .hovereffect a.info:hover {
     box-shadow: 0 0 5px #fff;
-    border: 1px solid;
 }
 
 .hovereffect:hover img {

@@ -227,15 +227,19 @@
             <br>
         </div>
 
-        <div class="container">
+        <div class="container ">
+            <div class="row justify-content-center ">
 
-                <ul class="pagination">
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
+                <ul class="pagination ">
+                    <li class="page-item"><a class="page-link" href="#"><i class="fa fa-chevron-right"></i></a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item "><a class="page-link" href="#"><i class="fa fa-chevron-left"></i></a>
                 </ul>
+            </div>
 
         </div>
     </div>
