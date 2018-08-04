@@ -186,9 +186,9 @@
                 <div class="card-deck ">
                     <div class="card border text-center hovereffect" style="width:400px ; height: 350px">
                         <img class="card-img-top" src="images/g5.png" alt="Card image">
-                        <div class="overlay">
-                            <a href="#" class="btn btn-primary info">تست انلاین</a>
-                            <a href="#" class="btn btn-primary info">مشاهده محصول</a>
+                        <div class="overlay row justify-content-center">
+                            <a href="#" class=" col-6 col-lg-offset-3 w-75 btn btn-primary info">تست انلاین</a>
+                            <a href="#" class="col-6 col-lg-offset-3 w-75 tn btn-primary info">مشاهده محصول</a>
                         </div>
                         <div class="card-body list-page">
                             <h6 class="card-title text-center">عینک طبی اسپای 145</h6>
@@ -198,9 +198,9 @@
                     </div>
                     <div class="card border text-center hovereffect" style="width:400px ; height: 350px">
                         <img class="card-img-top" src="images/g2.png" alt="Card image" style="width:100%">
-                        <div class="overlay">
-                            <a href="#" class="btn btn-primary info">تست انلاین</a>
-                            <a href="#" class="btn btn-primary info">مشاهده محصول</a>
+                        <div class="overlay row justify-content-center">
+                            <a href="#" class=" col-6 col-lg-offset-3 w-75 btn btn-primary info">تست انلاین</a>
+                            <a href="#" class="col-6 col-lg-offset-3 w-75 tn btn-primary info">مشاهده محصول</a>
                         </div>
                         <div class="card-body list-page">
                             <h6 class="card-title">عینک افتابی کومونو</h6>
@@ -210,9 +210,9 @@
                     </div>
                     <div class="card border text-center hovereffect" style="width:400px ; height: 350px">
                         <img class="card-img-top" src="images/g3.png" alt="Card image" style="width:100%">
-                        <div class="overlay">
-                            <a href="#" class="btn btn-primary info">تست انلاین</a>
-                            <a href="#" class="btn btn-primary info">مشاهده محصول</a>
+                        <div class="overlay row justify-content-center">
+                            <a href="#" class=" col-6 col-lg-offset-3 w-75 btn btn-primary info">تست انلاین</a>
+                            <a href="#" class="col-6 col-lg-offset-3 w-75 tn btn-primary info">مشاهده محصول</a>
                         </div>
                         <div class="card-body list-page">
                             <h6 class="card-title">عینک ری بن</h6>
@@ -229,13 +229,13 @@
 
         <div class="container">
 
-                <ul class="pagination">
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                </ul>
+            <ul class="pagination">
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+            </ul>
 
         </div>
     </div>
