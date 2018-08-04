@@ -21,7 +21,7 @@ class SignupController extends Controller
             [
                 'email' => 'required|email',
                 'phone' => 'required|numeric|regex:/(0)[0-9]{10}/',
-                'pswd' => 'required|min:7'
+                'pswd' => 'required|min:8'
             ]);
 
         if ($validator->fails()) {

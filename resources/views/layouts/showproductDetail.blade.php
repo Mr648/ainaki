@@ -7,26 +7,26 @@
                     <div class="preview-pic tab-content border" data-toggle="modal" data-target="#myModal">
                         <div class="tab-pane active" id="pic-1" style="height: 250px !important;">
                             <img
-                                    src="images/g1.png"/></div>
-                        <div class="tab-pane" style="height: 250px !important;" id="pic-2"><img src="images/g2.png"/>
+                                    src="/images/g1.png"/></div>
+                        <div class="tab-pane" style="height: 250px !important;" id="pic-2"><img src="/images/g2.png"/>
                         </div>
-                        <div class="tab-pane" style="height: 250px !important;" id="pic-3"><img src="images/g3.png"/>
+                        <div class="tab-pane" style="height: 250px !important;" id="pic-3"><img src="/images/g3.png"/>
                         </div>
-                        <div class="tab-pane" style="height: 250px !important;" id="pic-4"><img src="images/g4.png"/>
+                        <div class="tab-pane" style="height: 250px !important;" id="pic-4"><img src="/images/g4.png"/>
                         </div>
 
                     </div>
                     <ul class="preview-thumbnail nav nav-tabs text-center modal" id="myModal">
                         <li class="active border "><a class=" border" data-target="#pic-1" data-toggle="tab"><img
-                                        src="images/g1.png"/></a>
+                                        src="/images/g1.png"/></a>
                         </li>
-                        <li class=" border"><a data-target="#pic-2" data-toggle="tab"><img src="images/g2.png"
+                        <li class=" border"><a data-target="#pic-2" data-toggle="tab"><img src="/images/g2.png"
                                                                                            style="margin-top: 20px"/></a>
                         </li>
-                        <li class=" border"><a data-target="#pic-3" data-toggle="tab"><img src="images/g3.png"
+                        <li class=" border"><a data-target="#pic-3" data-toggle="tab"><img src="/images/g3.png"
                                                                                            style="margin-top: 20px"/></a>
                         </li>
-                        <li class=" border"><a data-target="#pic-4" data-toggle="tab"><img src="images/g4.png"
+                        <li class=" border"><a data-target="#pic-4" data-toggle="tab"><img src="/images/g4.png"
                                                                                            style="margin-top: 20px"/></a>
                         </li>
 
