@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
             <label for="pwd">رمز عبور</label>
-            <input type="password" autocomplete="off" value="" class="form-control" id="signUpPwd"
+            <input type="password" autocomplete="off" value="" class="form-control" id="signUpPswd"
                    placeholder="لطفا رمز عبور خود را وارد کنید"
                    name="pswd">
             <div class="form-control-feedback" id="pswdFeedback"></div>

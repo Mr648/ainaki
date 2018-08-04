@@ -225,4 +225,25 @@ class ProductController extends Controller
                 ];
         }
     }
+
+
+
+    public function index(){
+        $title = 'لیست محصولات';
+        return view('product.index', compact('title'));
+    }
+
+    public function show(Request $request, $id){
+//        $CLASS = $this->getProductType(hexdec($request->productType));
+//
+//        $product = array();
+//
+//        $result = $CLASS::where('id', $request->productId)->first();
+//
+//        if (!is_null($result)) {
+//
+//        }
+        $title = 'لیست محصولات';
+        return view('product.show', compact('title'));
+    }
 }
