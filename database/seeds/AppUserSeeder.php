@@ -13,10 +13,7 @@ class AppUserSeeder extends Seeder
     {
         factory(App\AinakiUser::class, 10)->create()->each(function ($user) {
             $len = random_int(2, 8);
-            for ($i = 0; $i < $len; $i++){
-                $user->photos()->save(factory(App\Photo::class)->make());
-
-            }
+            $user->photos()->save(factory(App\Photo::class)->make());
         });
     }
 }

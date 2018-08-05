@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\EyeGlass;
+
+use App\Http\Resources\EyeGlass as EyeGlassResource;
+use App\Http\Resources\EyeGlassCollection;
 use Illuminate\Http\Request;
 use App\Comment;
 use App\Favorite;
+use App\Photo;
 
 
-define('EYEGLASS', 0x1001);
-define('STRAP', 0x1002);
-define('LENS', 0x1003);
-define('CARRYING_CASE', 0x1004);
-define('CLEANER', 0x1005);
+define('EYEGLASS', '101');
+define('STRAP', '102');
+define('LENS', '103');
+define('CARRYING_CASE', '104');
+define('CLEANER', '105');
 
 
 class ProductController extends Controller
@@ -57,7 +62,6 @@ class ProductController extends Controller
 
     public function __construct()
     {
-        $this->middleware('smsauth');
     }
 
     public function filterChooser(Request $request)
@@ -119,8 +123,8 @@ class ProductController extends Controller
                 }
             }
 
-            $brand = $result->brand()->get(['name' , 'country']);
-            $brand= $brand['brand'] = [];
+            $brand = $result->brand()->get(['name', 'country']);
+            $brand = $brand['brand'] = [];
             if (!is_null($brand)) {
                 foreach ($brand as $brand) {
                     $brand['brand'][] = $brand->name;
@@ -128,12 +132,11 @@ class ProductController extends Controller
                 }
             }
 
-            $brand = $result->brand()->get(['name' , 'country']);
-            $brand= $brand['brand'] = [];
+            $brand = $result->brand()->get(['name', 'country']);
+            $brand = $brand['brand'] = [];
             if (!is_null($brand)) {
                 $brand['brand'][] = $brand;
             }
-
 
 
             $product['url'] = urlencode('http://test');
@@ -147,8 +150,8 @@ class ProductController extends Controller
         }
 
         return response()->json([
-            'message'=>'کالای مورد نظر یافت نشد!',
-            'error'=>true,
+            'message' => 'کالای مورد نظر یافت نشد!',
+            'error' => true,
         ]);
 
     }
@@ -164,6 +167,22 @@ class ProductController extends Controller
         switch ($productType) {
             case EYEGLASS :
                 return 'App\EyeGlass';
+            case STRAP :
+                return 'App\Strap';
+            case LENS :
+                return 'App\Lens';
+            case CARRYING_CASE :
+                return 'App\CarryingCase';
+            case CLEANER :
+                return 'App\Cleaner';
+        }
+    }
+
+    private function getAllProductsFor($productType)
+    {
+        switch ($productType) {
+            case EYEGLASS :
+                return new EyeGlassCollection(EyeGlass::paginate());
             case STRAP :
                 return 'App\Strap';
             case LENS :
@@ -227,13 +246,14 @@ class ProductController extends Controller
     }
 
 
-
-    public function index(){
+    public function index()
+    {
         $title = 'لیست محصولات';
         return view('product.index', compact('title'));
     }
 
-    public function show(Request $request, $id){
+    public function show(Request $request, $id)
+    {
 //        $CLASS = $this->getProductType(hexdec($request->productType));
 //
 //        $product = array();
@@ -245,5 +265,31 @@ class ProductController extends Controller
 //        }
         $title = 'لیست محصولات';
         return view('product.show', compact('title'));
+    }
+
+
+    private $products = null;
+
+    public function listProducts($category, $filters)
+    {
+        $filters = preg_split('/&/', $filters);
+
+//        $CLASS = $this->getProductType($category);
+
+//        $products = $CLASS::inRandomOrder()->with('photos')->take(25)->get();
+
+        if (is_null($this->products))
+            $products = $this->getAllProductsFor($category);
+
+//
+        foreach ($filters as $filter) {
+            $filter = preg_split('/=/', $filter);
+            $products = $products->where("{$filter[0]}", '=', "{$filter[1]}");
+        }
+
+
+        $title = 'لیست محصولات';
+
+        return view('product.index', compact('title', 'products'));
     }
 }
