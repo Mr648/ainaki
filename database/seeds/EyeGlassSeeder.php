@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class EyeGlassTableSeeder extends Seeder
+class EyeGlassSeeder extends Seeder
 {
     /**
      * Run the database seeds.

@@ -8,7 +8,10 @@ class EyeGlass extends Model
 {
     //
 
+
+
     protected $fillable = [
+        'id',
         'brand_id',
         'warranty_id',
         'category_id',
