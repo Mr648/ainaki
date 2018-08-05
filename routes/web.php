@@ -73,9 +73,6 @@ Route::get('/testUserAuth/{authKey}', function (Request $request) {
 })->middleware('smsauth');
 
 
-
-Route::post('/filter', 'ProductController@filterChooser');
-
 Route::get('/products', 'ProductController@index')->name('product.index');
 
 Route::get('/products/{id}', 'ProductController@show')->name('product.show');
