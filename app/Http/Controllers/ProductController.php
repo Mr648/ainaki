@@ -6,6 +6,7 @@ use App\EyeGlass;
 
 use App\Http\Resources\EyeGlass as EyeGlassResource;
 use App\Http\Resources\EyeGlassCollection;
+use App\Http\Resources\EyeGlassDetails;
 use Illuminate\Http\Request;
 use App\Comment;
 use App\Favorite;
@@ -254,17 +255,17 @@ class ProductController extends Controller
 
     public function show(Request $request, $id)
     {
-//        $CLASS = $this->getProductType(hexdec($request->productType));
-//
-//        $product = array();
-//
-//        $result = $CLASS::where('id', $request->productId)->first();
-//
-//        if (!is_null($result)) {
-//
-//        }
+//       [
+        //
+
+        //],
+
+
+//]
         $title = 'لیست محصولات';
-        return view('product.show', compact('title'));
+        $product =  new EyeGlassDetails(EyeGlass::find($id));
+        $product =  json_decode(json_encode($product->jsonSerialize()));
+        return view('product.show', compact('title', 'product'));
     }
 
 
@@ -291,5 +292,16 @@ class ProductController extends Controller
         $title = 'لیست محصولات';
 
         return view('product.index', compact('title', 'products'));
+    }
+
+
+    public function shop()
+    {
+        //
+    }
+
+    public function onlineTest()
+    {
+        //
     }
 }
