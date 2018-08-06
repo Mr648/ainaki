@@ -22,7 +22,6 @@ class CreateCleanersTable extends Migration
             $table->integer('brand_id')->nullable();
             $table->integer('warranty_id')->nullable();
             $table->integer('category_id')->unsigned()->nullable();
-
             $table->string('name')->nullable();
             $table->text('description')->nullable();
             $table->float('volume')->nullable();
