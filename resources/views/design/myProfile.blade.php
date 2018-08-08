@@ -29,65 +29,165 @@
     </ul>
 
 
+    <div class="tab-content col-md-12 " width="100%">
+        <div class="tab-pane fade show active " id="myprofile" role="tabpanel">
+            <h3>پروفایل من</h3>
+            {{--<p>Aenean sed lacus id mi scelerisque tristique. Nunc sed ex sed turpis fringilla aliquet in in neque. Praesent posuere, neque rhoncus sollicitudin fermentum, erat ligula volutpat dui, nec dapibus ligula lorem ac mauris. Etiam et leo venenatis purus pharetra dictum.</p>--}}
+            <div class="row wrapper">
+                <div class="col-md-4 ">
+                    <div class="form-group ">
+                        <label for="name" class="name">نام<i class="fa fa-star"></i> </label>
+                        <input type="name" class="form-control rtl" id="name" placeholder="لطفا نام خود را وارد کنید"
+                               name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="name">نام خانوادگی<i class="fa fa-star"></i> </label>
+                        <input type="name" class="form-control rtl" id="name"
+                               placeholder="لطفا نام خانوادگی خود را وارد کنید"
+                               name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="name">ایمیل<i class="fa fa-star"></i> </label>
+                        <input type="name" class="form-control rtl" id="name" placeholder="example@gmail.com"
+                               name="name">
+                    </div>
+                    <a href="" class="btn btn-primary sabt" style="background-color: #0076ad; ">ثبت اطلاعات</a>
 
+                </div>
+                <div class="col-md-4 ">
+                    <div class="form-group  ">
+                        <label for="phone">شماره همراه<i class="fa fa-star"></i></label>
+                        <input type="text" autocomplete="off" value="" class="form-control rtl" id="phone"
+                               placeholder="لطفا شماره تلفن خود را وارد کنید"
+                               name="phone">
+                    </div>
 
-    <div class="tab-content">
-        <div class="tab-pane fade show active" id="myprofile" role="tabpanel">
-            <h1>Lorem</h1>
-            <p>Aenean sed lacus id mi scelerisque tristique. Nunc sed ex sed turpis fringilla aliquet in in neque. Praesent posuere, neque rhoncus sollicitudin fermentum, erat ligula volutpat dui, nec dapibus ligula lorem ac mauris. Etiam et leo venenatis purus pharetra dictum.</p>
-            {{--<div class="row wrapper">--}}
-                {{--<div class="col-md-6 ">--}}
-                    {{--<div class="form-group ">--}}
-                        {{--<label for="name" class="name">???<i class="fa fa-star"></i> </label>--}}
-                        {{--<input type="name" class="form-control rtl" id="name" placeholder="??? ??? ?? ???? ????"--}}
-                               {{--name="name">--}}
-                    {{--</div>--}}
-                    {{--<div class="form-group">--}}
-                        {{--<label for="name" class="name">??? ????????<i class="fa fa-star"></i> </label>--}}
-                        {{--<input type="name" class="form-control rtl" id="name"--}}
-                               {{--placeholder="??? ???????? ??? ?? ???? ????"--}}
-                               {{--name="name">--}}
-                    {{--</div>--}}
-                    {{--<div class="form-group">--}}
-                        {{--<label for="name" class="name">?????<i class="fa fa-star"></i> </label>--}}
-                        {{--<input type="name" class="form-control rtl" id="name" placeholder="example@gmail.com"--}}
-                               {{--name="name">--}}
-                    {{--</div>--}}
-                    {{--<a href="" class="btn btn-primary sabt" style="background-color: #0076ad; ">??? ???????</a>--}}
+                </div>
 
-                {{--</div>--}}
-                {{--<div class="col-md-6 ">--}}
-                    {{--<div class="form-group  ">--}}
-                        {{--<label for="phone">???? ?????<i class="fa fa-star"></i></label>--}}
-                        {{--<input type="text" autocomplete="off" value="" class="form-control rtl" id="phone"--}}
-                               {{--placeholder="???? ????? ???? ??? ?? ???? ????"--}}
-                               {{--name="phone">--}}
-                    {{--</div>--}}
+            </div>
 
-                {{--</div>--}}
+            <br>
 
-            {{--</div>--}}
         </div>
+        <div class="tab-pane fade" id="edit" role="tabpanel">
+            <h3>ویرایش اطلاعات تکمیلی</h3>
+
+            <div class="row wrapper">
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label for="name" class="name">نام<i class="fa fa-star"></i> </label>
+                        <input type="name" class="form-control rtl" id="name" placeholder="لطفا نام خود را وارد کنید"
+                               name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="name">نام خانوادگی<i class="fa fa-star"></i> </label>
+                        <input type="name" class="form-control rtl" id="name"
+                               placeholder="لطفا نام خانوادگی خود را وارد کنید"
+                               name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="name">نام کاربری<i class="fa fa-star"></i> </label>
+                        <input type="name" class="form-control rtl" id="name" placeholder="نام کاربری خود را وارد کنید"
+                               name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="name">ایمیل<i class="fa fa-star"></i> </label>
+                        <input type="name" class="form-control rtl" id="name" placeholder="example@gmail.com"
+                               name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="name">استان<i class="fa fa-star"></i> </label>
+                        <input type="name" class="form-control rtl" id="name" placeholder="استان خود را انتخاب کنید"
+                               name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="name">کدپستی<i class="fa fa-star"></i> </label>
+                        <input type="name" class="form-control rtl" id="name" placeholder="کدپستی خود را وارد کنید"
+                               name="name">
+                    </div>
+                    <a href="" class="btn btn-primary sabt" style="background-color: #0076ad; ">ثبت اطلاعات</a>
+
+                </div>
+
+                <div class="col-md-4 ">
+                    <div class="form-group">
+                        <label for="name" class="name">ایمیل<i class="fa fa-star"></i> </label>
+                        <input type="name" class="form-control rtl" id="name" placeholder="example@gmail.com"
+                               name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="name">کد ملی<i class="fa fa-star"></i> </label>
+                        <input type="name" class="form-control rtl" id="name" placeholder="لطفا کد ملی خود را وارد کنید"
+                               name="name">
+                    </div>
+                    <div class="form-group ">
+                        <label for="name" class="name">شماره همراه<i class="fa fa-star"></i> </label>
+                        <input type="name" class="form-control rtl" id="name" placeholder="لطفا نام خود را وارد کنید"
+                               name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="name">شهر<i class="fa fa-star"></i> </label>
+                        <input type="name" class="form-control rtl" id="name"
+                               placeholder="انتخاب کنید"
+                               name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="name">تلفن ثابت<i class="fa fa-star"></i> </label>
+                        <input type="name" class="form-control rtl" id="name"
+                               placeholder="لطفا تلفن ثابت  خود را وارد کنید"
+                               name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="Address">ادرس<i class="fa fa-star"></i> </label>
+                        <textarea class="form-control" rows="3" id="Address" name="Address"></textarea>
+                    </div>
 
 
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <div class="tab-pane fade" id="mycart" role="tabpanel">
+            <h3>سفارش های من</h3>
+            <div class="col-md-9 ">
+            <table class="table">
+                <thead class="head" style="background-color: #921a48">
+                <tr>
+                    <th>شماره سفارش</th>
+                    <th>تاریخ ثبت سفارش</th>
+                    <th>مبلغ کل دریافتی</th>
+                    <th>عملیات پرداخت</th>
+                    <th>جزییات</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>ainaki#1</td>
+                    <td>ainaki#1</td>
+                    <td>290000</td>
+                    <td>موفق</td>
+                    <td>descript</td>
+                </tr>
+                <tr>
+                    <td>ainaki#2</td>
+                    <td>ainaki#2</td>
+                    <td>290000</td>
+                    <td>موفق</td>
+                    <td>descript</td>
+                </tr>
+                <tr>
+                    <td>ainaki#3</td>
+                    <td>ainaki#3</td>
+                    <td>290000</td>
+                    <td>موفق</td>
+                    <td>descript</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
     </div>
-    <div class="tab-pane fade" id="edit" role="tabpanel">
-        <h1>Ipsum</h1>
-
-        <p>Aenean pharetra risus quis placerat euismod. Praesent mattis lorem eget massa euismod sollicitudin. Donec
-            porta nulla ut blandit vehicula. Mauris sagittis lorem nec mauris placerat, et molestie elit vehicula.
-            Donec libero ex, condimentum et mi dapibus, euismod ornare ligula.</p>
-
-
-    </div>
-
-    <div class="tab-pane fade" id="mycart" role="tabpanel">
-        <h1>Sit Amet</h1>
-
-        <p>Aliquam hendrerit nunc vitae nisi efficitur, eu porta sem aliquam. Aenean tincidunt mi sed mi sodales
-            bibendum. Proin dolor ipsum, mollis venenatis velit eu, iaculis laoreet mi. Mauris eget egestas felis,
-            sit amet finibumaximus cursus ut a velit. In hac habitasse platea dictumst. Vestibulum vel neque sit
-            amet nisl finibus fermentum.</p>
-    </div>
-</div>
 </div>
