@@ -69,6 +69,8 @@
                             </div>
                         </div>
                 </div>
+            </div>
+    </div>
 </nav>
 
 <nav class="navbar navbar-expand-sm rtl bg-light navbar-light sticky-top">
@@ -213,17 +215,17 @@
                     <div class="row">
                         <div class="col" href="#">
                             <div class="list-group">
-                            <div class="d-flex flex-lg-row ">
-                                <img src="images/ReyBanLogo.png"
-                                     class="align-self-center rounded  img-dropdownbrand  m-2"
-                                     alt="Woman Glass">
-                                <h5 class="align-self-center"><a class=" dropdown-item" href="#">Rey.Ban</a></h5>
-                            </div>
+                                <div class="d-flex flex-lg-row ">
+                                    <img src="images/ReyBanLogo.png"
+                                         class="align-self-center rounded  img-dropdownbrand  m-2"
+                                         alt="Woman Glass">
+                                    <h5 class="align-self-center"><a class=" dropdown-item" href="#">Rey.Ban</a></h5>
+                                </div>
                                 <div class="d-flex d-flex-row">
-                            <img src="images/ArmanyLogo.png"
-                                 class="align-self-center rounded m-2" style="width:84px "
-                                 alt="Woman Glass">
-                                <h5 class="align-self-center"><a class=" dropdown-item" href="#">Armany</a></h5>
+                                    <img src="images/ArmanyLogo.png"
+                                         class="align-self-center rounded m-2" style="width:84px "
+                                         alt="Woman Glass">
+                                    <h5 class="align-self-center"><a class=" dropdown-item" href="#">Armany</a></h5>
                                 </div>
                             </div>
                         </div>
@@ -247,7 +249,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link" href="#">راهنمای تست آنلاین <i  aria-hidden="true"></i></a>
+                <a class="nav-link" href="#">راهنمای تست آنلاین <i aria-hidden="true"></i></a>
             </li>
 
             <li class="nav-item">

@@ -8,7 +8,10 @@ class EyeGlass extends Model
 {
     //
 
+
+
     protected $fillable = [
+        'id',
         'brand_id',
         'warranty_id',
         'category_id',
@@ -73,5 +76,14 @@ class EyeGlass extends Model
 
     public function brand(){
         return $this->belongsTo('App\Brand');
+    }
+
+    public function getGender(){
+        switch ($this->gender){
+            case 0: return 'آقایان';
+            case 1: return 'بانوان';
+            case 2: return 'کودکان';
+            case 3: return 'آقایان و بانوان';
+        }
     }
 }

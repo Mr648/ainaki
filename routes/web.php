@@ -68,96 +68,18 @@ Route::prefix('user')->group(function () {
 
 
 
-Route::get('/testUserAuth/{authKey}', function (Request $request) {
-    echo 'User Authorized :: <strong>' . $request->account()->phone . '</strong>';
-})->middleware('smsauth');
 
 
 
-Route::post('/filter', 'ProductController@filterChooser');
 
 Route::get('/products', 'ProductController@index')->name('product.index');
 
 Route::get('/products/{id}', 'ProductController@show')->name('product.show');
-
-Route::post('/product', 'ProductController@product');
-Route::get('/glass', function () {
-    $e = \App\EyeGlass::find(1);
-    $e = json_decode(json_encode($e));
-    foreach ($e as $key => $value) {
-        echo $key . " :: " . $value . " :: " . getFa($key) . "<br>";
-    }
-});
-
-function getFa($key)
-{
-    switch ($key) {
-        case 'name':
-            return 'نام';
-        case 'name':
-            return 'نام';
-        case 'name':
-            return 'نام';
-        case 'name':
-            return 'نام';
-        case 'name':
-            return 'نام';
-        case 'name':
-            return 'نام';
-        case 'name':
-            return 'نام';
-        case 'name':
-            return 'نام';
-        case 'name':
-            return 'نام';
-        case 'name':
-            return 'نام';
-        case 'name':
-            return 'نام';
-        case 'name':
-            return 'نام';
-        case 'name':
-            return 'نام';
-        case 'name':
-            return 'نام';
-        case 'name':
-            return 'نام';
-        case 'name':
-            return 'نام';
-    }
-}
-
-Route::get('/users', function () {
-    $users = \App\AinakiUser::all();
-    $users->each(function ($user) {
-        echo $user->authSms->authKey . '<br>';
-    });
-});
+Route::get('/products/shop/{id}', 'ProductController@shop')->name('product.shop');
+Route::get('/products/online/test/{id}', 'ProductController@onlineTest')->name('product.test');
 
 
-Route::get('/products/{category}/{filter}', function ($id) {
-    $eyes = \App\EyeGlass::all()->shuffle()->take(25);
-    $items = array();
-    foreach ($eyes as $eye) {
-        $eyeGlassImages = App\Photo::where('imageable_id', $eye->id)->get(['path']);
-
-        $images = array();
-        foreach ($eyeGlassImages as $image) {
-            $images[] = $image->path;
-        };
-        $items[] = array(
-            'id' => $eye->id,
-            'attrs' => array(
-                'name' => $eye->frameColor,
-                'color' => $eye->frameColor,
-                'frame' => $eye->frameShape,
-                'price' => $eye->price,
-                'images' => !is_null($images) ? $images : 'EMPTY',
-            )
-        );
-    }
-    return json_encode($items);
-});
+Route::get('/products/{category}/{filters}', 'ProductController@listProducts');
 
 
 Route::get('/test/new/api', function () {
@@ -168,3 +90,10 @@ Route::get('/test/new/api', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+Route::get('/gggggg', function () {
+    return new \App\Http\Resources\EyeGlassDetails(\App\EyeGlass::find(1));
+});
