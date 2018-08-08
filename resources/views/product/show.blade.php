@@ -137,7 +137,7 @@
                                                         {{__('messages.'.$spec. '.' . $key)}}
                                                     </td>
                                                     @if($key=='name')
-                                                        <td>{{json_decode($value)->fa}}</td>
+                                                        <td>{{$value}}</td>
                                                     @elseif($key=='category')
                                                         <td>{{$value->name}}</td>
                                                     @elseif($key=='brand')

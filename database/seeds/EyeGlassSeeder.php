@@ -17,6 +17,8 @@ class EyeGlassSeeder extends Seeder
                 $eyeGlass->photos()->save(factory(App\Photo::class)->make());
             for ($i = 0; $i < $len*2; $i++)
                 $eyeGlass->comments()->save(factory(App\Comment::class)->make());
+            for ($i = 0; $i < $len/2; $i++)
+                $eyeGlass->tags()->save(factory(App\Tag::class)->make());
         });
     }
 }

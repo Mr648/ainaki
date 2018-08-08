@@ -14,6 +14,9 @@ class Comment extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'rating'=>$this->rating,
+            'comment'=>$this->comment
+        ];
     }
 }

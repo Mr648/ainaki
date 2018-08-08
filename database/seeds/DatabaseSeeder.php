@@ -16,5 +16,8 @@ class DatabaseSeeder extends Seeder
         $this->call(AppUserSeeder::class);
         $this->call(LensSeeder::class);
         $this->call(CarryingCaseSeeder::class);
+        $this->call(BrandSeeder::class);
+        $this->call(WarrantySeeder::class);
+        $this->call(CategorySeeder::class);
     }
 }
