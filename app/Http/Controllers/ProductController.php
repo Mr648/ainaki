@@ -267,6 +267,7 @@ class ProductController extends Controller
         return $product;
         $product =  json_decode(json_encode($product->jsonSerialize()));
         return view('product.show', compact('title', 'product'));
+
     }
 
 
