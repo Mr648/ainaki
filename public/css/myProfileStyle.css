@@ -1,0 +1,26 @@
+.nav-tabs--vertical {
+    border-bottom: none;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+}
+
+
+.nav-item + .nav-item {
+    margin-top: .25rem;
+}
+
+.nav-link {
+    transition: border-color .125s ease-in;
+    white-space: nowrap;}
+
+
+
+.nav-link.active {
+
+    border-top-right-radius: 0;
+    margin-right: -1px;
+}
+
+

@@ -34,7 +34,7 @@
 
 </head>
 <body>
-@include ('layouts.header')
+{{--@include ('layouts.header')--}}
 
 @include ('layouts.showproductDetail')
 @include ('layouts.tabs')
@@ -46,7 +46,7 @@
 
 
 
-@include ('layouts.footer')
+{{--@include ('layouts.footer')--}}
 <script>
 //    $(document).ready(function () {
 //        $('.dropdown').dropdown();
