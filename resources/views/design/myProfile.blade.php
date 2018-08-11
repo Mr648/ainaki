@@ -148,49 +148,82 @@
 <div class="col-md-12">                        <a href="" class="btn btn-primary sabt" style="background-color: #0076ad; ">ثبت اطلاعات</a>
 </div>
 
-                </div>
+</div>
+        </div>
+        <div class="tab-pane containerfade" id="mycart" role="tabpanel">
+            <h3>سفارش های من</h3>
+            <div class="col-md-9 ">
+            <table class="tabletable-responsive">
+                <thead class="head" style="background-color: #921a48">
+                <tr>
+                    <th>شماره سفارش</th>
+                    <th>تاریخ ثبت سفارش</th>
+                    <th>مبلغ کل دریافتی</th>
+                    <th>عملیات پرداخت</th>
+                    <th>جزییات</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>ainaki#1</td>
+                    <td>ainaki#1</td>
+                    <td>290000</td>
+                    <td>موفق</td>
+                    <tddata-toggle="collapse" data-target="#accordion" class="clickable">descript</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                            <div id="accordion" class="collapse">Hidden by default</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ainaki#2</td>
+                    <td>ainaki#2</td>
+                    <td>290000</td>
+                    <td>موفق</td>
+                    <td>descript</td>
+                </tr>
+                <tr>
+                    <td>ainaki#3</td>
+                    <td>ainaki#3</td>
+                    <td>290000</td>
+                    <td>موفق</td>
+                    <td>descript</td>
+                </tr>
+                </tbody>
+            </table></div>
+        </div>
+        <div class="tab-pane fade" id="changePassword" role="tabpanel">
+            <h3>تغییر رمز عبور</h3>
 
+            <div class="row wrapper">
+                <div class="col-md-4">
+                    <div class="form-group ">
+                        <label for="name" class="name">رمز عبور فعلی<i class="fa fa-star"></i> </label>
+                        <input type="name" class="form-control rtl" id="name" placeholder=""
+                               name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="name">رمز عبور جدید<i class="fa fa-star"></i> </label>
+                        <input type="name" class="form-control rtl" id="name"
+                               placeholder=""
+                               name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="name">تکرار رمز عبور جدید<i class="fa fa-star"></i> </label>
+                        <input type="name" class="form-control rtl" id="name" placeholder=""
+                               name="name">
+                    </div>
 
-            </div>
-            <div class="tab-pane  container fade" id="mycart" role="tabpanel">
-                <h3>سفارش های من</h3>
-                <div class="col-md-9 ">
-                    <table class="table table-responsive">
-                        <thead class="head" style="background-color: #921a48">
-                        <tr>
-                            <th>شماره سفارش</th>
-                            <th>تاریخ ثبت سفارش</th>
-                            <th>مبلغ کل دریافتی</th>
-                            <th>عملیات پرداخت</th>
-                            <th>جزییات</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>ainaki#1</td>
-                            <td>ainaki#1</td>
-                            <td>290000</td>
-                            <td>موفق</td>
-                            <td>descript</td>
-                        </tr>
-                        <tr>
-                            <td>ainaki#2</td>
-                            <td>ainaki#2</td>
-                            <td>290000</td>
-                            <td>موفق</td>
-                            <td>descript</td>
-                        </tr>
-                        <tr>
-                            <td>ainaki#3</td>
-                            <td>ainaki#3</td>
-                            <td>290000</td>
-                            <td>موفق</td>
-                            <td>descript</td>
-                        </tr>
-                        </tbody>
-                    </table>
                 </div>
-            </div>
+        </div></div>
         </div>
     </div>
 </div>
+
+
+<script>
+    $('.collapse').on('show.bs.collapse', function () {
+        $('.collapse.in').collapse('hide');
+    });
+</script>
