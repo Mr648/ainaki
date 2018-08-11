@@ -300,18 +300,28 @@
     </div><!-- /.nav-collapse -->
 </nav>
 
-<script>$(document).ready(function () {
-//        $(".dropdown").hover(
-//            function () {
-//                $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true, true).slideDown("400");
-//                $(this).toggleClass('open');
-//            },
-//            function () {
-//                $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true, true).slideUp("400");
-//                $(this).toggleClass('open');
-//            }
-//        );
-    });
+<script>
+    $(document).ready(function () {
+//        $('.dropdown').dropdown();
+        $('.nav-item h5').each(function () {
+            var bg = '/' + $(this).data('background-image');
+            var size = $(this).data('size');
+            if (bg !== null && size !== null) {
+                $(this).css(
+                    {
+                        'background-image': 'url(' + bg + ')',
+                        'background-size': size + 'px' + " " + size + 'px',
+                        'width': size + "px !important",
+                        'height': size + "px !important"
+                    }
+                )
+                ;
+                console.info("bg is " + bg);
+            }
+        })
+        ;
+    })
+    ;
 </script>
 
 
