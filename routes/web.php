@@ -15,11 +15,41 @@
 use App\AinakiUser;
 use Illuminate\Http\Request;
 
-Route::get('/', function () {
-   // echo "Ainaki Application is Alive!";
 
-    return view('index');
+Route::get('/', function () {
+    $title = "صفحه اصلی";
+    $cards = array(
+        [
+            'img' => 'images/10.jpg',
+            'alt' => 'sample'
+        ],
+        [
+            'img' => 'images/12.jpg',
+            'alt' => 'sample'
+        ],
+        [
+            'img' => 'images/7.png',
+            'alt' => 'sample'
+        ],
+        [
+            'img' => 'images/8.jpg',
+            'alt' => 'sample'
+        ]
+    );
+
+    $homeProducts = \App\EyeGlass::inRandomOrder()->with('photos')->take(4)->get();
+//    echo '<pre>';
+//    print_r($homeProducts);
+//    echo '</pre>';
+
+    return view('index', compact('title' , 'cards', 'homeProducts') );
 });
+
+Route::get('/design', function () {
+    return view('design.index');
+});
+
+
 
 Route::post('/verifyCode', 'SmsAuthenticationController@verifyCode');
 Route::post('/sendSms', 'SmsAuthenticationController@sendSms');
@@ -32,21 +62,24 @@ Route::prefix('user')->group(function () {
     Route::post('/comment', 'UserController@addComment');
     Route::post('/signup', 'SignupController@signUp')->name('signup');
     Route::post('/signin', 'LoginController@login')->name('signin');
+    Route::post('/signout', 'LogoutController@logout')->name('signout');
 
 });
+
+
 
 Route::get('/testUserAuth/{authKey}', function (Request $request) {
     echo 'User Authorized :: <strong>' . $request->account()->phone . '</strong>';
 })->middleware('smsauth');
 
 
-Route::get('/sample/{id}', 'SampleExample@test');
-
-
-
-
 
 Route::post('/filter', 'ProductController@filterChooser');
+
+Route::get('/products', 'ProductController@index')->name('product.index');
+
+Route::get('/products/{id}', 'ProductController@show')->name('product.show');
+
 Route::post('/product', 'ProductController@product');
 Route::get('/glass', function () {
     $e = \App\EyeGlass::find(1);
@@ -132,8 +165,9 @@ Route::get('/test/new/api', function () {
 });
 
 
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/kar',function (){
+    return view('layouts.test');
+});
