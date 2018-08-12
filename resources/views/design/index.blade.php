@@ -1,7 +1,7 @@
 @extends ('layouts.designer')
 @section('content')
 
-    @include('design.FullmyProfile')
+    @include('design.FullmyProfileWithoutProduct')
     {{--@include('design.FullUserProfile')--}}
     {{--@include('design.showproduct')--}}
 @endsection
