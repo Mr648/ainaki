@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(BrandSeeder::class);
         $this->call(WarrantySeeder::class);
         $this->call(CategorySeeder::class);
+        $this->call(CleanerSeeder::class);
     }
 }

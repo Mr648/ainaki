@@ -15,6 +15,10 @@ class CleanerSeeder extends Seeder
 			$len = random_int(1, 3);
 			for ($i = 0; $i < $len; $i++)
 				$cleaner->photos()->save(factory(App\Photo::class)->make());
+			for ($i = 0; $i < $len * 2; $i++)
+				$cleaner->comments()->save(factory(App\Comment::class)->make());
+			for ($i = 0; $i < $len / 2; $i++)
+				$cleaner->tags()->save(factory(App\Tag::class)->make());
 		});
 
 	}
