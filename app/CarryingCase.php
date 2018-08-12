@@ -9,7 +9,6 @@ class CarryingCase extends Model
     //
     protected $fillable = [
         'brand_id',
-        'warranty_id',
         'category_id',
         'name',
         'color',
@@ -23,7 +22,7 @@ class CarryingCase extends Model
 
     public function warranty()
     {
-        return $this->morphOne('App\Warranty', 'warrantyable');
+        return $this->morphMany('App\Warranty', 'warrantyable');
     }
 
     public function category()

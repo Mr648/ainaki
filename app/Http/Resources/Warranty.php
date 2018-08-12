@@ -15,7 +15,7 @@ class Warranty extends JsonResource
     public function toArray($request)
     {
         return [
-            'name'=>$this->company,
+            'company'=>$this->company,
             'period'=>$this->period,
         ];
     }

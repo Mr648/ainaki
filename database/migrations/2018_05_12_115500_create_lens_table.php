@@ -16,7 +16,6 @@ class CreateLensTable extends Migration
         Schema::create('lens', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('brand_id')->unsigned()->nullable();
-            $table->integer('warranty_id')->unsigned()->nullable();
             $table->integer('category_id')->unsigned()->nullable();
 
 

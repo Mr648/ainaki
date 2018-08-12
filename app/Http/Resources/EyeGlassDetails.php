@@ -41,7 +41,7 @@ class EyeGlassDetails extends JsonResource
                     'name' => $this->name ,
                     'category' => new CategoryResource($this->category),
                     'brand' => new BrandResource($this->brand),
-                    'warranty' => new WarrantyResource($this->warranty),
+                    'warranty' =>   WarrantyResource::collection($this->warranty),
                     'weight' => $this->weight,
                 ],
                 "frame" => [

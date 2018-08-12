@@ -143,7 +143,7 @@
                                                     @elseif($key=='brand')
                                                         <td>{{$value->name}}</td>
                                                     @elseif($key=='warranty')
-                                                        <td>{{$value->name}}</td>
+                                                        <td>{{$value->company}}</td>
                                                     @else
                                                         <td>{{$value}}</td>
                                                     @endif
