@@ -160,50 +160,15 @@
             </div>
             <div class="tab-pane  fade" id="mycart" role="tabpanel">
                 <h3 class="titr">سفارش های من</h3>
-                <div class="col-md-9 ">
-                    <table class="table table-responsive mycartTable">
-                        <thead class="head" style="background-color: #921a48">
-                        <tr>
-                            <th ></th>
-                            <th style="width: 400px">شماره سفارش</th>
-                            <th style="width: 400px">تاریخ ثبت سفارش</th>
-                            <th style="width: 400px">مبلغ کل دریافتی</th>
-                            <th style="width: 400px">عملیات پرداخت</th>
-                            <th style="width: 400px">جزییات</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>ainaki#1</td>
-                            <td>ainaki#1</td>
-                            <td>290000</td>
-                            <td>موفق</td>
-                            <td data-toggle="collapse" data-target="#accordion" class="clickable">descript</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3">
-                                <div id="accordion" class="collapse">Hidden by default</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>ainaki#2</td>
-                            <td>ainaki#2</td>
-                            <td>290000</td>
-                            <td>موفق</td>
-                            <td>descript</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>ainaki#3</td>
-                            <td>ainaki#3</td>
-                            <td>290000</td>
-                            <td>موفق</td>
-                            <td>descript</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <div class="row wrapper">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-8 text-center product">
+                        <i class="fa fa-shopping-cart fa-5x"></i>
+                        <h3 style="padding: 20px">سفارشی برای شما ثبت نگردیده است</h3>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
                 </div>
             </div>
             <div class="tab-pane fade" id="changePassword" role="tabpanel">
@@ -227,7 +192,8 @@
                             <input type="name" class="form-control rtl" id="name" placeholder=""
                                    name="name">
                         </div>
-                        <div class="col-md-12"><a href="" class="btn btn-primary sabt" style="background-color: #0076ad; ">ثبت
+                        <div class="col-md-12"><a href="" class="btn btn-primary sabt"
+                                                  style="background-color: #0076ad; ">ثبت
                                 اطلاعات</a>
                         </div>
                     </div>
@@ -237,87 +203,31 @@
             <div class="tab-pane fade" id="favorites" role="tabpanel">
 
                 <h3 class="titr">علاقمندی های من</h3>
-                <div class="col-md-9 ">
-                    <table class="table table-responsive">
-                        <thead class="head" style="background-color: #921a48">
-                        <tr>
-                            <th ></th>
-                            <th style="width: 1000px;">نام محصول</th>
-                            <th style="width: 300px;">دسته بندی</th>
-                            <th style="width: 300px;"></th>
 
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>ainaki#1</td>
-                            <td>عینک افتابی</td>
-                            <td><a href="">مشاهده محصول</a></td>
-
-
-                        </tr>
-
-                        <tr>
-                            <td>2</td>
-                            <td>ainaki#2</td>
-                            <td>عینک طبی</td>
-
-                            <td><a href="">مشاهده محصول</a></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>ainaki#3</td>
-
-                            <td>لنز</td>
-                            <td><a href="">مشاهده محصول</a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-
+                <div class="row wrapper">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-8 text-center product">
+                        <i class="fa fa-heart fa-5x"></i>
+                        <h3 style="padding: 20px">محصولی برای نمایش وجود ندارد</h3>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
                 </div>
             </div>
 
             <div class="tab-pane fade" id="messages" role="tabpanel">
 
                 <h3 class="titr">پیغام های من</h3>
-                <div class="col-md-9 ">
-                    <table class="table table-responsive">
-                        <thead class="head" style="background-color: #921a48">
-                        <tr>
-                            <th ></th>
-                            <th style="width: 1000px">عنوان</th>
-                            <th style="width: 300px;">تاریخ پیغام</th>
-                            <th style="width: 300px;">جزییات</th>
-
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>اقای قلی عزیز، پیام جدیدی دارین</td>
-                            <td>21/5/97</td>
-                            <td>جزییات</td>
-
-
-                        </tr>
-
-                        <tr>
-                            <td>2</td>
-                            <td>اقای قلی عزیز، پیام جدیدی دارین</td>
-                            <td>21/5/97</td>
-
-                            <td>جزییات</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>اقای قلی عزیز، پیام جدیدی دارین</td>
-
-                            <td>21/5/97</td>
-                            <td>جزییات</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <div class="row wrapper">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-8 text-center product">
+                        <i class="fa fa-envelope fa-5x"></i>
+                        <h3 style="padding: 20px">پیغامی برای نمایش وجود ندارد</h3>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
                 </div>
             </div>
         </div>
