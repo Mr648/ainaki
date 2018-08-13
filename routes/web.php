@@ -75,7 +75,7 @@ Route::prefix('user')->group(function () {
 Route::get('/products', 'ProductController@index')->name('product.index');
 
 Route::get('/products/{id}', 'ProductController@show')->name('product.show');
-Route::get('/products/shop/{id}', 'ProductController@shop')->name('product.shop');
+Route::get('/products/shop/{id}', 'ProductController@addToBasket')->name('product.addToBasket');
 Route::get('/products/online/test/{id}', 'ProductController@onlineTest')->name('product.test');
 
 

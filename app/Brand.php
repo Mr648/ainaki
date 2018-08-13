@@ -19,4 +19,9 @@ class Brand extends Model
         return $this->morphMany('App\Photo', 'imageable');
     }
 
+	public function cleaners()
+	{
+		return $this->hasMany('App\Cleaner');
+	}
+
 }

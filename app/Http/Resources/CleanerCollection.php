@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class CommentCollection extends ResourceCollection
+class CleanerCollection extends ResourceCollection
 {
     /**
      * Transform the resource collection into an array.
@@ -14,8 +14,8 @@ class CommentCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-			return [
-				'data' => $this->collection,
-			];
+        return [
+            'data' => $this->collection,
+        ];
     }
 }
