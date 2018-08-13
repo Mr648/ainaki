@@ -2,6 +2,8 @@
  * Created by mr-code on 7/29/2018.
  */
 $(document).ready(function () {
+
+
     $("#signUpForm").submit(function (event) {
         // $('#myModalRegister').css({'z-index': "99999"}).modal('hide');
         event.preventDefault();

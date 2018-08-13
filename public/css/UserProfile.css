@@ -1,0 +1,13 @@
+.fa-star{
+   font-size: 8px;
+    color: red;
+}
+.btn-primary {
+
+    border: none !important;
+
+}
+
+.btn-primary:hover{
+    background-color: #004566 !important;
+}

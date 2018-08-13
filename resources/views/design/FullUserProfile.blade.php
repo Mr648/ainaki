@@ -24,8 +24,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/showproductDEtailStyle.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/UserProfile.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/devicon.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/devicon-colors.css') }}">
+    {{--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">--}}
 
     {{--Bootstrap--}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap/rtl/bootstrap.min.css') }}">
@@ -34,25 +36,8 @@
 
 </head>
 <body>
-{{--@include ('layouts.header')--}}
 
-@include ('layouts.showproductDetail')
-@include ('layouts.tabs')
-@include ('layouts.similarProduct')
-
-
-
-
-
-
-
-{{--@include ('layouts.footer')--}}
-<script>
-//    $(document).ready(function () {
-//        $('.dropdown').dropdown();
-//    });
-</script>
-
+@include ('design.UserProfile')
 
 
 </body>
