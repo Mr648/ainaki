@@ -11,14 +11,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
         $this->call(EyeGlassSeeder::class);
-        $this->call(StrapSeeder::class);
-        $this->call(AppUserSeeder::class);
-        $this->call(LensSeeder::class);
-        $this->call(CarryingCaseSeeder::class);
-        $this->call(BrandSeeder::class);
-        $this->call(WarrantySeeder::class);
-        $this->call(CategorySeeder::class);
-        $this->call(CleanerSeeder::class);
+//        $this->call(LensSeeder::class);
+//        $this->call(StrapSeeder::class);
+//        $this->call(CleanerSeeder::class);
+//        $this->call(CarryingCaseSeeder::class);
+//        $this->call(AppUserSeeder::class);
+//        $this->call(BrandSeeder::class);
+//        $this->call(CategorySeeder::class);
     }
 }

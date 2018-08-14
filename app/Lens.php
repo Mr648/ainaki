@@ -9,7 +9,6 @@ class Lens extends Model
 
     protected $fillable = [
         'brand_id',
-        'warranty_id',
         'category_id',
         'name',
         'description',
@@ -27,7 +26,7 @@ class Lens extends Model
 
     public function warranty()
     {
-        return $this->morphOne('App\Warranty', 'warrantyable');
+        return $this->morphMany('App\Warranty', 'warrantyable');
     }
 
 
@@ -61,5 +60,19 @@ class Lens extends Model
     public function favorites()
     {
         return $this->morphMany('App\Favorite', 'favoriteable');
+    }
+
+
+    public function brand(){
+        return $this->belongsTo('App\Brand');
+    }
+
+    public function getGender(){
+        switch ($this->gender){
+            case 0: return 'آقایان';
+            case 1: return 'بانوان';
+            case 2: return 'کودکان';
+            case 3: return 'آقایان و بانوان';
+        }
     }
 }

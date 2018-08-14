@@ -19,6 +19,9 @@ class LensSeeder extends Seeder
                 $lens->comments()->save(factory(App\Comment::class)->make());
             for ($i = 0; $i < $len/2; $i++)
                 $lens->tags()->save(factory(App\Tag::class)->make());
+
+
+            $lens->warranty()->save(factory(App\Warranty::class)->make());
         });
     }
 }

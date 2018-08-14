@@ -10,7 +10,6 @@ class Cleaner extends Model
 
     protected $fillable = [
         'brand_id',
-        'warranty_id',
         'category_id',
         'name',
         'description',
@@ -21,7 +20,7 @@ class Cleaner extends Model
 
     public function warranty()
     {
-        return $this->morphOne('App\Warranty', 'warrantyable');
+        return $this->morphMany('App\Warranty', 'warrantyable');
     }
 
 

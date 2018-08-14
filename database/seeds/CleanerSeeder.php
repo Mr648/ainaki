@@ -19,7 +19,10 @@ class CleanerSeeder extends Seeder
 				$cleaner->comments()->save(factory(App\Comment::class)->make());
 			for ($i = 0; $i < $len / 2; $i++)
 				$cleaner->tags()->save(factory(App\Tag::class)->make());
-		});
+
+            $cleaner->warranty()->save(factory(App\Warranty::class)->make());
+
+        });
 
 	}
 }

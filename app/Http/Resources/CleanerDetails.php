@@ -30,13 +30,12 @@ class CleanerDetails extends JsonResource
 			'description' => $description,
 			'properties' => $properties,
 			'images' => PhotoResource::collection($this->photos),
-			'add_to_basket_url' => route('product.addToBasket', $this->id), // change to product.buy
-			'images' => PhotoResource::collection($this->photos),
+			'add_to_basket_url' => route('shopping.basket', $this->id), // change to product.buy
 			'specs' => [
 				"full" => [
 					'name' => json_decode($this->name)->fa,
 					'brand' => new BrandResource($this->brand),
-					'warranty' => new WarrantyResource($this->warranty),
+					'warranty' =>WarrantyResource::collection($this->warranty),
 					'category' => new CategoryResource($this->category),
 					'volume' => $this->volume,
 					'healthLicence' => $this->healthLicence,
@@ -45,7 +44,7 @@ class CleanerDetails extends JsonResource
 			'tags' => TagResource::collection($this->tags),
 			'discount' => $this->discountPercentage,
 			'discountPeriod' => $this->discountPeriod,
-			'comment' => CommentResource::collection($this->comment)
+			'comments' => CommentResource::collection($this->comments)
 		];
 	}
 }
