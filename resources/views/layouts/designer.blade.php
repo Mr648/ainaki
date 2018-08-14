@@ -17,7 +17,7 @@
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/jquery.slim.min.js') }}"></script>
     <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 
 
 
@@ -30,6 +30,10 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap/rtl/bootstrap.min.css') }}">
     <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/ainaki.js') }}"></script>
+
+
+
+
 </head>
 <body>
 @include ('layouts.header')

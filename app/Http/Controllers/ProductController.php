@@ -264,7 +264,7 @@ class ProductController extends Controller
 //]
         $title = 'لیست محصولات';
         $product =  new EyeGlassDetails(EyeGlass::find($id));
-        return $product;
+//        return $product;
         $product =  json_decode(json_encode($product->jsonSerialize()));
         return view('product.show', compact('title', 'product'));
     }

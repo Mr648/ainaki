@@ -86,6 +86,11 @@ Route::get('/test/new/api', function () {
 
 });
 
+Route::get('/design/test/collapse', function () {
+return view('design/collapse');
+});
+
+
 
 Auth::routes();
 
