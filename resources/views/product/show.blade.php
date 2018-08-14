@@ -1,10 +1,6 @@
 @extends('layouts.layout')
 
 @section('contents')
-    {{--@php--}}
-    {{--dd($product);--}}
-    {{--exit;--}}
-    {{--@endphp--}}
     <div class="container rtl ">
         <div class="card">
             <div class="container-fliud">
@@ -143,7 +139,7 @@
                                                     @elseif($key=='brand')
                                                         <td>{{$value->name}}</td>
                                                     @elseif($key=='warranty')
-                                                        <td>{{$value->name}}</td>
+                                                        <td>{{$value->company}}</td>
                                                     @else
                                                         <td>{{$value}}</td>
                                                     @endif

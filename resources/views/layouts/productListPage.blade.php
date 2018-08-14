@@ -181,70 +181,38 @@
             <br>
         </div>
 
-        <div class=" col-md-9 col-sm-12">
-            <div class="container">
-                <div class="card-deck ">
-                    <div class="card border text-center hovereffect" style="width:400px ; height: 350px">
-                        <img class="card-img-top" src="images/g5.png" alt="Card image">
-                        <div class="overlay">
-                            <a href="#" class="btn btn-primary info">تست انلاین</a>
-                            <a href="#" class="btn btn-primary info">مشاهده محصول</a>
+        <div class="col-md-9 col-sm-12">
+            @php
+                $count = 0;
+            @endphp
+            <div class="row">
+                @foreach($products as $product)
+                    @if($count++ % 3 == 0)
+                        <div class="card-deck col-12">
+                            @endif
+                            <div class="card border text-center hovereffect " style=" height: 350px">
+                                <img class="card-img-top" src="/{{$product->photos[0]->path}}" alt="Card image">
+                                <div class="overlay">
+                                    <a href="{{route('product.test', $product->id)}}" class="btn btn-primary info">تست انلاین</a>
+                                    <a href="{{route('product.show', ['category'=>$product, 'id'=>$product->id])}}" class="btn btn-primary info">مشاهده محصول</a>
+                                </div>
+                                <div class="card-body list-page">
+                                    <h6 class="card-title text-center">{{$product->name}}</h6>
+                                    <p class="card-text text-center">{{$product->price}}</p>
+                                </div>
+                            </div>
+                            @if($count % 3 == 0)
                         </div>
-                        <div class="card-body list-page">
-                            <h6 class="card-title text-center">عینک طبی اسپای 145</h6>
-                            <p class="card-text text-center">290000 تومان</p>
-
-                        </div>
-                    </div>
-                    <div class="card border text-center hovereffect" style="width:400px ; height: 350px">
-                        <img class="card-img-top" src="images/g2.png" alt="Card image" style="width:100%">
-                        <div class="overlay">
-                            <a href="#" class="btn btn-primary info">تست انلاین</a>
-                            <a href="#" class="btn btn-primary info">مشاهده محصول</a>
-                        </div>
-                        <div class="card-body list-page">
-                            <h6 class="card-title">عینک افتابی کومونو</h6>
-                            <p class="card-text">800000 تومان</p>
-
-                        </div>
-                    </div>
-                    <div class="card border text-center hovereffect" style="width:400px ; height: 350px">
-                        <img class="card-img-top" src="images/g3.png" alt="Card image" style="width:100%">
-                        <div class="overlay">
-                            <a href="#" class="btn btn-primary info">تست انلاین</a>
-                            <a href="#" class="btn btn-primary info">مشاهده محصول</a>
-                        </div>
-                        <div class="card-body list-page">
-                            <h6 class="card-title">عینک ری بن</h6>
-                            <p class="card-text">958000 تومان</p>
-
-                        </div>
-                    </div>
-
-                </div>
+                    @endif
+                @endforeach
             </div>
-            <br>
-            <br>
-        </div>
-
-        <div class="container ">
-            <div class="row justify-content-center ">
-
-                <ul class="pagination ">
-                    <li class="page-item"><a class="page-link" href="#"><i class="fa fa-chevron-right"></i></a></li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item "><a class="page-link" href="#"><i class="fa fa-chevron-left"></i></a>
-                </ul>
-            </div>
-
         </div>
     </div>
-
-
+    <br>
+    <br>
 </div>
+</div>
+
+
 
 

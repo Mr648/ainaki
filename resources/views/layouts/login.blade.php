@@ -11,6 +11,7 @@
 
     {{--@endif--}}
     <input type="hidden" value="{{url()->current()}}" name="_location">
+
     <img src="images/user.png" alt="" width="80" height="80">
     <div class="form-group text-center">
         <h2 class="login rtl text-center">ورود به حساب کاربری</h2>

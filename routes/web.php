@@ -42,13 +42,12 @@ Route::get('/', function () {
 //    print_r($homeProducts);
 //    echo '</pre>';
 
-    return view('index', compact('title' , 'cards', 'homeProducts') );
+    return view('index', compact('title', 'cards', 'homeProducts'));
 });
 
 Route::get('/design', function () {
     return view('design.index');
 });
-
 
 
 Route::post('/verifyCode', 'SmsAuthenticationController@verifyCode');
@@ -68,8 +67,19 @@ Route::prefix('user')->group(function () {
 
 
 
+Route::prefix('products')->group(function () {
+    Route::get('/', 'ProductController@index')->name('product.index'); // list of products
+    Route::get('/{category}/{id}', 'ProductController@show')->name('product.show'); // show single product
+    Route::get('/test/online/{id}', 'ProductController@onlineTest')->name('product.test');
+//    Route::get('/filter', 'ProductController@filter')->name('product.filter');
 
+});
 
+Route::prefix('shopping')->group(function () {
+    Route::post('/basket/{id}', 'ProductController@addToBasket')->name('shopping.basket');
+    Route::post('/buy', 'ProductController@buy')->name('shopping.buy');
+    Route::post('/transactions', 'ProductController@transactions')->name('shopping.transactions');
+});
 
 
 Route::get('/products', 'ProductController@index')->name('product.index');
@@ -91,14 +101,19 @@ return view('design/collapse');
 });
 
 
+//Route::get('/products/{category}/{filters}', 'ProductController@listProducts');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-
-
 Route::get('/gggggg', function () {
-    return new \App\Http\Resources\EyeGlassDetails(\App\EyeGlass::find(1));
+
+    return response()->json([
+        new \App\Http\Resources\EyeGlassDetails(\App\EyeGlass::find(rand(1,10))),
+        new \App\Http\Resources\CleanerDetails(\App\Cleaner::find(rand(1,10))),
+        new \App\Http\Resources\StrapDetails(\App\Strap::find(rand(1,10))),
+        new \App\Http\Resources\CarryingCaseDetails(\App\CarryingCase::find(rand(1,10))),
+        new \App\Http\Resources\LensDetails(\App\Lens::find(rand(1,10))),
+    ], 200);
 });
