@@ -33,13 +33,13 @@ class EyeGlassDetails extends JsonResource
 			'properties' => $properties,
 			'images' => PhotoResource::collection($this->photos),
 			'online_test_url' => route('product.test', $this->id),
-			'add_to_basket_url' => route('product.addToBasket', $this->id),
+			'add_to_basket_url' => route('shopping.basket', $this->id),
 			'specs' => [
 				"full" => [
 					'name' => json_decode($this->name)->fa,
 					'category' => new CategoryResource($this->category),
 					'brand' => new BrandResource($this->brand),
-					'warranty' => new WarrantyResource($this->warranty),
+					'warranty' =>  WarrantyResource::collection($this->warranty),
 					'suitable_for' => $this->getGender(),
 					'weight' => $this->weight,
 				],
@@ -65,7 +65,7 @@ class EyeGlassDetails extends JsonResource
 			'tags' => TagResource::collection($this->tags),
 			'discount_percentage' => $this->discountPercentage,
 			'discount_period' => $this->discountPeriod,
-			'comment' => CommentResource::collection($this->comment),
+			'comments' => CommentResource::collection($this->comments),
 		];
 	}
 }

@@ -29,12 +29,13 @@ class CarryingCaseDetails extends JsonResource
 			'description' => $description,
 			'properties' => $properties,
 			'images' => PhotoResource::collection($this->photos),
-			'specs' => [
+            'add_to_basket_url' => route('shopping.basket', $this->id), // change to product.buy
+            'specs' => [
 				"full" => [
 					'name' => json_decode($this->name)->fa,
-					'brand' => new BrandResource($this->id),
-					'warranty' => new WarrantyResource($this->id),
-					'category' => new CategoryResource($this->id),
+					'brand' => new BrandResource($this->brand),
+					'warranty' =>  WarrantyResource::collection($this->warranty),
+					'category' => new CategoryResource($this->category),
 					'gender' => $this->getGender(),
 				],
 				"product" => [
@@ -47,7 +48,7 @@ class CarryingCaseDetails extends JsonResource
 			'tags' => TagResource::collection($this->tags),
 			'discountPercentage' => $this->discountPercentage,
 			'discountPeriod' => $this->discountPeriod,
-			'comment' => CommentResource::collection($this->comment)
+			'comments' => CommentResource::collection($this->comments)
 		];
 	}
 }

@@ -21,8 +21,8 @@ class StrapDetails extends JsonResource
 	 */
 	public function toArray($request)
 	{
-		$info = $this->description;
-		$description = $info->decription;
+		$info = json_decode($this->description);
+		$description = $info->description;
 		$properties = $info->properties;
 
 		return [
@@ -30,12 +30,12 @@ class StrapDetails extends JsonResource
 			'description' => $description,
 			'properties' => $properties,
 			'images' => PhotoResource::collection($this->photos),
-			'add_to_basket_url' => route('product.addToBasket', $this->id),
+			'add_to_basket_url' => route('shopping.basket', $this->id),
 			'specs' => [
 				'full' => [
 					'name' => json_decode($this->name)->fa,
 					'brand' => new BrandResource($this->brand),
-					'warranty' => new WarrantyResource($this->warranty),
+					'warranty' =>  WarrantyResource::collection($this->warranty),
 					'category' => new CategoryResource($this->category),
 					'gender' => $this->getGender(),
 				],
@@ -48,7 +48,7 @@ class StrapDetails extends JsonResource
 			'tags' => TagResource::collection($this->tags),
 			'discountPercentage' => $this->discountPercentage,
 			'discountPeriod' => $this->discountPeriod,
-			'comment' => CommentResource::collection($this->comment),
+			'comments' => CommentResource::collection($this->comments),
 		];
 	}
 }

@@ -30,12 +30,13 @@ class LensDetails extends JsonResource
 			'description' => $description,
 			'properties' => $properties,
 			'images' => PhotoResource::collection($this->photos),
-			'add_to_basket_url' => route('product.addToBasket', $this->id),
+            'online_test_url' => route('product.test', $this->id),
+            'add_to_basket_url' => route('shopping.basket', $this->id),
 			'specs' => [
 				"full" => [
 					'name' => json_decode($this->name)->fa,
 					'brand' => new BrandResource($this->brand),
-					'warranty' => new WarrantyResource($this->warranty),
+					'warranty' => WarrantyResource::collection($this->warranty),
 					'category' => new CategoryResource($this->category),
 					'gender' => $this->getGender(),
 				],
@@ -52,7 +53,7 @@ class LensDetails extends JsonResource
 			'discountPercentage' => $this->discountPercentage,
 			'discountPeriod' => $this->discountPeriod,
 			'productionDate' => $this->productionDate,
-			'comment' => CommentResource::collection($this->comment),
+			'comments' => CommentResource::collection($this->comments),
 		];
 	}
 }

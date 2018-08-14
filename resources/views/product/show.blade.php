@@ -1,10 +1,6 @@
 @extends('layouts.layout')
 
 @section('contents')
-    {{--@php--}}
-    {{--dd($product);--}}
-    {{--exit;--}}
-    {{--@endphp--}}
     <div class="container rtl ">
         <div class="card">
             <div class="container-fliud">

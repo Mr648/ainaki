@@ -19,6 +19,9 @@ class CarryingCaseSeeder extends Seeder
 				$carryingCase->comments()->save(factory(App\Comment::class)->make());
 			for ($i = 0; $i < $len / 2; $i++)
 				$carryingCase->tags()->save(factory(App\Tag::class)->make());
-		});
+
+			$carryingCase->warranty()->save(factory(App\Warranty::class)->make());
+
+        });
 	}
 }

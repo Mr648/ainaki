@@ -60,4 +60,13 @@ class Strap extends Model
     {
         return $this->morphMany('App\Favorite', 'favoriteable');
     }
+
+    public function getGender(){
+        switch ($this->gender){
+            case 0: return 'آقایان';
+            case 1: return 'بانوان';
+            case 2: return 'کودکان';
+            case 3: return 'آقایان و بانوان';
+        }
+    }
 }
