@@ -70,12 +70,13 @@ class ProductController extends Controller
 		return view('product.index', compact('title','products'));
 	}
 
-	public function show(Request $request, $id)
-	{
+    public function show(Request $request, $id)
+    {
 //       [
-		//
+        //
 
-		//],
+        //],
+
 
 //]
 //		$title = 'لیست محصولات';

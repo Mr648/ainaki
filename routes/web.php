@@ -83,6 +83,24 @@ Route::prefix('shopping')->group(function () {
 });
 
 
+Route::get('/products', 'ProductController@index')->name('product.index');
+
+Route::get('/products/{id}', 'ProductController@show')->name('product.show');
+Route::get('/products/shop/{id}', 'ProductController@shop')->name('product.shop');
+Route::get('/products/online/test/{id}', 'ProductController@onlineTest')->name('product.test');
+
+
+Route::get('/products/{category}/{filters}', 'ProductController@listProducts');
+
+
+Route::get('/test/new/api', function () {
+
+});
+
+Route::get('/design/test/collapse', function () {
+return view('design/collapse');
+});
+
 
 //Route::get('/products/{category}/{filters}', 'ProductController@listProducts');
 

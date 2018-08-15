@@ -323,10 +323,11 @@
         </div>
     </div>
 </div>
+<div id="collapse1" class="panel-collapse collapse">
+    <ul class="list-group">
+        <li class="list-group-item"><a class="list-item" href="#">Adidas</a></li>
+        <li class="list-group-item"><a class="list-item" href="#">RayBan</a></li>
+        <li class="list-group-item"><a class="list-item" href="#">Komono</a></li>
+    </ul>
 
-
-<script>
-    $('.collapse').on('show.bs.collapse', function () {
-        $('.collapse.in').collapse('hide');
-    });
-</script>
+</div>
