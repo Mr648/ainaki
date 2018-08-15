@@ -191,10 +191,12 @@
                         <div class="card-deck col-12">
                             @endif
                             <div class="card border text-center hovereffect " style=" height: 350px">
-                                <img class="card-img-top" src="/{{$product->photos[0]->path}}" alt="Card image">
+                                <img class="card-img img-fluid" src="/{{$product->photos[0]->path}}" alt="Card image">
                                 <div class="overlay">
-                                    <a href="{{route('product.test', $product->id)}}" class="btn btn-primary info">تست انلاین</a>
-                                    <a href="{{route('product.show', ['category'=>$product, 'id'=>$product->id])}}" class="btn btn-primary info">مشاهده محصول</a>
+                                    <a href="{{route('product.test', $product->id)}}" class="btn btn-primary info">تست
+                                        انلاین</a>
+                                    <a href="{{route('product.show', ['category'=>$product, 'id'=>$product->id])}}"
+                                       class="btn btn-primary info">مشاهده محصول</a>
                                 </div>
                                 <div class="card-body list-page">
                                     <h6 class="card-title text-center">{{$product->name}}</h6>
@@ -211,6 +213,19 @@
     <br>
     <br>
 </div>
+<div class="container-fluid">
+    <div class="card-columns">
+        @foreach($products as $product )
+            <div class="card">
+                <img alt="Card image cap" class="card-img-top img-fluid" src="https://www.fillmurray.com/420/200">
+                <div class="card-block">
+                    <h4 class="card-title">Boating is the new canoeing</h4>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        @endforeach
+    </div>
 </div>
 
 
