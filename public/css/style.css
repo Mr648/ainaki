@@ -176,6 +176,7 @@ form {
     .dropdown-menu-large {
         margin-left: 0 ;
         margin-right: 0 ;
+
     }
     .dropdown-menu-large > li {
         margin-bottom: 30px;
@@ -206,6 +207,7 @@ form {
     .card-columns {
         column-count: 2;
     }
+
 }
 
 @media screen and (max-width: 567px) {

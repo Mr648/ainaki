@@ -78,7 +78,7 @@
 
 <nav class="navbar navbar-expand-md rtl">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"><i class="fa fa-bars fa-2x" style="color: #595858"></i></span>
         </button>
 
 

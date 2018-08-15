@@ -13,25 +13,24 @@
     {{--FONTAWESOME--}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font_awesome.css') }}">
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/popper.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.slim.min.js') }}"></script>
-    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-
 
 
     <!-- Styles -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/devicon.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/devicon-colors.css') }}">
+    @yield('styles')
+
 
     {{--Bootstrap--}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap/rtl/bootstrap.min.css') }}">
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.slim.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/ainaki.js') }}"></script>
-
-
 
 
 </head>
@@ -43,6 +42,6 @@
 
 
 
-
+@yield('scripts')
 </body>
 </html>
