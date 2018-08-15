@@ -1,7 +1,7 @@
 <div class="container-fluid rtl">
 
     <div class="wrapper row">
-        <div class="col-md-3 col-sm-12" >
+        <div class="col-md-3 col-sm-12">
             <div class="card border" style="background-color: #f8f9fa!important">
                 <h5 class="text-left" style="margin-right: -30px">فیلتر بر اساس</h5>
 
@@ -174,6 +174,25 @@
                         </div>
 
                     </div>
+
+                    <br>
+                    <div class="panel panel-default ">
+                        <div class="panel-heading">
+                               <h6 class="panel-title">
+                                   قیمت
+                               </h6>
+                        </div>
+                        <div class="panel-body">
+                            <input id="ex2" type="text" class="ltr" value="" data-slider-min="50000" data-slider-max="1000000" data-slider-step="5000" data-slider-value="[50000,500000]"/>
+                            <p>
+                                <span>از </span>
+                                <span class="text-info" id="priceFrom"></span>
+                                <span>تا</span>
+                                <span class="text-info" id="priceTo"></span>
+                            </p>
+                            <a href="#" class="btn btn-primary w-100"><i class="fa fa-filter"></i> اعمال محدوده قیمت</a>
+                        </div>
+                    </div>
                 </div>
 
 
@@ -222,6 +241,11 @@
     <br>
 </div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-12">
 
-
+        </div>
+    </div>
+</div>
 
