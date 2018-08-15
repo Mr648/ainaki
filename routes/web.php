@@ -46,7 +46,8 @@ Route::get('/', function () {
 });
 
 Route::get('/design', function () {
-    return view('design.index');
+	$products = \App\EyeGlass::paginate(10);
+    return view('design.index',compact('products'));
 });
 
 
