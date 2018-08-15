@@ -174,6 +174,36 @@
                         </div>
 
                     </div>
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-heading border">
+                            <h6 class="panel-title">
+                                <a class="panel-title"
+                                   href="#collapse9">قیمت</a>
+
+                            </h6>
+
+                        </div>
+                        <div data-role="page">
+
+
+
+
+                            {{--<div data-role="main" class="ui-content">--}}
+                                {{--<form method="post" action="/action_page_post.php">--}}
+                                    {{--<div data-role="rangeslider">--}}
+                                        {{--<label for="price-min">Price:</label>--}}
+
+                                        {{--<label for="price-max">Price:</label>--}}
+                                        {{--<input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">--}}
+                                        {{--<input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">--}}
+                                    {{--</div>--}}
+                                    {{--<input type="submit" data-inline="true" value="Submit">--}}
+
+                                {{--</form>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                 </div>
 
 
@@ -229,13 +259,17 @@
 
         <div class="container">
 
-                <ul class="pagination">
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                </ul>
+            <ul class="pagination " >
+
+                <li class="page-item "><a class="page-link" href="#"> <i class="fa fa-angle-right"></i> </a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                <li class="page-item "><a class="page-link" href="#"> <i class="fa fa-angle-left"></i> </a></li>
+
+            </ul>
 
         </div>
     </div>
