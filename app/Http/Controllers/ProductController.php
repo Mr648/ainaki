@@ -66,7 +66,7 @@ class ProductController extends Controller
 	{
 		$title = 'لیست محصولات';
 //        $products = \App\Http\Resources\EyeGlassDetails::collection(\App\EyeGlass::simplePaginate(15));
-        $products = \App\EyeGlass::paginate(10);
+        $products = \App\EyeGlass::paginate(5);
 		return view('product.index', compact('title','products'));
 	}
 

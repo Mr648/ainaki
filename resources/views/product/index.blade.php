@@ -4,9 +4,7 @@
     @include ('layouts.productListPage')
 
 
-    <div class="container">
-        {{$products->links()}}
-    </div>
+
 @endsection
 
 @section('scripts')

@@ -1,8 +1,8 @@
 <div class="container-fluid rtl">
 
     <div class="wrapper row">
-        <div class="col-md-3 col-sm-12">
-            <div class="card border">
+        <div class="col-md-3 col-sm-12" >
+            <div class="card border" style="background-color: #f8f9fa!important">
                 <h5 class="text-left" style="margin-right: -30px">فیلتر بر اساس</h5>
 
 
@@ -181,36 +181,45 @@
             <br>
         </div>
 
-        <div class="col-md-9 col-sm-12">
+        <div class="col-md-9 col-sm-12 text-center">
             @php
                 $count = 0;
             @endphp
             <div class="row">
-                @foreach($products as $product)
-                    @if($count++ % 3 == 0)
-                        <div class="card-deck col-12">
-                            @endif
-                            <div class="card border text-center hovereffect " style=" height: 350px">
+                <div class="card-deck col-12">
+                    @foreach($products as $product)
+                        {{--@if($count++ % 3 == 0)--}}
+                        {{--@endif--}}
+                        <div class="col-sm-6 col-md-6 col-lg-4">
+                            <div class="card border text-center hovereffect mb-3 " style="height: 350px">
                                 <img class="card-img-top" src="/{{$product->photos[0]->path}}" alt="Card image">
                                 <div class="overlay">
-                                    <a href="{{route('product.test', $product->id)}}" class="btn btn-primary info">تست انلاین</a>
-                                    <a href="{{route('product.show', ['category'=>$product, 'id'=>$product->id])}}" class="btn btn-primary info">مشاهده محصول</a>
+                                    <a href="{{route('product.test', $product->id)}}" class="btn btn-primary info">تست
+                                        انلاین</a>
+                                    <a href="{{route('product.show', ['category'=>$product, 'id'=>$product->id])}}"
+                                       class="btn btn-primary info">مشاهده محصول</a>
                                 </div>
                                 <div class="card-body list-page">
                                     <h6 class="card-title text-center">{{$product->name}}</h6>
                                     <p class="card-text text-center">{{$product->price}}</p>
                                 </div>
                             </div>
-                            @if($count % 3 == 0)
                         </div>
-                    @endif
-                @endforeach
+                        {{--                            @if($count % 3 == 0)--}}
+                        {{--@endif--}}
+                    @endforeach
+                </div>
+            </div>
+            <div class="w-100 d-flex justify-content-center my-5">
+                <div class=" rtl align-self-center" style="position: absolute; bottom: 0">
+                    {{$products->links()}}
+                </div>
             </div>
         </div>
+
     </div>
     <br>
     <br>
-</div>
 </div>
 
 
