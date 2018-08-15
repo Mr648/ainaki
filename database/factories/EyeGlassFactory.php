@@ -7,10 +7,9 @@ $factory->define(App\EyeGlass::class, function (Faker $faker) {
     $id = random_int(0,10000);
     return [
         'name' => '{"en":"EyeGlass #' . $id . '","fa":"عینک #' . $id . '"}',
-        'description' => '{"description":"Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, Sample Description, ","properties":["Property #1","Property #2","Property #3","Property #4"]}',
+        'description' => '{"description":"Sample Description","properties":["Property #1","Property #2","Property #3","Property #4"]}',
         'brand_id' => rand(1,10),
         'category_id' =>rand(1,10),
-        'warranty_id' => rand(1,10),
         'bridgeLength' => random_int(1, 10),
         'frameColor' => str_random(7),
         'frameColorType' => str_random(7),

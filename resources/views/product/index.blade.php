@@ -3,6 +3,8 @@
 
     @include ('layouts.productListPage')
 
+
+
 @endsection
 
 @section('scripts')

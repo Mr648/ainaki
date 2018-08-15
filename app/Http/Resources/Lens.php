@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Warranty extends JsonResource
+class Lens extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,9 +14,13 @@ class Warranty extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-            'company'=>$this->company,
-            'period'=>$this->period,
-        ];
+        return[
+					'id' => $this->id,
+					'name' => $this->name,
+					'price' => $this->price,
+					'photos' => PhotoResource::collection($this->photos),
+					'created_at' => $this->created_at,
+					'updated_at' => $this->updated_at,
+				];
     }
 }

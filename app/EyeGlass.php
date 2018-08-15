@@ -13,7 +13,6 @@ class EyeGlass extends Model
     protected $fillable = [
         'id',
         'brand_id',
-        'warranty_id',
         'category_id',
         'name',
         'price',
@@ -40,7 +39,7 @@ class EyeGlass extends Model
 
     public function warranty()
     {
-        return $this->morphOne('App\Warranty', 'warrantyable');
+        return $this->morphMany('App\Warranty', 'warrantyable');
     }
 
     public function category()

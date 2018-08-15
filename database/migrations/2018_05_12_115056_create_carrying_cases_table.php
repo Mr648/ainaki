@@ -20,7 +20,6 @@ class CreateCarryingCasesTable extends Migration
              * and in the Accessory class we should define different table for it.
              */
             $table->integer('brand_id')->unsigned()->nullable();
-            $table->integer('warranty_id')->unsigned()->nullable();
             $table->integer('category_id')->unsigned()->nullable();
             $table->tinyInteger('gender')->nullable();
             $table->string('name')->nullable();

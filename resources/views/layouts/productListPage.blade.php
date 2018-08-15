@@ -1,8 +1,8 @@
 <div class="container-fluid rtl">
 
     <div class="wrapper row">
-        <div class="col-md-3 col-sm-12">
-            <div class="card border">
+        <div class="col-md-3 col-sm-12" >
+            <div class="card border" style="background-color: #f8f9fa!important">
                 <h5 class="text-left" style="margin-right: -30px">فیلتر بر اساس</h5>
 
 
@@ -174,36 +174,6 @@
                         </div>
 
                     </div>
-                    <br>
-                    <div class="panel panel-default">
-                        <div class="panel-heading border">
-                            <h6 class="panel-title">
-                                <a class="panel-title"
-                                   href="#collapse9">قیمت</a>
-
-                            </h6>
-
-                        </div>
-                        <div data-role="page">
-
-
-
-
-                            {{--<div data-role="main" class="ui-content">--}}
-                                {{--<form method="post" action="/action_page_post.php">--}}
-                                    {{--<div data-role="rangeslider">--}}
-                                        {{--<label for="price-min">Price:</label>--}}
-
-                                        {{--<label for="price-max">Price:</label>--}}
-                                        {{--<input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">--}}
-                                        {{--<input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">--}}
-                                    {{--</div>--}}
-                                    {{--<input type="submit" data-inline="true" value="Submit">--}}
-
-                                {{--</form>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
                 </div>
 
 
@@ -211,70 +181,47 @@
             <br>
         </div>
 
-        <div class=" col-md-9 col-sm-12">
-            <div class="container">
-                <div class="card-deck ">
-                    <div class="card border text-center hovereffect" style="width:400px ; height: 350px">
-                        <img class="card-img-top" src="images/g5.png" alt="Card image">
-                        <div class="overlay">
-                            <a href="#" class="btn btn-primary info">تست انلاین</a>
-                            <a href="#" class="btn btn-primary info">مشاهده محصول</a>
+        <div class="col-md-9 col-sm-12 text-center">
+            @php
+                $count = 0;
+            @endphp
+            <div class="row">
+                <div class="card-deck col-12">
+                    @foreach($products as $product)
+                        {{--@if($count++ % 3 == 0)--}}
+                        {{--@endif--}}
+                        <div class="col-sm-6 col-md-6 col-lg-4">
+                            <div class="card border text-center hovereffect mb-3 " style="height: 350px">
+                                <img class="card-img-top" src="/{{$product->photos[0]->path}}" alt="Card image">
+                                <div class="overlay">
+                                    <a href="{{route('product.test', $product->id)}}" class="btn btn-primary info">تست
+                                        انلاین</a>
+                                    <a href="{{route('product.show', ['category'=>$product, 'id'=>$product->id])}}"
+                                       class="btn btn-primary info">مشاهده محصول</a>
+                                </div>
+                                <div class="card-body list-page">
+                                    <h6 class="card-title text-center">{{$product->name}}</h6>
+                                    <p class="card-text text-center">{{$product->price}}</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-body list-page">
-                            <h6 class="card-title text-center">عینک طبی اسپای 145</h6>
-                            <p class="card-text text-center">290000 تومان</p>
-
-                        </div>
-                    </div>
-                    <div class="card border text-center hovereffect" style="width:400px ; height: 350px">
-                        <img class="card-img-top" src="images/g2.png" alt="Card image" style="width:100%">
-                        <div class="overlay">
-                            <a href="#" class="btn btn-primary info">تست انلاین</a>
-                            <a href="#" class="btn btn-primary info">مشاهده محصول</a>
-                        </div>
-                        <div class="card-body list-page">
-                            <h6 class="card-title">عینک افتابی کومونو</h6>
-                            <p class="card-text">800000 تومان</p>
-
-                        </div>
-                    </div>
-                    <div class="card border text-center hovereffect" style="width:400px ; height: 350px">
-                        <img class="card-img-top" src="images/g3.png" alt="Card image" style="width:100%">
-                        <div class="overlay">
-                            <a href="#" class="btn btn-primary info">تست انلاین</a>
-                            <a href="#" class="btn btn-primary info">مشاهده محصول</a>
-                        </div>
-                        <div class="card-body list-page">
-                            <h6 class="card-title">عینک ری بن</h6>
-                            <p class="card-text">958000 تومان</p>
-
-                        </div>
-                    </div>
-
+                        {{--                            @if($count % 3 == 0)--}}
+                        {{--@endif--}}
+                    @endforeach
                 </div>
             </div>
-            <br>
-            <br>
+            <div class="w-100 d-flex justify-content-center my-5">
+                <div class=" rtl align-self-center" style="position: absolute; bottom: 0">
+                    {{$products->links()}}
+                </div>
+            </div>
         </div>
 
-        <div class="container">
-
-            <ul class="pagination " >
-
-                <li class="page-item "><a class="page-link" href="#"> <i class="fa fa-angle-right"></i> </a></li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                <li class="page-item "><a class="page-link" href="#"> <i class="fa fa-angle-left"></i> </a></li>
-
-            </ul>
-
-        </div>
     </div>
-
-
+    <br>
+    <br>
 </div>
+
+
 
 
