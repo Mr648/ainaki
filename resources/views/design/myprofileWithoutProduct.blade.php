@@ -3,7 +3,7 @@
         <div class="col-md-2 col-sm-12">
             <ul class="nav nav-tabs nav-tabs--vertical nav-tabs--right" role="navigation">
                 <li class="nav-item">
-                    <a href="#myprofile" class="nav-link active" data-toggle="tab" role="tab" aria-controls="myprofile"><i
+                    <a href="#myprofile" class="nav-link " data-toggle="tab" role="tab" aria-controls="myprofile"><i
                                 class="fa fa-user  fa-2x  icons"></i> پروفایل من </a>
                 </li>
                 <li class="nav-item">

@@ -93,7 +93,6 @@ class ProductController extends Controller
 
 		//],
 
-
 //]
 //		$title = 'لیست محصولات';
 //		$product = new EyeGlassDetails(EyeGlass::find($id));

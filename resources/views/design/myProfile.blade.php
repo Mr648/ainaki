@@ -1,10 +1,11 @@
 <div class="container-fluid mt-2 rtl h-min-768 py-5">
     <div class="row">
-        <div class="col-md-2 col-sm-12">
-            <ul class="nav nav-tabs nav-tabs--vertical nav-tabs--right" role="navigation">
-                <li class="nav-item">
-                    <a href="#myprofile" class="nav-link active" data-toggle="tab" role="tab" aria-controls="myprofile"><i
-                                class="fa fa-user  fa-2x  icons"></i> پروفایل من </a>
+        <div class="col-md-3 col-sm-12 col-xs-12">
+
+            <ul class="nav nav-tabs nav-tabs--vertical nav-tabs--right nav-def" role="navigation">
+                <li class="nav-item ">
+                <a href="#myprofile" class="nav-link active" data-toggle="tab" role="tab" aria-controls="myprofile"><i
+                            class="fa fa-user  fa-2x  icons"></i> پروفایل من </a>
                 </li>
                 <li class="nav-item">
                     <a href="#edit" class="nav-link" data-toggle="tab" role="tab" aria-controls="edit"><i
@@ -31,7 +32,7 @@
             </ul>
 
         </div>
-        <div class="tab-content col-md-10 col-sm-12 w-100">
+        <div class="tab-content col-md-9 col-sm-12 w-100">
             <div class="tab-pane  fade show active " id="myprofile" role="tabpanel">
                 <h3 class="titr">پروفایل من</h3>
                 {{--<p>Aenean sed lacus id mi scelerisque tristique. Nunc sed ex sed turpis fringilla aliquet in in neque. Praesent posuere, neque rhoncus sollicitudin fermentum, erat ligula volutpat dui, nec dapibus ligula lorem ac mauris. Etiam et leo venenatis purus pharetra dictum.</p>--}}
@@ -179,12 +180,10 @@
                             <td>ainaki#1</td>
                             <td>290000</td>
                             <td>موفق</td>
-                            <td data-toggle="collapse" data-target="#accordion" class="clickable">descript</td>
+                            <td data-toggle="collapse" data-target="#accordion" class="clickable">descript
+                                <div id="accordion" class="collapse">Hidden by default</div></td>
                         </tr>
-                        <tr>
-                            <td colspan="3">
-                                <div id="accordion" class="collapse">Hidden by default</div>
-                            </td>
+
                         </tr>
                         <tr>
                             <td>2</td>
@@ -322,12 +321,4 @@
             </div>
         </div>
     </div>
-</div>
-<div id="collapse1" class="panel-collapse collapse">
-    <ul class="list-group">
-        <li class="list-group-item"><a class="list-item" href="#">Adidas</a></li>
-        <li class="list-group-item"><a class="list-item" href="#">RayBan</a></li>
-        <li class="list-group-item"><a class="list-item" href="#">Komono</a></li>
-    </ul>
-
 </div>

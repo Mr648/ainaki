@@ -81,10 +81,11 @@
 }
 .panel-title:hover{
     color: #921a48;
+    text-decoration: none;
 
 }
 .panel{
-    margin-right: -30px;
+    /*margin-right: -30px;*/
 }
 
 .panel-heading  a:before {
