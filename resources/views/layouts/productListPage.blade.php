@@ -117,7 +117,6 @@
                             <h6 class="panel-title">
                                 <a data-toggle="collapse" class="panel-title" data-parent="#accordion"
                                    href="#collapse6">اندازه فریم</a>
-
                             </h6>
 
                         </div>
@@ -196,7 +195,7 @@
                                 <div class="overlay">
                                     <a href="{{route('product.test', $product->id)}}" class="btn btn-primary info">تست
                                         انلاین</a>
-                                    <a href="{{route('product.show', ['category'=>$product, 'id'=>$product->id])}}"
+                                    <a href="{{route('product.show', ['category'=> $category, 'id'=>$product->id])}}"
                                        class="btn btn-primary info">مشاهده محصول</a>
                                 </div>
                                 <div class="card-body list-page">
