@@ -21,6 +21,8 @@ return [
 		'brand' => 'برند',
 		'warranty' => 'گارانتی',
 		'weight' => 'وزن',
+		'suitable_for' => 'مناسب برای',
+
 	],
 	'frame' => [
 		'bridge_length' => 'طول پل',
@@ -29,6 +31,11 @@ return [
 		'width' => 'عرض',
 		'handle_length' => 'طول دسته',
 		'shape' => 'شکل'
+	],
+	'strap' => [
+		'color' => 'رنگ',
+		'length' => 'طول',
+		'material' => 'جنس'
 	],
 	'lens' => [
 		'color' => 'رنگ',
@@ -45,6 +52,7 @@ return [
 		'discount_period' => 'مدت تخفیف'
 	],
 	'frame_key' => 'مشخصات فریم',
+	'strap_key' => 'مشخصات بند عینک',
 	'full_key' => 'مشخصات کلی',
 	'lens_key' => 'مشخصات عدسی',
 	'other_key' => 'سایر مشخصات',

@@ -5,7 +5,8 @@
 
     {{--@include ('layouts.infocards')--}}
     {{--@include ('layouts.text')--}}
-    @include('design.FullmyProfile')
+    @include('design.showproduct')
+{{--    @include('design.FullmyProfile')--}}
 
     {{--@php--}}
         {{--$products = \App\EyeGlass::paginate(10);--}}

@@ -117,6 +117,7 @@
                             <h6 class="panel-title">
                                 <a data-toggle="collapse" class="panel-title" data-parent="#accordion"
                                    href="#collapse6">اندازه فریم</a>
+
                             </h6>
 
                         </div>

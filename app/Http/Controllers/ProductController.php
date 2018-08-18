@@ -102,9 +102,9 @@ class ProductController extends Controller
 
 		$title = 'لیست محصولات';
 		$product = $this->getProductType($category, $id);
-		return $product;
-//		$product = json_decode(json_encode($product->jsonSerialize()));
-//		return view('product.show', compact('title', 'product'));
+//		return $product;
+		$product = json_decode(json_encode($product->jsonSerialize()));
+		return view('product.show', compact('title', 'product'));
 
 	}
 
