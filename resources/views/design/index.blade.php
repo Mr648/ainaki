@@ -1,16 +1,17 @@
 @extends ('layouts.designer')
 @section('content')
+    @include ('layouts.showproduct')
     {{--@include ('layouts.slider')--}}
     {{--@include ('layouts.cards')--}}
 
     {{--@include ('layouts.infocards')--}}
     {{--@include ('layouts.text')--}}
-{{--    @include('design.FullmyProfile')--}}
+{{--        @include('design.UserProfile')--}}
 
-    @php
-        $products = \App\EyeGlass::paginate(10);
-    @endphp
-    @include('layouts.productListPage')
+    {{--@php--}}
+        {{--$products = \App\EyeGlass::paginate(10);--}}
+    {{--@endphp--}}
+    {{--@include('layouts.productListPage')--}}
 
 
 @endsection
@@ -21,19 +22,22 @@
 
     <script>
 
-        $(document).ready(function(){
-var $slider = $("#ex2");
+        $(document).ready(function () {
+            var $slider = $("#ex2");
             $("#priceFrom").text($slider.data('slider-min'));
             $("#priceTo").text($slider.data('slider-max'));
 
             $slider.slider({
                 tooltip: 'hide',
-            }).on("slide", function(slideEvt) {
-                var values = (slideEvt.value+"").split(',');
+            }).on("slide", function (slideEvt) {
+                var values = (slideEvt.value + "").split(',');
                 $("#priceFrom").text(values[0]);
                 $("#priceTo").text(values[1]);
             });
+//            $("div.slider-selection").removeClass("slider-selection").addClass("slider-track-middle");
+            $("div.slider-selection").removeClass("slider-selection").addClass("slider-track");
 
+            $("div.slider-track-low,div.slider-track-high").addClass("slider-tracker-bgcolor");
             $('[data-toggle="tooltip"]').tooltip();
 
             $('.panel-collapse').on('show.bs.collapse', function () {
