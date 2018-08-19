@@ -111,4 +111,12 @@
     }
 }
 
+.rate{
+   color: yellow;
+}
 
+a.like:hover{
+
+    background-color: #921a48;
+color: white !important;
+}

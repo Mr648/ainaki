@@ -78,19 +78,8 @@
                                                 <i class="fa  fa-chevron-left text-black-50 "></i>
                                             </a>
 
-                                            {{--<a class="carousel-control-prev" href="#demo" data-slide="prev">--}}
-                                                {{--<span class="carousel-control-prev-icon"></span>--}}
-                                            {{--</a>--}}
-                                            {{--<a class="carousel-control-next" href="#demo" data-slide="next">--}}
-                                                {{--<span class="carousel-control-next-icon"></span>--}}
-                                            {{--</a>--}}
                                         </div>
                                     </div>
-
-                                    <!-- Modal footer -->
-                                    {{--<div class="modal-footer">--}}
-                                        {{--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--}}
-                                    {{--</div>--}}
 
                                 </div>
                             </div>

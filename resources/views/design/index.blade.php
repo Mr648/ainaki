@@ -1,6 +1,6 @@
 @extends ('layouts.designer')
 @section('content')
-    @include ('layouts.showproduct')
+{{--    @include ('layouts.showproduct')--}}
     {{--@include ('layouts.slider')--}}
     {{--@include ('layouts.cards')--}}
 
@@ -8,10 +8,10 @@
     {{--@include ('layouts.text')--}}
 {{--        @include('design.UserProfile')--}}
 
-    {{--@php--}}
-        {{--$products = \App\EyeGlass::paginate(10);--}}
-    {{--@endphp--}}
-    {{--@include('layouts.productListPage')--}}
+    @php
+        $products = \App\EyeGlass::paginate(10);
+    @endphp
+    @include('layouts.productListPage')
 
 
 @endsection
@@ -48,6 +48,7 @@
         });
 
     </script>
+
 @endsection
 
 
