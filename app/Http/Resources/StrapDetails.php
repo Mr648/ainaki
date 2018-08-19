@@ -37,7 +37,7 @@ class StrapDetails extends JsonResource
 					'brand' => new BrandResource($this->brand),
 					'warranty' =>  WarrantyResource::collection($this->warranty),
 					'category' => new CategoryResource($this->category),
-					'gender' => $this->getGender(),
+					'suitable_for' => $this->getGender(),
 				],
 				"strap" => [
 					'color' => $this->color,

@@ -1,6 +1,7 @@
 @extends('layouts.layout')
 @section('contents')
 
+
     @include ('layouts.productListPage')
 
 

@@ -2,24 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\CarryingCase;
 use App\EyeGlass;
-
-use App\Http\Resources\CleanerDetails as CleanerResource;
-use App\Http\Resources\EyeGlass as EyeGlassResource;
-use App\Http\Resources\EyeGlassCollection;
-use App\Http\Resources\EyeGlassDetails;
-use Illuminate\Http\Request;
-use App\Comment;
-use App\Favorite;
-use App\Photo;
+use App\Lens;
+use App\Strap;
 use App\Cleaner;
 
+use App\Http\Resources\CarryingCaseCollection;
+use App\Http\Resources\CleanerCollection;
+use App\Http\Resources\StrapCollection;
+use App\Http\Resources\LensCollection;
+use App\Http\Resources\EyeGlassCollection;
 
-define('EYEGLASS', '101');
-define('STRAP', '102');
-define('LENS', '103');
-define('CARRYING_CASE', '104');
-define('CLEANER', '105');
+use App\Http\Resources\CleanerDetails as CleanerResource;
+use App\Http\Resources\EyeGlassDetails as EyeGlassResource;
+use App\Http\Resources\LensDetails as LensResource;
+use App\Http\Resources\StrapDetails as StrapResource;
+use App\Http\Resources\CarryingCaseDetails as CarryingCaseResource;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+
+
+define('EYEGLASS', 'eyeglass');
+define('STRAP', 'strap');
+define('LENS', 'lens');
+define('CARRYING_CASE', 'carrying_case');
+define('CLEANER', 'cleaner');
 
 
 class ProductController extends Controller
@@ -30,47 +39,54 @@ class ProductController extends Controller
 	{
 	}
 
-	private function getProductType($productType)
+	private function getProductType($productType, $id)
 	{
 		switch ($productType) {
 			case EYEGLASS :
-				return 'App\EyeGlass';
+				return new EyeGlassResource(EyeGlass::findOrFail($id));
 			case STRAP :
-				return 'App\Strap';
+				return new StrapResource(Strap::findOrFail($id));
 			case LENS :
-				return 'App\Lens';
+				return new LensResource(Lens::findOrFail($id));
 			case CARRYING_CASE :
-				return 'App\CarryingCase';
+				return new CarryingCaseResource(CarryingCase::findOrFail($id));
 			case CLEANER :
-				return 'App\Cleaner';
+				return new CleanerResource(Cleaner::findOrFail($id));
 		}
 	}
 
-	private function getAllProductsFor($productType)
+
+	private function getAllProductsFor($productType, $paginate)
 	{
+		$productType = strtolower($productType);
 		switch ($productType) {
 			case EYEGLASS :
-				return new EyeGlassCollection(EyeGlass::paginate());
+				return new EyeGlassCollection(EyeGlass::paginate($paginate));
 			case STRAP :
-				return 'App\Strap';
+				return new StrapCollection(Strap::paginate($paginate));
 			case LENS :
-				return 'App\Lens';
+				return new LensCollection(Lens::paginate($paginate));
 			case CARRYING_CASE :
-				return 'App\CarryingCase';
+				return new CarryingCaseCollection(CarryingCase::paginate($paginate));
 			case CLEANER :
-				return 'App\Cleaner';
+				return new CleanerCollection(Cleaner::paginate($paginate));
 		}
 	}
 
-	public function index()
+	public function index($category)
 	{
-		$title = 'لیست محصولات';
+
+		$paginate = Input::get('paginate');
+		$title = 'لیست ' . __('messages.routes.' . $category) . '‌ها';
+		if (!is_numeric($paginate)) {
+			$paginate = 12;
+		}
 //        $products = \App\Http\Resources\EyeGlassDetails::collection(\App\EyeGlass::simplePaginate(15));
-        $products = \App\EyeGlass::paginate(5);
-		return view('product.index', compact('title','products'));
+		$products = $this->getAllProductsFor($category, $paginate);
+		return view('product.index', compact('title', 'products', 'category'));
 	}
 
-	public function show(Request $request, $id)
+	public function show($category, $id)
 	{
 //       [
 		//
@@ -85,10 +101,10 @@ class ProductController extends Controller
 //		return view('product.show', compact('title', 'product'));
 
 		$title = 'لیست محصولات';
-		$product = new CleanerResource(Cleaner::findOrFail($id));
-		return $product;
-//		$product = json_decode(json_encode($product->jsonSerialize()));
-//		return view('product.show', compact('title', 'product'));
+		$product = $this->getProductType($category, $id);
+//		return $product;
+		$product = json_decode(json_encode($product->jsonSerialize()));
+		return view('product.show', compact('title', 'product'));
 
 	}
 
@@ -116,7 +132,7 @@ class ProductController extends Controller
 
 		$title = 'لیست محصولات';
 
-		return view('product.index', compact('title', 'products'));
+		return view('product.index', compact('category', 'title', 'products'));
 	}
 
 
@@ -128,9 +144,9 @@ class ProductController extends Controller
 	public function addToBasket(Request $request)
 	{
 		return response()->json([
-		    $request->product_type,
-		    $request->id,
-        ], 200);
+			$request->product_type,
+			$request->id,
+		], 200);
 	}
 
 	public function onlineTest()

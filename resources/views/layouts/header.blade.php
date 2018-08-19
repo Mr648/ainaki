@@ -1,6 +1,6 @@
 <nav class="container-fluid rtl bg-color-primary py-4 navbar-sticky-top">
     <div class="row align-content-center">
-        <a class="col-md-2 col-xs-12" href="#"><img src="images/logo.jpg" class="rounded-circle" width="96px"
+        <a class="col-md-2 col-xs-12" href="#"><img src="{{asset('images/logo.jpg')}}" class="rounded-circle" width="96px"
                                                     alt="Logo"></a>
         <div class="input-group col-md-4 col-xs-12 h-25 align-self-center">
             <input type="text" class="form-control">
@@ -76,7 +76,7 @@
 
 
 
-<nav class="navbar navbar-expand-md rtl">
+<nav class="navbar navbar-expand-md rtl bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"><i class="fa fa-bars fa-2x" style="color: #595858"></i></span>
         </button>
