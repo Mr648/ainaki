@@ -14,6 +14,11 @@
                             <div class="tab-pane active" style="height: 250px !important;" id="pic-main">
                                 <img src="{{asset("{$product->images[0]->path}")}}"/>
                             </div>
+                            <div class="tab-pane" style="height: 250px !important;" id="pic-3"><img src="/images/g3.png"/>
+                            </div>
+                            <div class="tab-pane" style="height: 250px !important;" id="pic-4"><img src="/images/g4.png"/>
+                            </div>
+
                         </div>
                         <ul class="preview-thumbnail nav nav-tabs text-center">
                             @php
@@ -36,8 +41,8 @@
 
                         <div class=" container-fluid">
 
-                            <!-- The Modal -->
-                            <div class="modal fade " id="myModal">
+                        <!-- The Modal -->
+                            <div class="modal fade " id="myModal"  >
                                 <div class="modal-dialog modal-dialog-centered modal-lg">
                                     <div class="modal-content modal-test">
 
@@ -159,14 +164,14 @@
                         </ul>
 
 
-                        <div class="action text-center">
-                            <a href="{{$product->add_to_basket_url}}" class="add-to-cart btn btn-default">افزودن به سبد
-                                خرید</a>
-                        </div>
+                    <div class="action text-center">
+                        <a href="{{$product->add_to_basket_url}}" class="add-to-cart btn btn-default">افزودن به سبد
+                            خرید</a>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
         {{-- Similar Products --}}
@@ -364,3 +369,64 @@
 @section('styles')
     <link href="{{ asset('css/showproductDEtailStyle.css') }}" rel="stylesheet">
 @endsection
+
+
+<div id="comment" class="container tab-pane fade"><br>
+    <h3>نظرات کاربران</h3>
+    <div class="card border">
+        <div class="row  ">
+
+            <div class="col-md-1">
+                <img src="/images/boy.png" alt="" class="rounded-circle" style="width:60px;">
+            </div>
+            <div class="col-md-2">
+
+                <h4>John Doe</h4>
+
+
+
+                <span class="fa fa-star rate"></span>
+                <span class="fa fa-star rate "></span>
+                <span class="fa fa-star rate"></span>
+                <span class="fa fa-star rate"></span>
+                <span class="fa fa-star rate"></span>
+                <small >2018/8/19</small>
+            </div>
+            <div class="col-md-6"></div>
+            <div class="col-md-3 rtl ">
+
+                {{--<a href=""><i id="like" class="fa fa-thumbs-up fa-2x"></i></a> <span>1256</span>--}}
+                {{--<a href=""><i id="dislike" class="fa fa-thumbs-down fa-2x"></i> </a><span>1256</span>--}}
+                <a href="#" class="btn btn-outline-primary like" style="color: #921a48;  border-color: #921a48;"><i class="fa fa-heart"></i> 1234</a>
+                <a href="#" class="btn btn-outline-primary like" style="color: #921a48 ;  border-color: #921a48;"><i class="fa fa-thumbs-down"></i> 1234</a>
+            </div>
+
+        </div>
+
+
+        <br>
+        <div class="row">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt
+                ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt
+                ut labore et dolore magna aliqua.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt
+                ut labore et dolore magna aliqua.
+                ut labore et dolore magna aliqua.</p>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="comment">اضافه کردن دیدگاه</label>
+        <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">ارسال</button>
+
+</div>
+<br>
+</div>
+
+</div>
