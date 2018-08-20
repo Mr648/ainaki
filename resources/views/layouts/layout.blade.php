@@ -18,11 +18,9 @@
     <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/ainaki.js') }}"></script>
-    <script src="{{ asset('js/ninja-slider.js') }}"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/ninja-slider.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/devicon.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/devicon-colors.css') }}">
     @yield('styles')

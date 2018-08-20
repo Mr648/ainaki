@@ -11,7 +11,7 @@ class EyeGlassSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\EyeGlass::class, 150)->create()->each(function ($eyeGlass) {
+        factory(App\EyeGlass::class, 20)->create()->each(function ($eyeGlass) {
             $len = random_int(2, 8);
             // save some photos for eyeglass
 

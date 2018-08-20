@@ -12,7 +12,7 @@ class AppUserSeeder extends Seeder
     public function run()
     {
         factory(App\AinakiUser::class, 10)->create()->each(function ($user) {
-            $user->photos()->save(factory(App\Photo::class)->make());
+            $user->photos()->save(factory(App\Photo::class)->states('avatar')->make());
         });
     }
 }
