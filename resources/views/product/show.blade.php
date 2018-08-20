@@ -1,41 +1,42 @@
 @extends('layouts.layout')
 
 @section('contents')
+
+    {{-- --}}
     <div class="container rtl ">
         <div class="card">
             <div class="container-fliud">
                 <div class="wrapper row">
                     <div class="preview col-md-5 col-sm-12">
 
+
                         <div class="preview-pic tab-content border" style="margin-bottom: 6px !important;">
-
-                            <div class="tab-pane active" id="pic-1" style="height: 250px !important; ">
-                                <img src="/images/g3.png"/>
+                            <div class="tab-pane active" style="height: 250px !important;" id="pic-main">
+                                <img src="{{asset("{$product->images[0]->path}")}}"/>
                             </div>
-
-
                         </div>
                         <ul class="preview-thumbnail nav nav-tabs text-center">
-                            <li class="active border "><a class=" border" data-toggle="modal"
-                                                          data-target="#myModal"><img
-                                            src="/images/g1.png"/></a>
-                            </li>
-                            <li class=" border"><a data-toggle="modal" data-target="#myModal"><img src="/images/g2.png"
-                                                                                                   style="margin-top: 20px"/></a>
-                            </li>
-                            <li class=" border"><a data-toggle="modal" data-target="#myModal"><img src="/images/g3.png"
-                                                                                                   style="margin-top: 20px"/></a>
-                            </li>
-                            <li class=" border"><a data-toggle="modal" data-target="#myModal"><img src="/images/g4.png"
-                                                                                                   style="margin-top: 20px"/></a>
-                            </li>
+                            @php
+                                $imageCounter = 0;
+                            @endphp
+                            @foreach($product->images as $image)
+                                <li class="border">
+                                    <a class="mouse">
+                                        <img src="{{asset("{$image->path}")}}" data-image-id="{{$imageCounter}}"
+                                             style="margin-top: 20px"/>
+                                    </a>
+                                </li>
+                                @php
+                                    $imageCounter++;
+                                @endphp
+                            @endforeach
 
                         </ul>
 
 
                         <div class=" container-fluid">
 
-                        <!-- The Modal -->
+                            <!-- The Modal -->
                             <div class="modal fade " id="myModal">
                                 <div class="modal-dialog modal-dialog-centered modal-lg">
                                     <div class="modal-content modal-test">
@@ -45,30 +46,38 @@
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         </div>
 
+
                                         <!-- Modal body -->
                                         <div class="modal-body ">
                                             <div id="demo" class="carousel slide" data-ride="carousel">
-                                                <ul class="carousel-indicators">
-                                                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
-                                                    <li data-target="#carousel" data-slide-to="1"></li>
-                                                    <li data-target="#carousel" data-slide-to="2"></li>
+                                                <ul class="carousel-indicators" id="productImagesIndicators">
+                                                    @php
+                                                        $imageCounter = 0;
+                                                    @endphp
+                                                    @foreach($product->images as $image)
+                                                        <li data-target="#carousel" data-slide-to="{{$imageCounter}}"
+                                                            class="{{$imageCounter==0?'active':''}}"></li>
+                                                        @php
+                                                            $imageCounter++;
+                                                        @endphp
+                                                    @endforeach
                                                 </ul>
-                                                <div class="carousel-inner">
-                                                    <div class="carousel-item active">
-                                                        <img src="/images/g2.png" alt="Los Angeles"
-                                                             style="height: 250px !important;">
+                                                <div class="carousel-inner" id="productImagesLarge">
+                                                    @php
+                                                        $imageCounter = 0;
+                                                    @endphp
+                                                    @foreach($product->images as $image)
+                                                        <div class="carousel-item"
+                                                             data-selected-image="{{$imageCounter}}">
+                                                            <img src="{{asset("{$image->path}")}}"
+                                                                 alt="product-image-{{$imageCounter}}"
+                                                                 style="height: 250px !important;">
+                                                        </div>
+                                                        @php
+                                                            $imageCounter++;
+                                                        @endphp
+                                                    @endforeach
 
-                                                    </div>
-                                                    <div class="carousel-item">
-                                                        <img src="/images/g3.png" alt="Chicago"
-                                                             style="height: 250px !important;">
-
-                                                    </div>
-                                                    <div class="carousel-item">
-                                                        <img src="/images/g4.png" alt="New York"
-                                                             style="height: 250px !important;">
-
-                                                    </div>
                                                 </div>
 
                                                 <!-- Left and right controls -->
@@ -85,6 +94,23 @@
                                                 {{--<a class="carousel-control-next" href="#demo" data-slide="next">--}}
                                                 {{--<span class="carousel-control-next-icon"></span>--}}
                                                 {{--</a>--}}
+                                                <script>
+                                                    $(document).ready(function () {
+                                                        var selectedImage = -1;
+                                                        $(".mouse").on('click', function () {
+                                                            selectedImage = $(this).firstChild().data('image-id');
+                                                            $("#myModal").modal("show");
+                                                        })
+                                                        ;
+                                                        $("#myModal").on('show.bs.modal', function () {
+                                                            $('.carousel-item').each(function () {
+                                                                if ()
+                                                                    });
+                                                        })
+                                                        ;
+                                                    })
+                                                    ;
+                                                </script>
                                             </div>
                                         </div>
 
@@ -142,8 +168,9 @@
             </div>
         </div>
 
-        <h3 class="similar-product">محصولات مشابه</h3>
 
+        {{-- Similar Products --}}
+        <h3 class="similar-product">محصولات مشابه</h3>
         <div class="card-deck rtl">
 
             <div class="card my-5 border">
@@ -232,10 +259,20 @@
         <br>
     </div>
     <br>
+    <div class="gallery">
+        @php
+            $imageCounter = 0;
+        @endphp
+        @foreach($product->images as $image)
+            <img src="{{asset("{$image->path}")}}" onclick="lightbox({{$imageCounter}})" />
+            @php
+                $imageCounter++;
+            @endphp
+        @endforeach
+
     </div>
 
-
-
+    {{-- Tabs --}}
     <div class="container border rtl tabs my-5 p-2">
 
         <!-- Nav tabs -->

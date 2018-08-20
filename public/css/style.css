@@ -271,3 +271,7 @@ form {
     background-color:#BBD6EC;
 
 }
+
+.mouse:hover{
+    cursor: pointer;
+}
