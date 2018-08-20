@@ -232,17 +232,18 @@
                 </div>
 
                 <div id="comment" class="container tab-pane fade"><br>
-                    <h3>نظرات کاربران</h3>
-                    <div class="card border">
-                    <div class="row  ">
 
-                        <div class="col-md-1">
-                            <img src="/images/boy.png" alt="" class="rounded-circle" style="width:60px;">
-                        </div>
-                        <div class="col-md-2">
+
+                    <h3>نظرات کاربران</h3>
+                    <div class="card border shadow-lg">
+                        <div class="row  ">
+
+                            <div class="col-md-1">
+                                <img src="/images/boy.png" alt="" class="rounded-circle" style="width:60px;">
+                            </div>
+                            <div class="col-md-2">
 
                                 <h4>John Doe</h4>
-
 
 
                                 <span class="fa fa-star rate"></span>
@@ -250,141 +251,180 @@
                                 <span class="fa fa-star rate"></span>
                                 <span class="fa fa-star rate"></span>
                                 <span class="fa fa-star rate"></span>
-                            <small >2018/8/19</small>
+                                <small>2018/8/19</small>
                             </div>
-                        <div class="col-md-6"></div>
+                            <div class="col-md-6"></div>
                             <div class="col-md-3 rtl ">
 
                                 {{--<a href=""><i id="like" class="fa fa-thumbs-up fa-2x"></i></a> <span>1256</span>--}}
                                 {{--<a href=""><i id="dislike" class="fa fa-thumbs-down fa-2x"></i> </a><span>1256</span>--}}
-                                <a href="#" class="btn btn-outline-primary like" style="color: #921a48;  border-color: #921a48;"><i class="fa fa-heart"></i> 1234</a>
-                                <a href="#" class="btn btn-outline-primary like" style="color: #921a48 ;  border-color: #921a48;"><i class="fa fa-thumbs-down"></i> 1234</a>
+                                <a href="#" class="btn btn-outline-primary like"
+                                   style="color: #921a48;  border-color: #921a48;"><i class="fa fa-heart"></i> 1234</a>
+                                <a href="#" class="btn btn-outline-primary like"
+                                   style="color: #921a48 ;  border-color: #921a48;"><i class="fa fa-thumbs-down"></i>
+                                    1234</a>
                             </div>
 
                         </div>
 
 
-                    <br>
+                        <br>
                         <div class="row">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt
-                                ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit, sed do eiusmod tempor
                                 incididunt
                                 ut labore et dolore magna aliqua.</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor
                                 incididunt
                                 ut labore et dolore magna aliqua.
                                 ut labore et dolore magna aliqua.</p>
 
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="comment">اضافه کردن دیدگاه</label>
-                        <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">ارسال</button>
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="stars text-left">
+                                <h4 class="rate-pro">امتیاز دادن به محصول</h4>
+                                <form>
+
+                                    <input class="star star-5" id="star-5" type="radio" name="star"/>
+
+                                    <label class="star star-5" for="star-5"></label>
+
+                                    <input class="star star-4" id="star-4" type="radio" name="star"/>
+
+                                    <label class="star star-4" for="star-4"></label>
+
+                                    <input class="star star-3" id="star-3" type="radio" name="star"/>
+
+                                    <label class="star star-3" for="star-3"></label>
+
+                                    <input class="star star-2" id="star-2" type="radio" name="star"/>
+
+                                    <label class="star star-2" for="star-2"></label>
+
+                                    <input class="star star-1" id="star-1" type="radio" name="star"/>
+
+                                    <label class="star star-1" for="star-1"></label>
+
+                                </form>
+                            </div>
+                        </div>
+
+                            <div class="form-group">
+
+                                <label for="comment">اضافه کردن دیدگاه</label>
+                                <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+                            </div>
+                            <button type="submit" class=" send btn btn-default ">ارسال</button>
 
                     </div>
-                <br>
+
                 </div>
-
+                <br>
             </div>
-            <h3 class="similar-product">محصولات مشابه</h3>
 
-            <div class="card-deck rtl">
+        </div>
+        <h3 class="similar-product">محصولات مشابه</h3>
 
-                <div class="card my-5 border">
-                    <div id="demo1" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner text-center">
-                            <div class="carousel-item active" style="height: 350px !important;">
-                                <img src="images/aftabi.png" alt="Card image" class="w-75"/>
-                            </div>
-                            <div class="carousel-item" style="height: 350px !important;">
-                                <img src="images/lense.png" alt="glass1" class="w-75">
-                            </div>
+        <div class="card-deck rtl">
+
+            <div class="card my-5 border">
+                <div id="demo1" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner text-center">
+                        <div class="carousel-item active" style="height: 350px !important;">
+                            <img src="images/aftabi.png" alt="Card image" class="w-75"/>
                         </div>
-                        <!-- Left and right controls -->
-                        <a class="carousel-control-prev" href="#demo1" data-slide="prev">
-                            <i class="fa  fa-chevron-right text-black-50"></i>
-                        </a>
-                        <a class="carousel-control-next" href="#demo1" data-slide="next">
-                            <i class="fa  fa-chevron-left text-black-50"></i>
-                        </a>
-                        <br>
-                        {{--<img class="card-img-top" src="images/8.jpg" alt="Card image" style="width:400px;">--}}
-                    </div>
-                    <div class="card-body text-center ">
-                        <h5 class="card-title">عینک افتابی کومونو 879 589</h5>
-                        <p class="card-text text-center">قیمت 290000 تومان</p>
-                        <a href="#" class="btn btn-primary" id="see-product">مشاهده محصول</a>
-                    </div>
-                </div>
-
-                <div class="card my-5 border">
-                    <div id="demo2" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner text-center">
-                            <div class="carousel-item active" style="height: 350px !important;">
-                                <img src="images/aftabi.png" alt="Card image" class="w-75"/>
-                            </div>
-                            <div class="carousel-item" style="height: 350px !important;">
-                                <img src="images/lense.png" alt="glass1" class="w-75">
-                            </div>
+                        <div class="carousel-item" style="height: 350px !important;">
+                            <img src="images/lense.png" alt="glass1" class="w-75">
                         </div>
-                        <!-- Left and right controls -->
-                        <a class="carousel-control-prev" href="#demo2" data-slide="prev">
-                            <i class="fa  fa-chevron-right text-black-50"></i>
-                        </a>
-                        <a class="carousel-control-next" href="#demo2" data-slide="next">
-                            <i class="fa  fa-chevron-left text-black-50"></i>
-                        </a>
-                        <br>
-
                     </div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">عینک افتابی کومونو 879 589</h5>
-                        <p class="card-text">قیمت 290000 تومان</p>
-                        <a href="#" class="btn btn-primary" id="see-product">مشاهده محصول</a>
-                    </div>
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#demo1" data-slide="prev">
+                        <i class="fa  fa-chevron-right text-black-50"></i>
+                    </a>
+                    <a class="carousel-control-next" href="#demo1" data-slide="next">
+                        <i class="fa  fa-chevron-left text-black-50"></i>
+                    </a>
+                    <br>
+                    {{--<img class="card-img-top" src="images/8.jpg" alt="Card image" style="width:400px;">--}}
                 </div>
+                <div class="card-body text-center ">
+                    <h5 class="card-title">عینک افتابی کومونو 879 589</h5>
+                    <p class="card-text text-center">قیمت 290000 تومان</p>
+                    <a href="#" class="btn btn-primary" id="see-product">مشاهده محصول</a>
+                </div>
+            </div>
 
-                <div class="card my-5 border">
-                    <div id="demo3" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner text-center">
-                            <div class="carousel-item active" style="height: 350px !important;">
-                                <img src="images/aftabi.png" alt="Card image" class="w-75"/>
-                            </div>
-                            <div class="carousel-item" style="height: 350px !important;">
-                                <img src="images/lense.png" alt="glass1" class="w-75">
-                            </div>
+            <div class="card my-5 border">
+                <div id="demo2" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner text-center">
+                        <div class="carousel-item active" style="height: 350px !important;">
+                            <img src="images/aftabi.png" alt="Card image" class="w-75"/>
                         </div>
-                        <!-- Left and right controls -->
-                        <a class="carousel-control-prev" href="#demo3" data-slide="prev">
-                            <i class="fa  fa-chevron-right text-black-50"></i>
-                        </a>
-                        <a class="carousel-control-next" href="#demo3" data-slide="next">
-                            <i class="fa  fa-chevron-left text-black-50"></i>
-                        </a>
-                        <br>
+                        <div class="carousel-item" style="height: 350px !important;">
+                            <img src="images/lense.png" alt="glass1" class="w-75">
+                        </div>
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#demo2" data-slide="prev">
+                        <i class="fa  fa-chevron-right text-black-50"></i>
+                    </a>
+                    <a class="carousel-control-next" href="#demo2" data-slide="next">
+                        <i class="fa  fa-chevron-left text-black-50"></i>
+                    </a>
+                    <br>
 
-                    </div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title ">عینک افتابی کومونو 879 589</h5>
-                        <p class="card-text">قیمت 290000 تومان</p>
-                        <a href="#" class="btn btn-primary" id="see-product">مشاهده محصول</a>
-                    </div>
                 </div>
-                <br>
+                <div class="card-body text-center">
+                    <h5 class="card-title">عینک افتابی کومونو 879 589</h5>
+                    <p class="card-text">قیمت 290000 تومان</p>
+                    <a href="#" class="btn btn-primary" id="see-product">مشاهده محصول</a>
+                </div>
+            </div>
 
+            <div class="card my-5 border">
+                <div id="demo3" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner text-center">
+                        <div class="carousel-item active" style="height: 350px !important;">
+                            <img src="images/aftabi.png" alt="Card image" class="w-75"/>
+                        </div>
+                        <div class="carousel-item" style="height: 350px !important;">
+                            <img src="images/lense.png" alt="glass1" class="w-75">
+                        </div>
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#demo3" data-slide="prev">
+                        <i class="fa  fa-chevron-right text-black-50"></i>
+                    </a>
+                    <a class="carousel-control-next" href="#demo3" data-slide="next">
+                        <i class="fa  fa-chevron-left text-black-50"></i>
+                    </a>
+                    <br>
+
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="card-title ">عینک افتابی کومونو 879 589</h5>
+                    <p class="card-text">قیمت 290000 تومان</p>
+                    <a href="#" class="btn btn-primary" id="see-product">مشاهده محصول</a>
+                </div>
             </div>
             <br>
+
         </div>
         <br>
+    </div>
+    <br>
 
 
-        {{--@include ('layouts.similarProduct')--}}
+    {{--@include ('layouts.similarProduct')--}}
 
-        @endsection
-        @section('styles')
-            <link href="{{ asset('css/showproductDEtailStyle.css') }}" rel="stylesheet">
+@endsection
+@section('styles')
+    <link href="{{ asset('css/showproductDEtailStyle.css') }}" rel="stylesheet">
 @endsection

@@ -35,7 +35,7 @@
                     <div class="card-body text-center">
                         <h4 class="card-title">{{json_decode($product->name)->fa}}</h4>
                         <p class="card-text text-center"> قیمت {{$product->price}} تومان</p>
-                        <a href="{{route('product.show', $product->id)}}" class="btn btn-primary" id="see-product">مشاهده
+                        <a href="#" class="btn btn-primary" id="see-product">مشاهده
                             محصول</a>
                     </div>
                 </div>
