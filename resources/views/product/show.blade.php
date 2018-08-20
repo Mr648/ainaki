@@ -1,18 +1,18 @@
 @extends('layouts.layout')
 
 @section('contents')
-
-    {{-- --}}
     <div class="container rtl ">
         <div class="card">
             <div class="container-fliud">
                 <div class="wrapper row">
                     <div class="preview col-md-5 col-sm-12">
 
-
                         <div class="preview-pic tab-content border" style="margin-bottom: 6px !important;">
-                            <div class="tab-pane active" style="height: 250px !important;" id="pic-main">
-                                <img src="{{asset("{$product->images[0]->path}")}}"/>
+                            <div class="tab-pane active" id="pic-1" style="height: 250px !important; ">
+                                <img
+                                        src="/images/g1.png"/></div>
+                            <div class="tab-pane" style="height: 250px !important;" id="pic-2"><img
+                                        src="/images/g2.png"/>
                             </div>
                             <div class="tab-pane" style="height: 250px !important;" id="pic-3"><img
                                         src="/images/g3.png"/>
@@ -23,25 +23,25 @@
 
                         </div>
                         <ul class="preview-thumbnail nav nav-tabs text-center">
-                            @php
-                                $imageCounter = 0;
-                            @endphp
-                            @foreach($product->images as $image)
-                                <li class="border">
-                                    <a class="mouse">
-                                        <img src="{{asset("{$image->path}")}}" data-image-id="{{$imageCounter}}"
-                                             style="margin-top: 20px"/>
-                                    </a>
-                                </li>
-                                @php
-                                    $imageCounter++;
-                                @endphp
-                            @endforeach
+                            <li class="active border "><a class=" border" data-toggle="modal"
+                                                          data-target="#myModal"><img
+                                            src="/images/g1.png"/></a>
+                            </li>
+                            <li class=" border"><a data-toggle="modal" data-target="#myModal"><img src="/images/g2.png"
+                                                                                                   style="margin-top: 20px"/></a>
+                            </li>
+                            <li class=" border"><a data-toggle="modal" data-target="#myModal"><img src="/images/g3.png"
+                                                                                                   style="margin-top: 20px"/></a>
+                            </li>
+                            <li class=" border"><a data-toggle="modal" data-target="#myModal"><img src="/images/g4.png"
+                                                                                                   style="margin-top: 20px"/></a>
+                            </li>
 
                         </ul>
 
 
                         <div class=" container-fluid">
+
 
                             <!-- The Modal -->
                             <div class="modal fade " id="myModal">
@@ -53,38 +53,30 @@
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         </div>
 
-
                                         <!-- Modal body -->
                                         <div class="modal-body ">
                                             <div id="demo" class="carousel slide" data-ride="carousel">
-                                                <ul class="carousel-indicators" id="productImagesIndicators">
-                                                    @php
-                                                        $imageCounter = 0;
-                                                    @endphp
-                                                    @foreach($product->images as $image)
-                                                        <li data-target="#carousel" data-slide-to="{{$imageCounter}}"
-                                                            class="{{$imageCounter==0?'active':''}}"></li>
-                                                        @php
-                                                            $imageCounter++;
-                                                        @endphp
-                                                    @endforeach
+                                                <ul class="carousel-indicators">
+                                                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                                                    <li data-target="#carousel" data-slide-to="1"></li>
+                                                    <li data-target="#carousel" data-slide-to="2"></li>
                                                 </ul>
-                                                <div class="carousel-inner" id="productImagesLarge">
-                                                    @php
-                                                        $imageCounter = 0;
-                                                    @endphp
-                                                    @foreach($product->images as $image)
-                                                        <div class="carousel-item"
-                                                             data-selected-image="{{$imageCounter}}">
-                                                            <img src="{{asset("{$image->path}")}}"
-                                                                 alt="product-image-{{$imageCounter}}"
-                                                                 style="height: 250px !important;">
-                                                        </div>
-                                                        @php
-                                                            $imageCounter++;
-                                                        @endphp
-                                                    @endforeach
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item active">
+                                                        <img src="/images/g2.png" alt="Los Angeles"
+                                                             style="height: 250px !important;">
 
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="/images/g3.png" alt="Chicago"
+                                                             style="height: 250px !important;">
+
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="/images/g4.png" alt="New York"
+                                                             style="height: 250px !important;">
+
+                                                    </div>
                                                 </div>
 
                                                 <!-- Left and right controls -->
@@ -101,23 +93,6 @@
                                                 {{--<a class="carousel-control-next" href="#demo" data-slide="next">--}}
                                                 {{--<span class="carousel-control-next-icon"></span>--}}
                                                 {{--</a>--}}
-                                                <script>
-                                                    $(document).ready(function () {
-                                                        var selectedImage = -1;
-                                                        $(".mouse").on('click', function () {
-                                                            selectedImage = $(this).firstChild().data('image-id');
-                                                            $("#myModal").modal("show");
-                                                        })
-                                                        ;
-                                                        $("#myModal").on('show.bs.modal', function () {
-                                                            $('.carousel-item').each(function () {
-                                                                if (true) ;
-                                                            });
-                                                        })
-                                                        ;
-                                                    })
-                                                    ;
-                                                </script>
                                             </div>
                                         </div>
 
@@ -176,8 +151,187 @@
         </div>
 
 
-        {{-- Similar Products --}}
+        <div class="container border rtl tabs my-5 p-2">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+                <li class="nav-item ">
+                    <a class="nav-link active show" data-toggle="tab" href="#desc">توضیحات</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" data-toggle="tab" href="#information">مشخصات</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" data-toggle="tab" href="#comment">نظرات کاربران</a>
+                </li>
+
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div id="desc" class="container tab-pane active"><br>
+                    <div class="row  ">
+                        <div class="col-12 text-left">
+                            <h3>توضیحات تکمیلی</h3>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-12 text-left">
+                            <p>{{$product->description}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="information" class="container tab-pane fade"><br>
+                    <div class="row  ">
+                        <div class="col-12 text-left">
+                            <h3>مشخصات فنی</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <table class="table table-borderless">
+                                <tbody>
+                                @foreach($product->specs as $spec=>$attribs)
+                                    <tr>
+                                        <th>{{__('messages.' . $spec .'_key')}}</th>
+                                        <td>
+                                            <table class="table w-75">
+
+                                                <tbody>
+                                                @foreach($attribs as $key =>$value)
+                                                    <tr class="text-left">
+                                                        <td class="w-50">
+                                                            {{__('messages.'.$spec. '.' . $key)}}
+                                                        </td>
+                                                        @if($key=='name')
+                                                            <td class="w-50">{{$value}}</td>
+                                                        @elseif($key=='category')
+                                                            <td class="w-50">{{$value->name}}</td>
+                                                        @elseif($key=='brand')
+                                                            <td class="w-50">{{$value->name}}</td>
+                                                        @elseif($key=='warranty')
+                                                            <td class="w-50">@foreach($value as $warranty)
+                                                                    {{$warranty->company  }}<br>
+                                                                @endforeach</td>
+                                                        @else
+                                                            <td class="w-50">{{$value}}</td>
+                                                        @endif
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="comment" class="container tab-pane fade"><br>
+
+
+                    <h3>نظرات کاربران</h3>
+                    <div class="card border shadow-lg">
+                        <div class="row  ">
+
+                            <div class="col-md-1">
+                                <img src="/images/boy.png" alt="" class="rounded-circle" style="width:60px;">
+                            </div>
+                            <div class="col-md-2">
+
+                                <h4>John Doe</h4>
+
+
+                                <span class="fa fa-star rate"></span>
+                                <span class="fa fa-star rate "></span>
+                                <span class="fa fa-star rate"></span>
+                                <span class="fa fa-star rate"></span>
+                                <span class="fa fa-star rate"></span>
+                                <small>2018/8/19</small>
+                            </div>
+                            <div class="col-md-6"></div>
+                            <div class="col-md-3 rtl ">
+
+                                {{--<a href=""><i id="like" class="fa fa-thumbs-up fa-2x"></i></a> <span>1256</span>--}}
+                                {{--<a href=""><i id="dislike" class="fa fa-thumbs-down fa-2x"></i> </a><span>1256</span>--}}
+                                <a href="#" class="btn btn-outline-primary like"
+                                   style="color: #921a48;  border-color: #921a48;"><i class="fa fa-heart"></i> 1234</a>
+                                <a href="#" class="btn btn-outline-primary like"
+                                   style="color: #921a48 ;  border-color: #921a48;"><i class="fa fa-thumbs-down"></i>
+                                    1234</a>
+                            </div>
+
+                        </div>
+
+
+                        <br>
+                        <div class="row">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt
+                                ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit, sed do eiusmod tempor
+                                incididunt
+                                ut labore et dolore magna aliqua.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor
+                                incididunt
+                                ut labore et dolore magna aliqua.
+                                ut labore et dolore magna aliqua.</p>
+
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="stars text-left">
+                                <h4 class="rate-pro">امتیاز دادن به محصول</h4>
+                                <form>
+
+                                    <input class="star star-5" id="star-5" type="radio" name="star"/>
+
+                                    <label class="star star-5" for="star-5"></label>
+
+                                    <input class="star star-4" id="star-4" type="radio" name="star"/>
+
+                                    <label class="star star-4" for="star-4"></label>
+
+                                    <input class="star star-3" id="star-3" type="radio" name="star"/>
+
+                                    <label class="star star-3" for="star-3"></label>
+
+                                    <input class="star star-2" id="star-2" type="radio" name="star"/>
+
+                                    <label class="star star-2" for="star-2"></label>
+
+                                    <input class="star star-1" id="star-1" type="radio" name="star"/>
+
+                                    <label class="star star-1" for="star-1"></label>
+
+                                </form>
+                            </div>
+                        </div>
+
+                            <div class="form-group">
+
+                                <label for="comment">اضافه کردن دیدگاه</label>
+                                <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+                            </div>
+                            <button type="submit" class=" send btn btn-default ">ارسال</button>
+
+                    </div>
+
+                </div>
+                <br>
+            </div>
+
+        </div>
         <h3 class="similar-product">محصولات مشابه</h3>
+
         <div class="card-deck rtl">
 
             <div class="card my-5 border">
@@ -268,154 +422,9 @@
     <br>
 
 
-    {{-- Tabs --}}
-    <div class="container border rtl tabs my-5 p-2">
-
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs">
-            <li class="nav-item ">
-                <a class="nav-link active show" data-toggle="tab" href="#desc">توضیحات</a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" data-toggle="tab" href="#information">مشخصات</a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" data-toggle="tab" href="#comment">نظرات کاربران</a>
-            </li>
-
-        </ul>
-
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <div id="desc" class="container tab-pane active"><br>
-                <div class="row  ">
-                    <div class="col-12 text-left">
-                        <h3>توضیحات تکمیلی</h3>
-                    </div>
-                </div>
-                <br>
-                <br>
-                <div class="row">
-                    <div class="col-12 text-left">
-                        <p>{{$product->description}}</p>
-                    </div>
-                </div>
-            </div>
-            <div id="information" class="container tab-pane fade"><br>
-                <div class="row  ">
-                    <div class="col-12 text-left">
-                        <h3>مشخصات فنی</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <table class="table table-borderless">
-                            <tbody>
-                            @foreach($product->specs as $spec=>$attribs)
-                                <tr>
-                                    <th>{{__('messages.' . $spec .'_key')}}</th>
-                                    <td>
-                                        <table class="table w-75">
-
-                                            <tbody>
-                                            @foreach($attribs as $key =>$value)
-                                                <tr class="text-left">
-                                                    <td class="w-50">
-                                                        {{__('messages.'.$spec. '.' . $key)}}
-                                                    </td>
-                                                    @if($key=='name')
-                                                        <td class="w-50">{{$value}}</td>
-                                                    @elseif($key=='category')
-                                                        <td class="w-50">{{$value->name}}</td>
-                                                    @elseif($key=='brand')
-                                                        <td class="w-50">{{$value->name}}</td>
-                                                    @elseif($key=='warranty')
-                                                        <td class="w-50">@foreach($value as $warranty)
-                                                                {{$warranty->company  }}<br>
-                                                            @endforeach</td>
-                                                    @else
-                                                        <td class="w-50">{{$value}}</td>
-                                                    @endif
-                                                </tr>
-                                            @endforeach
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div id="comment" class="container tab-pane fade"><br>
-                <h3>نظرات کاربران</h3>
-                @foreach($product->comments as $comment)
-                    {{--<div class="card border">--}}
-                        {{--<div class="row  ">--}}
-                            {{--<div class="col-md-1">--}}
-                                {{--<img src="{{asset("{$comment->user->avatar}")}}" alt="" class="rounded-circle"--}}
-                                     {{--style="width:60px;">--}}
-                            {{--</div>--}}
-                            {{--<div class="col-md-2">--}}
-
-{{--                                <h4>{{$comment->user->name}}</h4>--}}
-
-                                {{--@for( $rating=0; $rating < $comment->$rating ; $rating++)--}}
-                                    {{--<span class="fa fa-star rate checked"></span>--}}
-                                {{--@endfor--}}
-                                {{--<small>{{\Carbon\Carbon::createFromTimestamp($comment->date)->diffForHumans()}}</small>--}}
-                            {{--</div>--}}
-                            {{--<div class="col-md-6"></div>--}}
-                            {{--<div class="col-md-3 rtl ">--}}
-
-                                {{--<a href=""><i id="like" class="fa fa-thumbs-up fa-2x"></i></a> <span>1256</span>--}}
-                                {{--<a href=""><i id="dislike" class="fa fa-thumbs-down fa-2x"></i> </a><span>1256</span>--}}
-                                {{--<a href="#" class="btn btn-outline-primary like"--}}
-                                   {{--style="color: #921a48;  border-color: #921a48;"><i class="fa fa-heart"></i> 1234</a>--}}
-                                {{--<a href="#" class="btn btn-outline-primary like"--}}
-                                   {{--style="color: #921a48 ;  border-color: #921a48;"><i class="fa fa-thumbs-down"></i>--}}
-                                    {{--1234</a>--}}
-                            {{--</div>--}}
-
-                        {{--</div>--}}
-
-
-                        {{--<br>--}}
-                        {{--<div class="row">--}}
-                            {{--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor--}}
-                                {{--incididunt--}}
-                                {{--ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing--}}
-                                {{--elit,--}}
-                                {{--sed do eiusmod tempor--}}
-                                {{--incididunt--}}
-                                {{--ut labore et dolore magna aliqua.</p>--}}
-                            {{--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor--}}
-                                {{--incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod--}}
-                                {{--tempor--}}
-                                {{--incididunt--}}
-                                {{--ut labore et dolore magna aliqua.--}}
-                                {{--ut labore et dolore magna aliqua.</p>--}}
-
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{print_r($comment->user)}}
-                @endforeach
-
-                <div class="form-group">
-                    <label for="comment">اضافه کردن دیدگاه</label>
-                    <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">ارسال</button>
-
-            </div>
-        </div>
-    </div>
-
     {{--@include ('layouts.similarProduct')--}}
 
 @endsection
 @section('styles')
     <link href="{{ asset('css/showproductDEtailStyle.css') }}" rel="stylesheet">
 @endsection
-
