@@ -16,12 +16,10 @@ class Comment extends JsonResource
     {
         return [
             'rating'=>$this->rating,
-            'user'=>[
-                $this->user->name,
-                $this->user->photos->path,
-            ],
+            'user_name'=> $this->user->name,
+            'user_avatar'=>$this->user->photos->path,
             'comment'=>$this->comment,
-            'date'=>$this->created_at,
+            'date'=>$this->created_at->timestamp,
         ];
     }
 }

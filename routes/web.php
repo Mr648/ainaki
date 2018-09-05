@@ -63,7 +63,6 @@ Route::prefix('user')->group(function () {
     Route::post('/signup', 'SignupController@signUp')->name('signup');
     Route::post('/signin', 'LoginController@login')->name('signin');
     Route::post('/signout', 'LogoutController@logout')->name('signout');
-
 });
 
 

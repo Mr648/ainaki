@@ -22,12 +22,12 @@
                             </div>
 
                         </div>
-                        <ul class="preview-thumbnail nav nav-tabs text-center">
+                        <ul class="preview-thumbnail nav nav-tabs text-center" id="image_thumbnails">
                             @php
                                 $imageCounter = 0;
                             @endphp
                             @foreach($product->images as $image)
-                                <li class="border">
+                                <li class="border" >
                                     <a class="mouse">
                                         <img src="{{asset("{$image->path}")}}" data-image-id="{{$imageCounter}}"
                                              style="margin-top: 20px"/>
@@ -104,14 +104,15 @@
                                                 <script>
                                                     $(document).ready(function () {
                                                         var selectedImage = -1;
-                                                        $(".mouse").on('click', function () {
-                                                            selectedImage = $(this).firstChild().data('image-id');
+                                                        $("#image_thumbnails a").on('click', function (evt) {
+                                                            evt.preventDefault();
+                                                            selectedImage = $(this).find('img').data('image-id');
                                                             $("#myModal").modal("show");
                                                         })
                                                         ;
                                                         $("#myModal").on('show.bs.modal', function () {
                                                             $('.carousel-item').each(function () {
-                                                                if (true) ;
+                                                                alert('jamal');
                                                             });
                                                         })
                                                         ;
@@ -351,55 +352,46 @@
             <div id="comment" class="container tab-pane fade"><br>
                 <h3>نظرات کاربران</h3>
                 @foreach($product->comments as $comment)
-                    {{--<div class="card border">--}}
-                        {{--<div class="row  ">--}}
-                            {{--<div class="col-md-1">--}}
-                                {{--<img src="{{asset("{$comment->user->avatar}")}}" alt="" class="rounded-circle"--}}
-                                     {{--style="width:60px;">--}}
-                            {{--</div>--}}
-                            {{--<div class="col-md-2">--}}
+                    <div class="card border">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <img src="{{asset("{$comment->user_avatar}")}}" alt="" class="border rounded-circle p-1"
+                                     style="width:72px;">
+                            </div>
+                            <div class="col-md-2">
 
-{{--                                <h4>{{$comment->user->name}}</h4>--}}
+                                <h4>{{$comment->user_name}}</h4>
+                                @php
+                                    $rating_on = $comment->rating;
+                                    $rating_off = 5 - $rating_on;
 
-                                {{--@for( $rating=0; $rating < $comment->$rating ; $rating++)--}}
-                                    {{--<span class="fa fa-star rate checked"></span>--}}
-                                {{--@endfor--}}
-                                {{--<small>{{\Carbon\Carbon::createFromTimestamp($comment->date)->diffForHumans()}}</small>--}}
-                            {{--</div>--}}
-                            {{--<div class="col-md-6"></div>--}}
-                            {{--<div class="col-md-3 rtl ">--}}
+                                @endphp
+                                @while( $rating_on-- > 0 )
+                                    <span class="fa fa-star rate"></span>
+                                @endwhile
+                                @while( $rating_off-- > 0 )
+                                    <span class="fa fa-star text-light"></span>
+                                @endwhile
+                                <span><strong>{{$comment->rating}}</strong> از  <strong>5</strong></span>
+                                <br>
+                                <small>{{\Carbon\Carbon::createFromTimestamp($comment->date)}}</small>
+                            </div>
+                            <div class="col-md-6"></div>
+                            <div class="col-md-3 rtl ">
+                                <a href="#" class="btn btn-outline-light like"
+                                   style="color: #921a48;  border-color: #921a48;"><i class="fa fa-thumbs-up"></i> 1234</a>
+                                <a href="#" class="btn btn-outline-light like"
+                                   style="color: #921a48 ;  border-color: #921a48;"><i class="fa fa-thumbs-down"></i>
+                                    1234</a>
+                            </div>
+                        </div>
 
-                                {{--<a href=""><i id="like" class="fa fa-thumbs-up fa-2x"></i></a> <span>1256</span>--}}
-                                {{--<a href=""><i id="dislike" class="fa fa-thumbs-down fa-2x"></i> </a><span>1256</span>--}}
-                                {{--<a href="#" class="btn btn-outline-primary like"--}}
-                                   {{--style="color: #921a48;  border-color: #921a48;"><i class="fa fa-heart"></i> 1234</a>--}}
-                                {{--<a href="#" class="btn btn-outline-primary like"--}}
-                                   {{--style="color: #921a48 ;  border-color: #921a48;"><i class="fa fa-thumbs-down"></i>--}}
-                                    {{--1234</a>--}}
-                            {{--</div>--}}
 
-                        {{--</div>--}}
-
-
-                        {{--<br>--}}
-                        {{--<div class="row">--}}
-                            {{--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor--}}
-                                {{--incididunt--}}
-                                {{--ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing--}}
-                                {{--elit,--}}
-                                {{--sed do eiusmod tempor--}}
-                                {{--incididunt--}}
-                                {{--ut labore et dolore magna aliqua.</p>--}}
-                            {{--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor--}}
-                                {{--incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod--}}
-                                {{--tempor--}}
-                                {{--incididunt--}}
-                                {{--ut labore et dolore magna aliqua.--}}
-                                {{--ut labore et dolore magna aliqua.</p>--}}
-
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{print_r($comment->user)}}
+                        <br>
+                        <div class="row">
+                            <p class="w-100">{{$comment->comment}}</p>
+                        </div>
+                    </div>
                 @endforeach
 
                 <div class="form-group">
@@ -411,8 +403,6 @@
             </div>
         </div>
     </div>
-
-    {{--@include ('layouts.similarProduct')--}}
 
 @endsection
 @section('styles')
